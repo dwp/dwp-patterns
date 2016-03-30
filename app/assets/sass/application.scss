@@ -7,13 +7,14 @@
 
 // Font Overrides
 @import 'NotoSans';
-html * {
-  font-family: 'NotoSans', arial, sans-serif !important;
-}
-
-// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+*:not(.token) { font-family: 'NotoSans', arial, sans-serif; }
+#proposition-name { font-family: 'NotoSans', arial, sans-serif !important; }
 
 // Import prism for code syntax
 @import 'prism';
 // Import tabs styling
 @import 'tabbing';
+
+.built-by-dwp {
+    font-size: 16px;
+}
