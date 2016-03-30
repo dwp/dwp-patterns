@@ -73,7 +73,6 @@ app.use(function (req, res, next) {
     serviceName: config.serviceName,
     cookieText: config.cookieText,
     releaseVersion: 'v' + releaseVersion,
-    path: req.params[0],
     postData: (req.body ? req.body : false)
   });
   next();
