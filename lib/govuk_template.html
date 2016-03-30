@@ -67,17 +67,21 @@
       </div>
     </div>
 
-    <!--<div id="global-cookie-message">
+    <div id="global-cookie-message">
 
         {% block cookie_message %}{% endblock %}
 
-    </div> -->
+    </div>
     <!--end global-cookie-message-->
+
 
     <header role="banner" id="global-header" class="{% block header_class %}{% endblock %}">
       <div class="header-wrapper">
         <div class="header-global">
           <div class="header-logo">
+            <a href="{{ homepage_url|default('https://www.gov.uk') }}" title="{{ logo_link_title|default('Go to the GOV.UK homepage') }}" id="logo" class="content">
+              <img src="{{ asset_path }}images/gov.uk_logotype_crown_invert_trans.png?0.16.4" width="35" height="31" alt=""> {{ global_header_text|default('GOV.UK') }}
+            </a>
           </div>
           {% block inside_header %}{% endblock %}
         </div>
@@ -88,6 +92,9 @@
 
 
     {% block after_header %}{% endblock %}
+
+    <div id="global-header-bar"></div>
+    <!--end global-header-bar-->
 
     {% block content %}{% endblock %}
 
