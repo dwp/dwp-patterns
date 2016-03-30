@@ -10,6 +10,8 @@ var path = require('path'),
     port = (process.env.PORT || config.port),
     utils = require(__dirname + '/lib/utils.js'),
     packageJson = require(__dirname + '/package.json'),
+    filters = require(__dirname + '/app/filters.js'),
+    _ = require('lodash'),
 
 // Grab environment variables specified in Procfile or as Heroku config vars
     releaseVersion = packageJson.version;
@@ -37,6 +39,13 @@ nunjucks.setup({
   noCache: true
 }, app);
 
+nunjucks.ready(function(nj) {
+  // iterate over filter items and add each to nunjucks
+  Object.keys(filters.items).forEach(function(filterName) {
+    nj.addFilter(filterName, filters.items[filterName]);
+  });
+});
+
 // Middleware to serve static assets
 app.use('/public', express.static(__dirname + '/public'));
 app.use('/public', express.static(__dirname + '/govuk_modules/govuk_template/assets'));
@@ -60,9 +69,13 @@ app.use(function (req, res, next) {
 
 // Add variables that are available in all views
 app.use(function (req, res, next) {
-  res.locals.serviceName=config.serviceName;
-  res.locals.cookieText=config.cookieText;
-  res.locals.releaseVersion="v" + releaseVersion;
+  _.merge(res.locals,{
+    serviceName: config.serviceName,
+    cookieText: config.cookieText,
+    releaseVersion: 'v' + releaseVersion,
+    path: req.params[0],
+    postData: (req.body ? req.body : false)
+  });
   next();
 });
 
@@ -76,7 +89,7 @@ if (typeof(routes) != "function"){
 }
 
 // auto render any view that exists
-app.get(/^\/([^.]+)$/, function (req, res) {
+app.all(/^\/([^.]+)$/, function (req, res) {
 
   var path = (req.params[0]);
 
