@@ -1,63 +1,50 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  GOV.UK prototype kit
+  DWP design patterns
 {% endblock %}
 
 {% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
 
-<main id="content" role="main">
-  <div class="grid-row">
-    <div class="column-two-thirds">
+        <h1 class="heading-xlarge">DWP design patterns</h1>
 
-      <h1 class="heading-xlarge">The GOV.UK prototype kit</h1>
+        <p class="lede">
+          These patterns are intended for use in designing DWP services and
+          should be used in the event that the GOV.UK pattern library does not
+          contain a viable solution to your design problem.
+        </p>
 
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
+        <hr />
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
+        <h2 class="heading-medium">Visual style</h2>
 
-      <h2 class="heading-medium">About this page</h2>
+        <p class="text">
+          For a visual style guide, including front-end code snippets, see the
+          GOV.UK elements guide. In addition there is now a DWP elements guide
+          that details how to style services that are for DWP staff and for
+          services not hosted on GOV.UK.
+        </p>
 
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
+        <h2 class="heading-large">Form elements</h2>
+        <ul class="list list-bullet">
+          <li><a href="#">Add new item(s) to a list</a></li>
+          <li><a href="#">Check your answers</a></li>
+          <li><a href="#">Entering bank details</a></li>
+          <li><a href="#">Document upload</a></li>
+          <li><a href="#">Save and exit</a></li>
+          <li><a href="#">Declarations</a></li>
+        </ul>
 
-			<h2 class="heading-medium">Examples and documentation</h2>
-
-			<ul class="list list-bullet">
-				<li><a href="/examples">Example pages and patterns</a></li>
-				<li><a href="https://github.com/alphagov/govuk_prototype_kit/tree/master/docs">
-						Read the full documentation</a></li>
-			</ul>
-
-      <h2 class="heading-medium">Other resources</h2>
-
-			<ul class="list list-bullet">
-				<li>
-					<a href="http://govuk-elements.herokuapp.com/snippets/">
-						Guide to GOV.UK Elements
-					</a>
-				</li>
-				<li>
-					<a href="https://www.gov.uk/service-manual">
-						Service design manual
-					</a>
-				</li>
-				<li>
-					<a href="https://www.gov.uk/design-principles">
-						Government Digital Service Design Principles
-					</a>
-				</li>
-			</ul>
-
+        <h2 class="heading-large">Third-party details</h2>
+        <ul class="list list-bullet">
+          <li><a href="#">Admin menus</a></li>
+          <li><a href="#">Search and filter</a></li>
+          <li><a href="#">Task lists and completion indicators</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</main>
-
+  </main>
 {% endblock %}
-
-
