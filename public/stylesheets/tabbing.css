@@ -1,0 +1,37 @@
+.tab-link {
+  float: left;
+  background-color: #dee0e2;
+  border: 0 none;
+  display: block;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 400;
+  top: 1px;
+  margin: 0.26316em 0.26316em 0.26316em 0 !important;
+  padding: 0.47368em 1em;
+}
+
+.tab-link-active {
+  background-color: #fff;
+  color: #0b0c0c;
+  position: relative;
+  text-decoration: none;
+  z-index: 5;
+  border: 1px solid #bfc1c3;
+  border-bottom: 1px solid transparent;
+  margin-top: 0px;
+  margin-bottom: 0 !important;
+  padding: 0.68421em 0.94737em 0.73684em;
+}
+
+.tab-link-active:focus {
+  background-color: white;
+}
+
+.tab-panes {
+  padding: 1em 0 0 0;
+  border-top: solid 1px #bfc1c3;
+  clear: both;
+  width: auto;
+}
