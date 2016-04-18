@@ -67,7 +67,25 @@
       </div>
     </div>
 
-    {% block header %}{% endblock %}
+    <header role="banner" id="global-header" class="with-proposition">
+      <div class="header-wrapper">
+        <div class="header-global">
+          <div class="header-logo">
+            <a href="/" id="logo" class="content dwplogo">
+              DWP
+            </a>
+          </div>
+        </div>
+
+        <div class="header-proposition">
+          <div class="content">
+            <nav id="proposition-menu">
+              <a href="/" id="proposition-name">{{serviceName}}</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
     <!--end header-->
 
     {% block after_header %}{% endblock %}

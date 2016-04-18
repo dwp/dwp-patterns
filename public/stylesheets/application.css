@@ -2219,6 +2219,16 @@ pre[class*="language-"] {
   width: auto;
 }
 
+#proposition-name {
+  font-family: 'NotoSans', arial, sans-serif !important;
+}
+
+.dwplogo {
+  margin-top: -2px !important;
+  font-size: 30px !important;
+  background: none !important;
+}
+
 .built-by-dwp {
   font-size: 16px;
 }
