@@ -1,0 +1,125 @@
+{% extends "layout_dwp.html" %}
+
+{% block page_title %}
+  DWP design patterns
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <h1 class="heading-xlarge">Add items to a list</h1>
+
+        <p class="text">
+          Use this pattern when you're asking the user to enter a list of things
+          (eg medical conditions or names of people). It allows the user to add
+          as many fields as they need, one at a time, so they aren't put off by
+          a page of empty fields.
+        </p>
+
+        <hr />
+
+        <h2 class="heading-medium">Standard version - horizontal fields</h2>
+        <p class="text">
+          This is how the first list item appears. Note the grey colour of the button below.
+        </p>
+        <img src="/public/images/additemstolist1.png" alt="" width="1020" height="295" style="margin-left:-32px"; />
+        <p class="text">
+        When the user clicks the 'Add another' button, a second set of text entry
+        fields appears below, separated by a keyline. The 'Add another' button
+        moves below the new fields ready for the user to click it again.
+        </p>
+        <p class="text">
+          A 'Remove' link also appears next to both of the items, which allows the user to
+          quickly delete an entry if they need to.
+        </p>
+        <p class="text">
+        If there are only 2 items in the list, the 'Remove' button will disappear
+        when it's clicked the first time (because the user shouldn't be able to
+        remove all items).
+        </p>
+        <img src="/public/images/additemstolist2.png" alt="" width="1024" height="515" style="margin-left:-32px" />
+
+        <h2 class="heading-medium">Variant version - vertical fields</h2>
+        <p class="text">
+        Use this version when you're asking for more fields than will fit on the
+        page horizontally.
+        </p>
+        <img src="/public/images/additemstolist_variant.png" alt="" width="1024" height="905" style="margin-left:-32px"; />
+
+        <h2 class="heading-medium">Demo version</h2>
+        <p class="text">
+        See how it works with this demo version. The number of items you can add
+        is limited to 5 for the purposes of the demo.
+        </p>
+        <img src="/public/images/additemstolist1.png" alt="" width="1024" height="295" style="margin-left:-32px"; />
+
+
+
+        <h2 class="heading-medium">Code snippets</h2>
+        <p class="text">
+         See below for the code snippets for each version.
+        </p>
+        <p>
+          <details>
+            <summary><span class="summary">View code snippet</span></summary>
+            <div class="panel panel-border-narrow">
+              <div class="tab-panel">
+                <div class="tab-panel-menu">
+                  <a href="#" class="tab-link">HTML</a>
+                  <a href="#" class="tab-link">CSS</a>
+                </div>
+
+                <div class="tab-panes">
+                  <div class="tab-pane">
+                    <pre class="language-markup">
+                      <code>
+                          &lt;footer id="footer"&gt;
+                            &lt;div class="footer-wrapper"&gt;
+                              &lt;div class="footer-meta"&gt;
+                                &lt;div class="footer-meta-inner"&gt;
+                                  &lt;ul class="platform-help-links"&gt;
+                                    &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#"&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#"&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+                                  &lt;/ul&gt;
+
+                                  &lt;p class="built-by-dwp"&gt;Built by DWP Digital&lt;/p&gt;
+
+                                  &lt;div class="open-government-licence"&gt;
+                                    &lt;p class="logo"&gt;&lt;a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license"&gt;Open Government Licence&lt;/a&gt;&lt;/p&gt;
+                                      &lt;p&gt;All content is available under the &lt;a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license"&gt;Open Government Licence v3.0&lt;/a&gt;, except where otherwise stated&lt;/p&gt;
+                                  &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class="copyright"&gt;
+                                  &lt;a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm" target="_blank"&gt;© Crown Copyright&lt;/a&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                          &lt;/footer&gt;
+                      </code>
+                    </pre>
+                  </div>
+
+                  <div class="tab-pane">
+                    <pre class="language-css">
+                      <code>
+                        CSS
+                      </code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </details>
+        </p>
+
+        </p>
+      </div>
+    </div>
+  </main>
+{% endblock %}
