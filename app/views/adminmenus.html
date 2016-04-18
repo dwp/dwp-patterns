@@ -11,23 +11,168 @@
 
         <h1 class="heading-xlarge">Admin menus</h1>
 
-        <p class="lede">
-          These patterns are intended for use in designing DWP services and
-          should be used in the event that the GOV.UK pattern library does not
-          contain a viable solution to your design problem.
-        </p>
-
-        <hr />
-
-        <h2 class="heading-medium">Visual style</h2>
         <p class="text">
-          For a visual style guide, including front-end code snippets, see the
-          GOV.UK elements guide. In addition there is now a DWP elements guide
-          that details how to style services that are for DWP staff and for
-          services not hosted on GOV.UK.
+          Use this pattern when creating interfaces that will be used only by internal
+          departmental staff and third-party suppliers. The pattern is made up of
+          two sections; the main left-hand navigation and the page sub-navigation.
+        </p>
+        <hr />
+        <h2 class="heading-medium">Main navigation</h2>
+        <p class="text">
         </p>
 
+        <p class="text">
+        The main admin menu navigation is left-aligned and displays the titles of each
+        admin area. When the user selects one of these the area's content is displayed
+        in the central panel.
+        </p>
+        <p class="text">
+          There is also a strip beneath the top black bar which is where any action
+          links can be placed eg a 'log out' action. Any actions placed in here are
+          right-aligned and new ones are added to the right.
+        </p>
+        <img src="/public/images/adminmenu1.png" alt="" width="800" height="531" style="margin-left:-32px"; />
 
+        <h2 class="heading-medium">Demo version</h2>
+        <p class="text">
+        See how it works with this demo version.
+        </p>
+        <img src="/public/images/adminmenu1.png" alt="" width="800" height="531" style="margin-left:-32px"; />
+
+        <h2 class="heading-medium">Code snippets</h2>
+        <p class="text">
+         See below for the code snippets for each version.
+        </p>
+        <p>
+          <details>
+            <summary><span class="summary">View code snippet</span></summary>
+            <div class="panel panel-border-narrow">
+              <div class="tab-panel">
+                <div class="tab-panel-menu">
+                  <a href="#" class="tab-link">HTML</a>
+                  <a href="#" class="tab-link">CSS</a>
+                </div>
+
+                <div class="tab-panes">
+                  <div class="tab-pane">
+                    <pre class="language-markup">
+                      <code>
+                          &lt;footer id="footer"&gt;
+                            &lt;div class="footer-wrapper"&gt;
+                              &lt;div class="footer-meta"&gt;
+                                &lt;div class="footer-meta-inner"&gt;
+                                  &lt;ul class="platform-help-links"&gt;
+                                    &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#"&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#"&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+                                  &lt;/ul&gt;
+
+                                  &lt;p class="built-by-dwp"&gt;Built by DWP Digital&lt;/p&gt;
+
+                                  &lt;div class="open-government-licence"&gt;
+                                    &lt;p class="logo"&gt;&lt;a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license"&gt;Open Government Licence&lt;/a&gt;&lt;/p&gt;
+                                      &lt;p&gt;All content is available under the &lt;a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license"&gt;Open Government Licence v3.0&lt;/a&gt;, except where otherwise stated&lt;/p&gt;
+                                  &lt;/div&gt;
+                                &lt;/div&gt;
+
+                                &lt;div class="copyright"&gt;
+                                  &lt;a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm" target="_blank"&gt;© Crown Copyright&lt;/a&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;
+                          &lt;/footer&gt;
+                      </code>
+                    </pre>
+                  </div>
+
+                  <div class="tab-pane">
+                    <pre class="language-css">
+                      <code>
+                        CSS
+                      </code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </details>
+          <h2 class="heading-medium">Secondary navigation</h2>
+          <p class="text">
+            It may be necessary to have a secondary level of navigation within an
+            area and this pattern is for that purpose. Selecting a title changes the
+            content below the keyline and the coloured focus mark moves underneath
+            the title.
+          </p>
+          <img src="/public/images/secondary_navigation.png" alt="" width="800" height="531" style="margin-left:-32px"; />
+          <h2 class="heading-medium">Demo version</h2>
+          <p class="text">
+          See how it works with this demo version.
+          </p>
+          <img src="/public/images/secondary_navigation.png" alt="" width="800" height="531" style="margin-left:-32px"; />
+          <h2 class="heading-medium">Code snippets</h2>
+          <p class="text">
+           See below for the code snippets for each version.
+          </p>
+          <p>
+            <details>
+              <summary><span class="summary">View code snippet</span></summary>
+              <div class="panel panel-border-narrow">
+                <div class="tab-panel">
+                  <div class="tab-panel-menu">
+                    <a href="#" class="tab-link">HTML</a>
+                    <a href="#" class="tab-link">CSS</a>
+                  </div>
+
+                  <div class="tab-panes">
+                    <div class="tab-pane">
+                      <pre class="language-markup">
+                        <code>
+                            &lt;footer id="footer"&gt;
+                              &lt;div class="footer-wrapper"&gt;
+                                &lt;div class="footer-meta"&gt;
+                                  &lt;div class="footer-meta-inner"&gt;
+                                    &lt;ul class="platform-help-links"&gt;
+                                      &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+                                      &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+                                      &lt;li&gt;&lt;a href="#"&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+                                      &lt;li&gt;&lt;a href="#"&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+                                    &lt;/ul&gt;
+
+                                    &lt;p class="built-by-dwp"&gt;Built by DWP Digital&lt;/p&gt;
+
+                                    &lt;div class="open-government-licence"&gt;
+                                      &lt;p class="logo"&gt;&lt;a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license"&gt;Open Government Licence&lt;/a&gt;&lt;/p&gt;
+                                        &lt;p&gt;All content is available under the &lt;a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license"&gt;Open Government Licence v3.0&lt;/a&gt;, except where otherwise stated&lt;/p&gt;
+                                    &lt;/div&gt;
+                                  &lt;/div&gt;
+
+                                  &lt;div class="copyright"&gt;
+                                    &lt;a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm" target="_blank"&gt;© Crown Copyright&lt;/a&gt;
+                                  &lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/footer&gt;
+                        </code>
+                      </pre>
+                    </div>
+
+                    <div class="tab-pane">
+                      <pre class="language-css">
+                        <code>
+                          CSS
+                        </code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </details>
+
+        </p>
+        </p>
       </div>
     </div>
   </main>
