@@ -8,19 +8,20 @@
  
 <main id="content" role="main">
   <div class="grid-row">
-   <div class="column-two-thirds">
+    <div class="column-two-thirds">
       <a class="link-back" href="/">Back</a>
       <h1 class="heading-xlarge">Enter bank details</h1>
       <p class="lede">
-         The user needs to provide details of where they want to receive payments.
-      </p>
-      <hr />
-   </div>
+       The user needs to provide details of where they want to receive payments.
+     </p>
+     <hr />
+     <h2 class="heading-medium">Version 1 - Simple </h2>
+    </div>
   </div>
-  <div class="grid-row">
-   <h2 class="heading-medium">Version 1 - Simple </h2>
-   <div class="example">
-      <div class="column-two-thirds">
+
+    <div class="example">
+      <div class="grid-row">
+        <div class="column-two-thirds">
          <h1 class="heading-xlarge">Your bank details</h1>
          <form action="bank-details" method="POST">
             <div class="form-group">
@@ -57,7 +58,7 @@
             <div class="form-group">
                <fieldset>
                   <label class="form-label-bold" for="bs-society-roll">
-                  Building society roll or reference numbern (optional)
+                  Building society roll or reference number (optional)
                   <span class="form-hint">If your building society uses a roll or reference number, you will find it on your passbook</span>
                   </label>
                   <input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll" value="" data-required="true">
