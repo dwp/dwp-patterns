@@ -1,0 +1,144 @@
+{% extends "layout_dwp.html" %}
+
+{% block page_title %}
+  DWP design patterns
+{% endblock %}
+
+{% block content %}
+ 
+<main id="content" role="main">
+  <div class="grid-row">
+   <div class="column-two-thirds">
+      <a class="link-back" href="/">Back</a>
+      <h1 class="heading-xlarge">Enter bank details</h1>
+      <p class="lede">
+         The user needs to provide details of where they want to receive payments.
+      </p>
+      <hr />
+   </div>
+  </div>
+  <div class="grid-row">
+   <h2 class="heading-medium">Version 1 - Simple </h2>
+   <div class="example">
+      <div class="column-two-thirds">
+         <h1 class="heading-xlarge">Your bank details</h1>
+         <form action="bank-details" method="POST">
+            <div class="form-group">
+               <fieldset>
+                  <label class="form-label-bold label-no-hint" for="ba-account-holder">Account holder name</label>
+                  <input type="text" class="form-control" id="ba-account-holder" name="ba-account-holder" value="">
+               </fieldset>
+            </div>
+            <legend class="form-label-bold">Sort code</legend>
+            <div class="form-date form-group">
+               <fieldset>
+                  <div class="form-group form-group-day">
+                     <label for="ba-sort1"></label>
+                     <input class="form-control" id="ba-sort1" maxlength="2" name="ba-sort1" value="" type="text">
+                  </div>
+                  <div class="form-group form-group-month">
+                     <label for="ba-sort2"></label>
+                     <input class="form-control" id="ba-sort2" maxlength="2" name="ba-sort2" value="" type="text">
+                  </div>
+                  <div class="form-group form-group-month">
+                     <label for="ba-sort3"></label>
+                     <input class="form-control" id="ba-sort3" maxlength="2" name="ba-sort3" value="" type="text">
+                  </div>
+               </fieldset>
+            </div>
+            <div class="form-group">
+               <fieldset>
+                  <label class="form-label-bold" for="ba-account-number">
+                  Account number
+                  </label>
+                  <input type="text" class="form-control" id="ba-account-number" name="ba-account-number" value="" maxlength="10">
+               </fieldset>
+            </div>
+            <div class="form-group">
+               <fieldset>
+                  <label class="form-label-bold" for="bs-society-roll">
+                  Building society roll or reference numbern (optional)
+                  <span class="form-hint">If your building society uses a roll or reference number, you will find it on your passbook</span>
+                  </label>
+                  <input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll" value="" data-required="true">
+               </fieldset>
+            </div>
+          </form>
+        </div>
+      </div>
+  </div>
+  
+  <div class="grid-row">
+
+    <details role="group" open="">
+      <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">View code snippet</span></summary>
+      
+      <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+          <div class="tab-panel">
+            <div class="tab-panel-menu">
+              <a href="#" class="tab-link tab-link-active">HTML</a>
+              <a href="#" class="tab-link">CSS</a>
+            </div>
+            <div class="tab-panes">
+              <div class="tab-pane" style="display: block;">
+               <pre class="language-markup">
+                <code>
+ &lt;h1 class="heading-xlarge"&gt;Your bank details&lt;/h1&gt;
+   &lt;form action="bank-details" method="POST"&gt;
+      &lt;div class="form-group"&gt;
+         &lt;fieldset&gt;
+            &lt;label class="form-label-bold label-no-hint" for="ba-account-holder"&gt;Name of account holder&lt;/label&gt;
+            &lt;input type="text" class="form-control" id="ba-account-holder" name="ba-account-holder" value=""&gt;
+         &lt;/fieldset&gt;
+      &lt;/div&gt;
+      &lt;legend class="form-label-bold"&gt;Sort code&lt;/legend&gt;
+      &lt;div class="form-date form-group"&gt;
+         &lt;fieldset&gt;
+            &lt;div class="form-group form-group-day"&gt;
+               &lt;label for="ba-sort1"&gt;&lt;/label&gt;
+               &lt;input class="form-control" id="ba-sort1" maxlength="2" name="ba-sort1" value="" type="text"&gt;
+            &lt;/div&gt;
+            &lt;div class="form-group form-group-month"&gt;
+               &lt;label for="ba-sort2"&gt;&lt;/label&gt;
+               &lt;input class="form-control" id="ba-sort2" maxlength="2" name="ba-sort2" value="" type="text"&gt;
+            &lt;/div&gt;
+            &lt;div class="form-group form-group-month"&gt;
+               &lt;label for="ba-sort3"&gt;&lt;/label&gt;
+               &lt;input class="form-control" id="ba-sort3" maxlength="2" name="ba-sort3" value="" type="text"&gt;
+            &lt;/div&gt;
+         &lt;/fieldset&gt;
+      &lt;/div&gt;
+      &lt;div class="form-group"&gt;
+         &lt;fieldset&gt;
+            &lt;label class="form-label-bold" for="ba-account-number"&gt;
+            Account number
+            &lt;/label&gt;
+            &lt;input type="text" class="form-control" id="ba-account-number" name="ba-account-number" value="" maxlength="10"&gt;
+         &lt;/fieldset&gt;
+      &lt;/div&gt;
+      &lt;div class="form-group"&gt;
+         &lt;fieldset&gt;
+            &lt;label class="form-label-bold" for="bs-society-roll"&gt;
+            Building society roll or reference numbern (optional)
+            &lt;span class="form-hint"&gt;If your building society uses a roll or reference number, you will find it on your passbook&lt;/span&gt;
+            &lt;/label&gt;
+            &lt;input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll" value="" data-required="true"&gt;
+         &lt;/fieldset&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+                </code>
+              </pre>
+            </div>
+            <div class="tab-pane" style="display: none;">
+              <pre class="language-markup">
+                <code>
+            </code>
+              </pre>
+            </div>
+          </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </main>
+{% endblock %}
