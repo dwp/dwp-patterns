@@ -5,141 +5,366 @@
 {% endblock %}
 
 {% block content %}
- 
+
 <main id="content" role="main">
   <div class="grid-row">
     <div class="column-two-thirds">
       <a class="link-back" href="/">Back</a>
+
       <h1 class="heading-xlarge">Enter bank details</h1>
+
       <p class="lede">
        The user needs to provide details of where they want to receive payments.
      </p>
+
      <hr />
+
      <h2 class="heading-medium">Version 1 - Simple </h2>
     </div>
   </div>
 
-    <div class="example">
-      <div class="grid-row">
+    <div class="grid-row">
+      <div class="example">
         <div class="column-two-thirds">
-         <h1 class="heading-xlarge">Your bank details</h1>
-         <form action="bank-details" method="POST">
+          <h1 class="heading-xlarge">Your bank details</h1>
+
+          <form>
             <div class="form-group">
-               <fieldset>
-                  <label class="form-label-bold label-no-hint" for="ba-account-holder">Account holder name</label>
-                  <input type="text" class="form-control" id="ba-account-holder" name="ba-account-holder" value="">
-               </fieldset>
+              <fieldset>
+                <label class="form-label-bold label-no-hint" for="ba-account-holder">Account holder name</label>
+                <input type="text" class="form-control" id="ba-account-holder" name="ba-account-holder" value="">
+              </fieldset>
             </div>
+
             <legend class="form-label-bold">Sort code</legend>
             <div class="form-date form-group">
-               <fieldset>
-                  <div class="form-group form-group-day">
-                     <label for="ba-sort1"></label>
-                     <input class="form-control" id="ba-sort1" maxlength="2" name="ba-sort1" value="" type="text">
-                  </div>
-                  <div class="form-group form-group-month">
-                     <label for="ba-sort2"></label>
-                     <input class="form-control" id="ba-sort2" maxlength="2" name="ba-sort2" value="" type="text">
-                  </div>
-                  <div class="form-group form-group-month">
-                     <label for="ba-sort3"></label>
-                     <input class="form-control" id="ba-sort3" maxlength="2" name="ba-sort3" value="" type="text">
-                  </div>
-               </fieldset>
+              <fieldset>
+                <div class="form-group form-group-day">
+                  <label for="ba-sort1"></label>
+                  <input class="form-control" id="ba-sort1" maxlength="2" name="ba-sort1" value="" type="text">
+                </div>
+
+                <div class="form-group form-group-month">
+                  <label for="ba-sort2"></label>
+                  <input class="form-control" id="ba-sort2" maxlength="2" name="ba-sort2" value="" type="text">
+                </div>
+
+                <div class="form-group form-group-month">
+                  <label for="ba-sort3"></label>
+                  <input class="form-control" id="ba-sort3" maxlength="2" name="ba-sort3" value="" type="text">
+                </div>
+              </fieldset>
             </div>
+
             <div class="form-group">
-               <fieldset>
-                  <label class="form-label-bold" for="ba-account-number">
+              <fieldset>
+                <label class="form-label-bold" for="ba-account-number">
                   Account number
-                  </label>
-                  <input type="text" class="form-control" id="ba-account-number" name="ba-account-number" value="" maxlength="10">
-               </fieldset>
+                </label>
+                <input type="text" class="form-control" id="ba-account-number" name="ba-account-number" value="" maxlength="10">
+              </fieldset>
             </div>
+
             <div class="form-group">
-               <fieldset>
-                  <label class="form-label-bold" for="bs-society-roll">
+              <fieldset>
+                <label class="form-label-bold" for="bs-society-roll">
                   Building society roll or reference number (optional)
                   <span class="form-hint">If your building society uses a roll or reference number, you will find it on your passbook</span>
-                  </label>
-                  <input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll" value="" data-required="true">
-               </fieldset>
+                </label>
+                <input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll" value="" data-required="true">
+              </fieldset>
             </div>
           </form>
         </div>
       </div>
-  </div>
-  
-  <div class="grid-row">
+    </div>
 
-    <details role="group">
-      <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">View code snippet</span></summary>
-      
-      <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+    <div class="grid-row">
+      <details>
+        <summary><span class="summary">View code snippet</span></summary>
+
+        <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
           <div class="tab-panel">
             <div class="tab-panel-menu">
               <a href="#" class="tab-link tab-link-active">HTML</a>
-              <a href="#" class="tab-link">CSS</a>
             </div>
+
             <div class="tab-panes">
               <div class="tab-pane" style="display: block;">
-               <pre class="language-markup">
-                <code>
- &lt;h1 class="heading-xlarge"&gt;Your bank details&lt;/h1&gt;
-   &lt;form action="bank-details" method="POST"&gt;
+                <pre class="language-markup">
+                  <code>
+    &lt;h1 class="heading-xlarge"&gt;Your bank details&lt;/h1&gt;
+    &lt;form action="bank-details" method="POST"&gt;
       &lt;div class="form-group"&gt;
-         &lt;fieldset&gt;
-            &lt;label class="form-label-bold label-no-hint" for="ba-account-holder"&gt;Name of account holder&lt;/label&gt;
-            &lt;input type="text" class="form-control" id="ba-account-holder" name="ba-account-holder" value=""&gt;
-         &lt;/fieldset&gt;
+        &lt;fieldset&gt;
+          &lt;label class="form-label-bold label-no-hint" for="ba-account-holder"&gt;Name of account holder&lt;/label&gt;
+          &lt;input type="text" class="form-control" id="ba-account-holder" name="ba-account-holder" value=""&gt;
+        &lt;/fieldset&gt;
       &lt;/div&gt;
+
       &lt;legend class="form-label-bold"&gt;Sort code&lt;/legend&gt;
       &lt;div class="form-date form-group"&gt;
-         &lt;fieldset&gt;
-            &lt;div class="form-group form-group-day"&gt;
-               &lt;label for="ba-sort1"&gt;&lt;/label&gt;
-               &lt;input class="form-control" id="ba-sort1" maxlength="2" name="ba-sort1" value="" type="text"&gt;
-            &lt;/div&gt;
-            &lt;div class="form-group form-group-month"&gt;
-               &lt;label for="ba-sort2"&gt;&lt;/label&gt;
-               &lt;input class="form-control" id="ba-sort2" maxlength="2" name="ba-sort2" value="" type="text"&gt;
-            &lt;/div&gt;
-            &lt;div class="form-group form-group-month"&gt;
-               &lt;label for="ba-sort3"&gt;&lt;/label&gt;
-               &lt;input class="form-control" id="ba-sort3" maxlength="2" name="ba-sort3" value="" type="text"&gt;
-            &lt;/div&gt;
-         &lt;/fieldset&gt;
+        &lt;fieldset&gt;
+          &lt;div class="form-group form-group-day"&gt;
+            &lt;label for="ba-sort1"&gt;&lt;/label&gt;
+            &lt;input class="form-control" id="ba-sort1" maxlength="2" name="ba-sort1" value="" type="text"&gt;
+          &lt;/div&gt;
+
+          &lt;div class="form-group form-group-month"&gt;
+            &lt;label for="ba-sort2"&gt;&lt;/label&gt;
+            &lt;input class="form-control" id="ba-sort2" maxlength="2" name="ba-sort2" value="" type="text"&gt;
+          &lt;/div&gt;
+
+          &lt;div class="form-group form-group-month"&gt;
+            &lt;label for="ba-sort3"&gt;&lt;/label&gt;
+            &lt;input class="form-control" id="ba-sort3" maxlength="2" name="ba-sort3" value="" type="text"&gt;
+          &lt;/div&gt;
+        &lt;/fieldset&gt;
       &lt;/div&gt;
+
       &lt;div class="form-group"&gt;
-         &lt;fieldset&gt;
-            &lt;label class="form-label-bold" for="ba-account-number"&gt;
+        &lt;fieldset&gt;
+          &lt;label class="form-label-bold" for="ba-account-number"&gt;
             Account number
-            &lt;/label&gt;
-            &lt;input type="text" class="form-control" id="ba-account-number" name="ba-account-number" value="" maxlength="10"&gt;
-         &lt;/fieldset&gt;
+          &lt;/label&gt;
+          &lt;input type="text" class="form-control" id="ba-account-number" name="ba-account-number" value="" maxlength="10"&gt;
+        &lt;/fieldset&gt;
       &lt;/div&gt;
+
       &lt;div class="form-group"&gt;
-         &lt;fieldset&gt;
-            &lt;label class="form-label-bold" for="bs-society-roll"&gt;
+        &lt;fieldset&gt;
+          &lt;label class="form-label-bold" for="bs-society-roll"&gt;
             Building society roll or reference numbern (optional)
             &lt;span class="form-hint"&gt;If your building society uses a roll or reference number, you will find it on your passbook&lt;/span&gt;
-            &lt;/label&gt;
-            &lt;input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll" value="" data-required="true"&gt;
-         &lt;/fieldset&gt;
+          &lt;/label&gt;
+          &lt;input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll" value="" data-required="true"&gt;
+        &lt;/fieldset&gt;
       &lt;/div&gt;
     &lt;/form&gt;
-                </code>
-              </pre>
-            </div>
-            <div class="tab-pane" style="display: none;">
-              <pre class="language-markup">
-                <code>
-            </code>
-              </pre>
+                  </code>
+                </pre>
+              </div>
             </div>
           </div>
+        </div>
+      </details>
+    </div>
+
+    <h2 class="heading-medium">Version 2 - Get your State Pension</h2>
+
+    <div class="grid-row">
+      <div class="example">
+        <div class="column-two-thirds">
+          <h1 class="heading-xlarge">Your payment details</h1>
+
+          <p>How would you like to get paid?</p>
+
+          <form>
+            <fieldset>
+              <div class="form-group">
+                <!-- No data-targets to avoid duplication, see jQuery at bottom of this page -->
+                <label class="block-label" for="bank-account-yes">
+                  <input id="bank-account-yes" type="radio" name="account-select" value="bank">
+                  Bank account
+                </label>
+
+                <label class="block-label" for="building-society-yes">
+                  <input id="building-society-yes" type="radio" name="account-select" value="building">
+                  Building society account
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="js-hidden" id="bank-details">
+              <div class="form-group">
+                <fieldset>
+                  <label class="form-label-bold" for="account-name">
+                    Name on account
+                  </label>
+                  <input type="text" class="form-control" id="account-name" name="account-name">
+                </fieldset>
+              </div>
+
+              <div class="form-group">
+                <fieldset>
+                  <label class="form-label-bold" for="account-number">
+                    Account number
+                  </label>
+                  <input type="text" class="form-control" id="account-number" name="account-number">
+                </fieldset>
+              </div>
+
+              <legend class="form-label-bold">Sort code</legend>
+
+              <div class="form-date form-group">
+                <fieldset>
+                  <div class="form-group form-group-day">
+                    <label for="sort-code-1"></label>
+                    <input class="form-control" id="sort-code-1" maxlength="2" name="sort-code-1" type="text" />
+                  </div>
+
+                  <div class="form-group form-group-month">
+                    <label for="sort-code-2"></label>
+                    <input class="form-control" id="sort-code-2" maxlength="2"  name="sort-code-2" type="text" />
+                  </div>
+
+                  <div class="form-group form-group-month">
+                    <label for="sort-code-3"></label>
+                    <input class="form-control" id="sort-code-3" maxlength="2"  name="sort-code-3" type="text" />
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+
+            <div class="js-hidden" id="building-society-details">
+              <div class="form-group">
+                <fieldset>
+                  <label class="form-label-bold" for="bs-society-roll">
+                    Building society roll or reference number
+                    <span class="form-hint">If your building society uses a roll or reference number, you will find it on your passbook</span>
+                  </label>
+
+                  <input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll">
+                </fieldset>
+              </div>
+            </div>
+
+            <input type="submit" class="button" value="Continue">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <details>
+        <summary role="button"><span class="summary">View code snippet</span></summary>
+
+        <div class="panel panel-border-narrow">
+          <div class="tab-panel">
+            <div class="tab-panel-menu">
+              <a href="#" class="tab-link tab-link-active">HTML</a>
+              <a href="#" class="tab-link">JS</a>
+            </div>
+
+            <div class="tab-panes">
+              <div class="tab-pane" style="display: block;">
+                <pre class="language-markup">
+                  <code>
+    &lt;h1 class="heading-xlarge"&gt;Your payment details&lt;/h1&gt;
+
+    &lt;p&gt;How would you like to get paid?&lt;/p&gt;
+
+    &lt;form&gt;
+      &lt;fieldset&gt;
+        &lt;div class="form-group"&gt;
+          &lt;!-- No data-targets to avoid duplication, see JS tab --&gt;
+          &lt;label class="block-label" for="bank-account-yes"&gt;
+          &lt;input id="bank-account-yes" type="radio" name="account-select" value="bank"&gt;
+            Bank account
+          &lt;/label&gt;
+
+          &lt;label class="block-label" for="building-society-yes"&gt;
+            &lt;input id="building-society-yes" type="radio" name="account-select" value="building"&gt;
+            Building society account
+          &lt;/label&gt;
+        &lt;/div&gt;
+      &lt;/fieldset&gt;
+
+      &lt;div class="js-hidden" id="bank-details"&gt;
+        &lt;div class="form-group"&gt;
+          &lt;fieldset&gt;
+            &lt;label class="form-label-bold" for="account-name"&gt;
+              Name on account
+            &lt;/label&gt;
+            &lt;input type="text" class="form-control" id="account-name" name="account-name"&gt;
+          &lt;/fieldset&gt;
+        &lt;/div&gt;
+
+        &lt;div class="form-group"&gt;
+          &lt;fieldset&gt;
+            &lt;label class="form-label-bold" for="account-number"&gt;
+              Account number
+            &lt;/label&gt;
+            &lt;input type="text" class="form-control" id="account-number" name="account-number"&gt;
+          &lt;/fieldset&gt;
+        &lt;/div&gt;
+
+        &lt;legend class="form-label-bold"&gt;Sort code&lt;/legend&gt;
+
+        &lt;div class="form-date form-group"&gt;
+          &lt;fieldset&gt;
+            &lt;div class="form-group form-group-day"&gt;
+              &lt;label for="sort-code-1"&gt;&lt;/label&gt;
+              &lt;input class="form-control" id="sort-code-1" maxlength="2" name="sort-code-1" type="text" /&gt;
+            &lt;/div&gt;
+
+            &lt;div class="form-group form-group-month"&gt;
+              &lt;label for="sort-code-2"&gt;&lt;/label&gt;
+              &lt;input class="form-control" id="sort-code-2" maxlength="2"  name="sort-code-2" type="text" /&gt;
+            &lt;/div&gt;
+
+            &lt;div class="form-group form-group-month"&gt;
+              &lt;label for="sort-code-3"&gt;&lt;/label&gt;
+              &lt;input class="form-control" id="sort-code-3" maxlength="2"  name="sort-code-3" type="text" /&gt;
+            &lt;/div&gt;
+          &lt;/fieldset&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class="js-hidden" id="building-society-details"&gt;
+        &lt;div class="form-group"&gt;
+          &lt;fieldset&gt;
+            &lt;label class="form-label-bold" for="bs-society-roll"&gt;
+              Building society roll or reference number
+              &lt;span class="form-hint"&gt;If your building society uses a roll or reference number, you will find it on your passbook&lt;/span&gt;
+            &lt;/label&gt;
+
+            &lt;input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll"&gt;
+          &lt;/fieldset&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;input type="submit" class="button" value="Continue"&gt;
+    &lt;/form&gt;
+                  </code>
+                </pre>
+              </div>
+
+              <div class="tab-pane" style="display: none;">
+                <pre class="language-javascript">
+                  <code>
+    $(document).on('click', 'input[type="radio"]', function (e) {
+      if ($(e.target).attr('id') === 'bank-account-yes' || $(e.target).attr('id') === 'building-society-yes') {
+        $('#bank-details').show();
+        if ($(this).attr('id') === 'building-society-yes') {
+          $('#building-society-details').show();
+        } else {
+          $('#building-society-details').hide();
+        }
+      }
+    });
+                  </code>
+                </pre>
+              </div>
+            </div>
           </div>
         </div>
       </details>
     </div>
   </main>
+{% endblock %}
+
+{% block page_scripts %}
+  <script>
+    $(document).on('click', 'input[type="radio"]', function (e) {
+      if ($(e.target).attr('id') === 'bank-account-yes' || $(e.target).attr('id') === 'building-society-yes') {
+        $('#bank-details').show();
+        if ($(this).attr('id') === 'building-society-yes') {
+          $('#building-society-details').show();
+        } else {
+          $('#building-society-details').hide();
+        }
+      }
+    });
+  </script>
 {% endblock %}
