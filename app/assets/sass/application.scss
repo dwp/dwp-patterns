@@ -15,9 +15,10 @@
 // Import tabs styling
 @import 'tabbing';
 
-#proposition-name {
-  font-family: 'NotoSans', arial, sans-serif !important;
-}
+
+// import example box
+@import 'example-box';
+@import 'remove-items-from-list';
 
 .dwplogo {
   margin-top: -2px !important;
@@ -29,53 +30,12 @@
     font-size: 16px;
 }
 
-// back link
-
-.back-link {
-	padding-top: 20px;
-}
-
-// example box
-
-.example {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid #bfc1c3;
-  margin-top: 15px;
-  margin-bottom: 15px;
-
-  @media (min-width: 641px) {
-    padding-top: 45px;
-    padding-right: 30px;
-    padding-bottom: 30px;
-    padding-left: 30px;
-  }
-
-  &:before {
-    content: "EXAMPLE";
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0.2105263158em 0.7894736842em 0.2105263158em 0.7894736842em;
-    font-weight: 400;
-    text-transform: none;
-    background: #bfc1c3;
-    color: white;
-
-    @media (min-width: 641px) {
-      font-size: 14px;
-      line-height: 1.4285714286;
-    }
-  }
-}
 // form styles
-
 legend {
 	font-weight: 700;
 }
 
 // declaration
-
 .legal_message {
 	margin: 30px 0 30px;
 	padding-left: 60px;

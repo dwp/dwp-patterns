@@ -1,0 +1,54 @@
+// Remove items from list
+.no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.remove-list-item {
+  display: inline-block;
+  margin-top: 1em;
+}
+
+.list-item-wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  .heading-small,
+  .heading-medium,
+  .heading-large,
+  .heading-xlarge {
+    margin-top: 0;
+  }
+
+  .column-one-third {
+    .list-item {
+      width: 100%;
+    }
+
+    input {
+      width: 90%;
+
+      @media (max-width: 640px) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.button-add-another {
+  background-color: #eee;
+  color: #000;
+  box-shadow: 0 2px 0 #666;
+
+  &:hover {
+    background-color: #ccc;
+    color: #000;
+    box-shadow: 0 2px 0 #666;
+  }
+
+  &:focus {
+    background-color: #ccc;
+    color: #000;
+    box-shadow: 0 2px 0 #666;
+  }
+}

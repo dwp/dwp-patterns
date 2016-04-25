@@ -2219,24 +2219,6 @@ pre[class*="language-"] {
   width: auto;
 }
 
-#proposition-name {
-  font-family: 'NotoSans', arial, sans-serif !important;
-}
-
-.dwplogo {
-  margin-top: -2px !important;
-  font-size: 30px !important;
-  background: none !important;
-}
-
-.built-by-dwp {
-  font-size: 16px;
-}
-
-.back-link {
-  padding-top: 20px;
-}
-
 .example {
   position: relative;
   overflow: hidden;
@@ -2271,6 +2253,70 @@ pre[class*="language-"] {
     font-size: 14px;
     line-height: 1.4285714286;
   }
+}
+
+.no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.remove-list-item {
+  display: inline-block;
+  margin-top: 1em;
+}
+
+.list-item-wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.list-item-wrapper .heading-small,
+.list-item-wrapper .heading-medium,
+.list-item-wrapper .heading-large,
+.list-item-wrapper .heading-xlarge {
+  margin-top: 0;
+}
+
+.list-item-wrapper .column-one-third .list-item {
+  width: 100%;
+}
+
+.list-item-wrapper .column-one-third input {
+  width: 90%;
+}
+
+@media (max-width: 640px) {
+  .list-item-wrapper .column-one-third input {
+    width: 100%;
+  }
+}
+
+.button-add-another {
+  background-color: #eee;
+  color: #000;
+  box-shadow: 0 2px 0 #666;
+}
+
+.button-add-another:hover {
+  background-color: #ccc;
+  color: #000;
+  box-shadow: 0 2px 0 #666;
+}
+
+.button-add-another:focus {
+  background-color: #ccc;
+  color: #000;
+  box-shadow: 0 2px 0 #666;
+}
+
+.dwplogo {
+  margin-top: -2px !important;
+  font-size: 30px !important;
+  background: none !important;
+}
+
+.built-by-dwp {
+  font-size: 16px;
 }
 
 legend {

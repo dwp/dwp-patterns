@@ -8,7 +8,6 @@
   <main id="content" role="main">
     <div class="grid-row">
       <div class="column-two-thirds">
-
         <h1 class="heading-xlarge">Add items to a list</h1>
 
         <p class="text">
@@ -18,108 +17,433 @@
           a page of empty fields.
         </p>
 
-        <hr />
-
         <h2 class="heading-medium">Standard version - horizontal fields</h2>
-        <p class="text">
-          This is how the first list item appears. Note the grey colour of the button below.
-        </p>
-        <img src="/public/images/additemstolist1.png" alt="" width="1020" height="295" style="margin-left:-32px"; />
-        <p class="text">
-        When the user clicks the 'Add another' button, a second set of text entry
-        fields appears below, separated by a keyline. The 'Add another' button
-        moves below the new fields ready for the user to click it again.
-        </p>
-        <p class="text">
-          A 'Remove' link also appears next to both of the items, which allows the user to
-          quickly delete an entry if they need to.
-        </p>
-        <p class="text">
-        If there are only 2 items in the list, the 'Remove' button will disappear
-        when it's clicked the first time (because the user shouldn't be able to
-        remove all items).
-        </p>
-        <img src="/public/images/additemstolist2.png" alt="" width="1024" height="515" style="margin-left:-32px" />
+      </div>
+    </div>
 
-        <h2 class="heading-medium">Variant version - vertical fields</h2>
-        <p class="text">
-        Use this version when you're asking for more fields than will fit on the
-        page horizontally.
-        </p>
-        <img src="/public/images/additemstolist_variant.png" alt="" width="1024" height="905" style="margin-left:-32px"; />
+    <div class="example">
+      <form>
+        <div class="grid-row">
+          <div class="form-group-compound list-item-wrapper">
+            <h2 class="heading-medium">Item 1</h2>
 
-        <h2 class="heading-medium">Demo version</h2>
-        <p class="text">
-        See how it works with this demo version. The number of items you can add
-        is limited to 5 for the purposes of the demo.
-        </p>
-        <img src="/public/images/additemstolist1.png" alt="" width="1024" height="295" style="margin-left:-32px"; />
-
-
-
-        <h2 class="heading-medium">Code snippets</h2>
-        <p class="text">
-         See below for the code snippets for each version.
-        </p>
-        <p>
-          <details>
-            <summary><span class="summary">View code snippet</span></summary>
-            <div class="panel panel-border-narrow">
-              <div class="tab-panel">
-                <div class="tab-panel-menu">
-                  <a href="#" class="tab-link">HTML</a>
-                  <a href="#" class="tab-link">CSS</a>
-                </div>
-
-                <div class="tab-panes">
-                  <div class="tab-pane">
-                    <pre class="language-markup">
-                      <code>
-                          &lt;footer id="footer"&gt;
-                            &lt;div class="footer-wrapper"&gt;
-                              &lt;div class="footer-meta"&gt;
-                                &lt;div class="footer-meta-inner"&gt;
-                                  &lt;ul class="platform-help-links"&gt;
-                                    &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
-                                    &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
-                                    &lt;li&gt;&lt;a href="#"&gt;Link 3&lt;/a&gt;&lt;/li&gt;
-                                    &lt;li&gt;&lt;a href="#"&gt;Link 4&lt;/a&gt;&lt;/li&gt;
-                                  &lt;/ul&gt;
-
-                                  &lt;p class="built-by-dwp"&gt;Built by DWP Digital&lt;/p&gt;
-
-                                  &lt;div class="open-government-licence"&gt;
-                                    &lt;p class="logo"&gt;&lt;a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license"&gt;Open Government Licence&lt;/a&gt;&lt;/p&gt;
-                                      &lt;p&gt;All content is available under the &lt;a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license"&gt;Open Government Licence v3.0&lt;/a&gt;, except where otherwise stated&lt;/p&gt;
-                                  &lt;/div&gt;
-                                &lt;/div&gt;
-
-                                &lt;div class="copyright"&gt;
-                                  &lt;a href="http://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm" target="_blank"&gt;© Crown Copyright&lt;/a&gt;
-                                &lt;/div&gt;
-                              &lt;/div&gt;
-                            &lt;/div&gt;
-                          &lt;/footer&gt;
-                      </code>
-                    </pre>
-                  </div>
-
-                  <div class="tab-pane">
-                    <pre class="language-css">
-                      <code>
-                        CSS
-                      </code>
-                    </pre>
-                  </div>
+            <fieldset>
+              <div class="column-one-third no-padding">
+                <div class="form-group list-item">
+                  <label class="form-label" for="field-1">
+                    Field label
+                  </label>
+                  <input type="text" class="form-control" id="field-1" name="field-1">
                 </div>
               </div>
 
-            </div>
-          </details>
-        </p>
+              <div class="column-one-third no-padding">
+                <div class="form-group list-item">
+                  <label class="form-label" for="field-2">
+                    Field label
+                  </label>
+                  <input type="text" class="form-control" id="field-2" name="field-2">
+                </div>
+              </div>
 
-        </p>
+              <div class="column-one-third no-padding">
+                <div class="list-item">
+                </div>
+              </div>
+            </fieldset>
+
+            <hr />
+          </div>
+        </div>
+
+        <div class="grid-row">
+          <div class="column-two-thirds">
+            <div class="form-group">
+              <button id="add-button" class="button button-add-another">Add another</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <details>
+      <summary><span class="summary">View code snippet</span></summary>
+      <div class="panel panel-border-narrow">
+        <div class="tab-panel">
+          <div class="tab-panel-menu">
+            <a href="#" class="tab-link">HTML</a>
+            <a href="#" class="tab-link">SCSS</a>
+            <a href="#" class="tab-link">CSS</a>
+            <a href="#" class="tab-link">JS</a>
+          </div>
+
+          <div class="tab-panes">
+            <div class="tab-pane">
+              <pre class="language-markup">
+                <code>
+    &lt;form&gt;
+      &lt;div class="grid-row"&gt;
+        &lt;div class="form-group-compound list-item-wrapper"&gt;
+          &lt;h2 class="heading-medium"&gt;Item 1&lt;/h2&gt;
+
+          &lt;fieldset&gt;
+            &lt;div class="column-one-third no-padding"&gt;
+              &lt;div class="form-group list-item"&gt;
+                &lt;label class="form-label" for="field-1"&gt;
+                  Field label
+                &lt;/label&gt;
+                &lt;input type="text" class="form-control" id="field-1" name="field-1"&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class="column-one-third no-padding"&gt;
+              &lt;div class="form-group list-item"&gt;
+                &lt;label class="form-label" for="field-2"&gt;
+                  Field label
+                &lt;/label&gt;
+                &lt;input type="text" class="form-control" id="field-2" name="field-2"&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class="column-one-third no-padding"&gt;
+              &lt;div class="list-item"&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/fieldset&gt;
+
+          &lt;hr /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class="grid-row"&gt;
+        &lt;div class="column-two-thirds"&gt;
+          &lt;div class="form-group"&gt;
+            &lt;button id="add-button" class="button button-add-another"&gt;Add another&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+                </code>
+              </pre>
+            </div>
+
+            <div class="tab-pane">
+              <pre class="language-css">
+                <code>
+    .no-padding {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .remove-list-item {
+      display: inline-block;
+      margin-top: 1em;
+    }
+
+    .list-item-wrapper {
+      padding-left: 20px;
+      padding-right: 20px;
+
+      .heading-small,
+      .heading-medium,
+      .heading-large,
+      .heading-xlarge {
+        margin-top: 0;
+      }
+
+      .column-one-third {
+        .list-item {
+          width: 100%;
+        }
+
+        input {
+          width: 90%;
+
+          @media (max-width: 640px) {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .button-add-another {
+      background-color: #eee;
+      color: #000;
+      box-shadow: 0 2px 0 #666;
+
+      &:hover {
+        background-color: #ccc;
+        color: #000;
+        box-shadow: 0 2px 0 #666;
+      }
+
+      &:focus {
+        background-color: #ccc;
+        color: #000;
+        box-shadow: 0 2px 0 #666;
+      }
+    }
+                </code>
+              </pre>
+            </div>
+
+            <div class="tab-pane">
+              <pre class="language-css">
+                <code>
+    .no-padding {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .remove-list-item {
+      display: inline-block;
+      margin-top: 1em;
+    }
+
+    .list-item-wrapper {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .list-item-wrapper .heading-small,
+    .list-item-wrapper .heading-medium,
+    .list-item-wrapper .heading-large,
+    .list-item-wrapper .heading-xlarge {
+      margin-top: 0;
+    }
+
+    .list-item-wrapper .column-one-third .list-item {
+      width: 100%;
+    }
+
+    .list-item-wrapper .column-one-third input {
+      width: 90%;
+    }
+
+    @media (max-width: 640px) {
+      .list-item-wrapper .column-one-third input {
+        width: 100%;
+      }
+    }
+
+    .button-add-another {
+      background-color: #eee;
+      color: #000;
+      box-shadow: 0 2px 0 #666;
+    }
+
+    .button-add-another:hover {
+      background-color: #ccc;
+      color: #000;
+      box-shadow: 0 2px 0 #666;
+    }
+
+    .button-add-another:focus {
+      background-color: #ccc;
+      color: #000;
+      box-shadow: 0 2px 0 #666;
+    }
+                </code>
+              </pre>
+            </div>
+
+            <div class="tab-pane">
+              <pre class="language-javascript">
+                <code>
+    $(document).on('click', '.button-add-another', function (e) {
+      var beforeThis = $(this).parents('.grid-row');
+      e.preventDefault();
+      insertFields(beforeThis);
+      sortFields();
+    });
+
+    $(document).on('click', '.remove-list-item', function (e) {
+      e.preventDefault();
+      $(this).parents('.list-item-wrapper').remove();
+      sortFields();
+    });
+
+    function insertFields(element) {
+      element.before(
+        '&lt;div class="grid-row"&gt;' +
+          '&lt;div class="form-group-compound list-item-wrapper"&gt;' +
+            '&lt;h2 class="heading-medium"&gt;Item 1&lt;/h2&gt;' +
+            '&lt;fieldset&gt;' +
+              '&lt;div class="column-one-third no-padding"&gt;' +
+                '&lt;div class="form-group list-item"&gt;' +
+                  '&lt;label class="form-label" for="field-x"&gt;' +
+                    'Field label' +
+                  '&lt;/label&gt;' +
+                  '&lt;input type="text" class="form-control" id="field-x" name="field-x"&gt;' +
+                '&lt;/div&gt;' +
+              '&lt;/div&gt;' +
+              '&lt;div class="column-one-third no-padding"&gt;' +
+                '&lt;div class="form-group list-item"&gt;' +
+                  '&lt;label class="form-label" for="field-x"&gt;' +
+                    'Field label' +
+                  '&lt;/label&gt;' +
+                  '&lt;input type="text" class="form-control" id="field-x" name="field-x"&gt;' +
+                '&lt;/div&gt;' +
+              '&lt;/div&gt;' +
+              '&lt;div class="column-one-third no-padding"&gt;' +
+                '&lt;div class="list-item"&gt;' +
+                '&lt;/div&gt;' +
+              '&lt;/div&gt;' +
+            '&lt;/fieldset&gt;' +
+            '&lt;hr /&gt;' +
+          '&lt;/div&gt;' +
+        '&lt;/div&gt;'
+      );
+    }
+
+    function sortFields() {
+      var listCounter = 1;
+      var inputCounter = 1;
+
+      $(document).find('.list-item-wrapper').each(function () {
+        $(this).find('h2').text('Item ' + listCounter);
+
+        if ($(this).find('.remove-list-item').length === 0) {
+          $(this).find('.list-item:last').append('<a id="remove-item-' + listCounter + '" class="remove-list-item" href="#">Remove this</a>');
+        } else {
+          $(this).find('.remove-list-item').attr('id', 'remove-item-' + listCounter);
+        }
+
+        $(this).find('.list-item').children('label').each(function () {
+          $(this).attr('for', 'field-' + inputCounter);
+          inputCounter++;
+        });
+
+        $(this).find('.list-item').children('input').each(function () {
+          var labelNo = $(this).parent().find('label').attr('for').slice(-1);
+          $(this).attr('id', 'field-' + labelNo);
+          $(this).attr('name', 'field-' + labelNo);
+        });
+
+        listCounter++;
+      });
+
+      if ($(document).find('.list-item-wrapper').length === 1) {
+        $('.remove-list-item').remove();
+      }
+    }
+
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
       </div>
+    </details>
+
+
+    <div class="grid-row">
+      <h2 class="heading-medium">Variant version - vertical fields</h2>
+      <p class="text">
+      Use this version when you're asking for more fields than will fit on the
+      page horizontally.
+      </p>
+      <img src="/public/images/additemstolist_variant.png" alt="" width="1024" height="905" style="margin-left:-32px"; />
+
+      <h2 class="heading-medium">Demo version</h2>
+      <p class="text">
+      See how it works with this demo version. The number of items you can add
+      is limited to 5 for the purposes of the demo.
+      </p>
+      <img src="/public/images/additemstolist1.png" alt="" width="1024" height="295" style="margin-left:-32px"; />
+
+
+
+      <h2 class="heading-medium">Code snippets</h2>
+      <p class="text">
+       See below for the code snippets for each version.
+      </p>
+      <p>
+
+      </p>
+
     </div>
   </main>
+{% endblock %}
+
+{% block page_scripts %}
+<script>
+  $(document).on('click', '.button-add-another', function (e) {
+    var beforeThis = $(this).parents('.grid-row');
+    e.preventDefault();
+    insertFields(beforeThis);
+    sortFields();
+  });
+
+  $(document).on('click', '.remove-list-item', function (e) {
+    e.preventDefault();
+    $(this).parents('.list-item-wrapper').remove();
+    sortFields();
+  });
+
+  function insertFields(element) {
+    element.before(
+      '<div class="grid-row">' +
+        '<div class="form-group-compound list-item-wrapper">' +
+          '<h2 class="heading-medium">Item 1</h2>' +
+          '<fieldset>' +
+            '<div class="column-one-third no-padding">' +
+              '<div class="form-group list-item">' +
+                '<label class="form-label" for="field-x">' +
+                  'Field label' +
+                '</label>' +
+                '<input type="text" class="form-control" id="field-x" name="field-x">' +
+              '</div>' +
+            '</div>' +
+            '<div class="column-one-third no-padding">' +
+              '<div class="form-group list-item">' +
+                '<label class="form-label" for="field-x">' +
+                  'Field label' +
+                '</label>' +
+                '<input type="text" class="form-control" id="field-x" name="field-x">' +
+              '</div>' +
+            '</div>' +
+            '<div class="column-one-third no-padding">' +
+              '<div class="list-item">' +
+              '</div>' +
+            '</div>' +
+          '</fieldset>' +
+          '<hr />' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  function sortFields() {
+    var listCounter = 1;
+    var inputCounter = 1;
+
+    $(document).find('.list-item-wrapper').each(function () {
+      $(this).find('h2').text('Item ' + listCounter);
+
+      if ($(this).find('.remove-list-item').length === 0) {
+        $(this).find('.list-item:last').append('<a id="remove-item-' + listCounter + '" class="remove-list-item" href="#">Remove this</a>');
+      } else {
+        $(this).find('.remove-list-item').attr('id', 'remove-item-' + listCounter);
+      }
+
+      $(this).find('.list-item').children('label').each(function () {
+        $(this).attr('for', 'field-' + inputCounter);
+        inputCounter++;
+      });
+
+      $(this).find('.list-item').children('input').each(function () {
+        var labelNo = $(this).parent().find('label').attr('for').slice(-1);
+        $(this).attr('id', 'field-' + labelNo);
+        $(this).attr('name', 'field-' + labelNo);
+      });
+
+      listCounter++;
+    });
+
+    if ($(document).find('.list-item-wrapper').length === 1) {
+      $('.remove-list-item').remove();
+    }
+  }
+  </script>
 {% endblock %}
