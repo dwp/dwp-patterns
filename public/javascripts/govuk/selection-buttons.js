@@ -1,11 +1,16 @@
+'use strict';
+
 (function () {
   "use strict";
+
   var root = this,
       $ = root.jQuery;
 
-  if (typeof GOVUK === 'undefined') { root.GOVUK = {}; }
+  if (typeof GOVUK === 'undefined') {
+    root.GOVUK = {};
+  }
 
-  var SelectionButtons = function (elmsOrSelector, opts) {
+  var SelectionButtons = function SelectionButtons(elmsOrSelector, opts) {
     var $elms;
 
     this.selectedClass = 'selected';
@@ -53,11 +58,10 @@
 
     if ($elm.attr('type') === 'radio') {
       radioName = $elm.attr('name');
-      $($elm[0].form).find('input[name="' + radioName + '"]')
-        .parent('label')
-        .removeClass(this.selectedClass);
+      $($elm[0].form).find('input[name="' + radioName + '"]').parent('label').removeClass(this.selectedClass);
       $elm.parent('label').addClass(this.selectedClass);
-    } else { // checkbox
+    } else {
+      // checkbox
       if ($elm.is(':checked')) {
         $elm.parent('label').addClass(this.selectedClass);
       } else {
@@ -67,19 +71,15 @@
   };
   SelectionButtons.prototype.addElementLevelEvents = function () {
     this.clickHandler = this.getClickHandler();
-    this.focusHandler = this.getFocusHandler({ 'level' : 'element' });
+    this.focusHandler = this.getFocusHandler({ 'level': 'element' });
 
-    this.$elms
-      .on('click', this.clickHandler)
-      .on('focus blur', this.focusHandler);
+    this.$elms.on('click', this.clickHandler).on('focus blur', this.focusHandler);
   };
   SelectionButtons.prototype.addDocumentLevelEvents = function () {
     this.clickHandler = this.getClickHandler();
-    this.focusHandler = this.getFocusHandler({ 'level' : 'document' });
+    this.focusHandler = this.getFocusHandler({ 'level': 'document' });
 
-    $(document)
-      .on('click', this.selector, this.clickHandler)
-      .on('focus blur', this.selector, this.focusHandler);
+    $(document).on('click', this.selector, this.clickHandler).on('focus blur', this.selector, this.focusHandler);
   };
   SelectionButtons.prototype.getClickHandler = function () {
     return function (e) {
@@ -87,25 +87,21 @@
     }.bind(this);
   };
   SelectionButtons.prototype.getFocusHandler = function (opts) {
-    var focusEvent = (opts.level === 'document') ? 'focusin' : 'focus';
+    var focusEvent = opts.level === 'document' ? 'focusin' : 'focus';
 
     return function (e) {
-      var state = (e.type === focusEvent) ? 'focused' : 'blurred';
+      var state = e.type === focusEvent ? 'focused' : 'blurred';
 
       this.markFocused($(e.target), state);
     }.bind(this);
   };
   SelectionButtons.prototype.destroy = function () {
     if (typeof this.selector !== 'undefined') {
-      $(document)
-        .off('click', this.selector, this.clickHandler)
-        .off('focus blur', this.selector, this.focusHandler);
+      $(document).off('click', this.selector, this.clickHandler).off('focus blur', this.selector, this.focusHandler);
     } else {
-      this.$elms
-        .off('click', this.clickHandler)
-        .off('focus blur', this.focusHandler);
+      this.$elms.off('click', this.clickHandler).off('focus blur', this.focusHandler);
     }
   };
 
   root.GOVUK.SelectionButtons = SelectionButtons;
-}).call(this);
+}).call(undefined);

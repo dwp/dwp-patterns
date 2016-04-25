@@ -1,13 +1,13 @@
 // Tab Panes
-  $(document).ready(function() {
-    $('.tab-panes').each(function() {
+  $(document).ready(function () {
+    $('.tab-panes').each(function () {
       $(this).children('div').hide();
       $(this).children('.tab-pane:first').show();
       $(this).parent().find('.tab-link:first').addClass('tab-link-active');
     });
   });
-  
-  $(document).on('click', '.tab-link', function(e) {
+
+  $(document).on('click', '.tab-link', function (e) {
     e.preventDefault();
 
     var nth = $(this).index() + 1;
