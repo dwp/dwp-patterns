@@ -304,7 +304,7 @@
         $(this).find('h2').text('Item ' + listCounter);
 
         if ($(this).find('.remove-list-item').length === 0) {
-          $(this).find('.list-item:last').append('<a id="remove-item-' + listCounter + '" class="remove-list-item" href="#">Remove this</a>');
+          $(this).find('.list-item:last').append('&lt;a id="remove-item-' + listCounter + '" class="remove-list-item" href="#"&gt;Remove this&lt;/a&gt;');
         } else {
           $(this).find('.remove-list-item').attr('id', 'remove-item-' + listCounter);
         }
@@ -315,7 +315,7 @@
         });
 
         $(this).find('.list-item').children('input').each(function () {
-          var labelNo = $(this).parent().find('label').attr('for').slice(-1);
+          var labelNo = $(this).parent().find('label').attr('for').split('-').pop();
           $(this).attr('id', 'field-' + labelNo);
           $(this).attr('name', 'field-' + labelNo);
         });
@@ -433,7 +433,7 @@
       });
 
       $(this).find('.list-item').children('input').each(function () {
-        var labelNo = $(this).parent().find('label').attr('for').slice(-1);
+        var labelNo = $(this).parent().find('label').attr('for').split('-').pop();
         $(this).attr('id', 'field-' + labelNo);
         $(this).attr('name', 'field-' + labelNo);
       });
