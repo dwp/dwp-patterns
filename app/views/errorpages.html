@@ -1,0 +1,49 @@
+{% extends "layout_dwp.html" %}
+
+{% block page_title %}
+  DWP design patterns
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">Error pages</h1>
+
+        <p class="text">
+          These patterns are to be used for both public and staff-facing services
+          and are intended to inform the user when something is wrong or when a
+          page they've requested is not available.
+        </p>
+
+        <h2 class="heading-medium">Service unavailable - 50x messages</h2>
+      </div>
+    </div>
+
+    <div class="example">
+      <h1 class="heading-xlarge">Something's gone wrong</h1>
+      <p class="text">
+      You can't use this service just now. The problem will be fixed as soon as
+      possible
+      </p>
+      <p class="text">
+      Please try again later.
+      </p>
+    </div>
+
+    <h2 class="heading-medium">Page not found - 40x messages</h2>
+  </div>
+</div>
+
+<div class="example">
+  <h1 class="heading-xlarge">Something's gone wrong</h1>
+  <p class="text">
+This page can't be found. Check the link you're using and try again.
+  </p>
+  <p class="text">
+  Go to <a href="">(relevant link)</a> to try again.</p>
+</div>
+
+
+  </main>
+{% endblock %}
