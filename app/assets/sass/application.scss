@@ -8,7 +8,9 @@
 // Font Overrides
 *:not(.token) { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 #proposition-name { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important; }
-
+.example * {
+  font-family: 'nta', Helvetica, Arial, sans-serif;
+}
 // Import prism for code syntax
 @import 'prism';
 // Import tabs styling

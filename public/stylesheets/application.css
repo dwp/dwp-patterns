@@ -2040,6 +2040,10 @@ input[type=number] {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
+.example * {
+  font-family: 'nta', Helvetica, Arial, sans-serif;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
   color: black;
