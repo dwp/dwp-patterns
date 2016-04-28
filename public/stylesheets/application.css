@@ -2032,23 +2032,12 @@ input[type=number] {
   padding-right: 0;
 }
 
-@font-face {
-  font-family: "NotoSans";
-  src: url("/public/fonts/NotoSans-Regular.ttf");
-}
-
-@font-face {
-  font-family: "NotoSans";
-  src: url("/public/fonts/NotoSans-Bold.ttf");
-  font-weight: bold;
-}
-
 *:not(.token) {
-  font-family: 'NotoSans', arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 #proposition-name {
-  font-family: 'NotoSans', arial, sans-serif !important;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
 code[class*="language-"],

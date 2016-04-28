@@ -6,9 +6,8 @@
 @import 'patterns';
 
 // Font Overrides
-@import 'NotoSans';
-*:not(.token) { font-family: 'NotoSans', arial, sans-serif; }
-#proposition-name { font-family: 'NotoSans', arial, sans-serif !important; }
+*:not(.token) { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+#proposition-name { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important; }
 
 // Import prism for code syntax
 @import 'prism';
