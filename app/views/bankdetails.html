@@ -351,6 +351,230 @@
         </div>
       </details>
     </div>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h2 class="heading-medium">Research notes</h2>
+        <ul class="list list-bullet">
+          <li>User research for <a href="http://dwp-digital-services.herokuapp.com/projects/0/get_your_state_pension">Get your State Pension</a> found that asking people about the type of account (Bank or Building society) makes them think about whether they need their pension for everyday spending or for savings.</li>
+        </ul>
+      </div>
+    </div>
+   
+    <h2 class="heading-medium">Version 3 - need to know if user has a bank account to receive payments</h2>
+    <div class="grid-row">
+      <div class="example">
+        <div class="column-two-thirds">
+          <h1 class="heading-xlarge">Your bank details</h1>
+          <p>Carer's Allowance can be paid into a UK bank account, either your own or someone else's, or your own Post Office card account. 
+            You're responsible for repaying any overpayments, even if the money is paid into someone else's account
+            
+
+          <form>
+            <legend>Do you have a bank account?</legend>
+            <fieldset class="inline">
+              <div class="form-group">
+                <!-- No data-targets to avoid duplication, see jQuery at bottom of this page -->
+                <label class="block-label" for="bank-account-yes2">
+                  <input id="bank-account-yes2" type="radio" name="account-select" value="Yes">
+                  Yes
+                </label>
+
+                <label class="block-label" for="bank-account-no2">
+                  <input id="bank-account-no2" type="radio" name="account-select" value="No">
+                  No
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="js-hidden" id="bank-details2">
+              <div class="form-group">
+                <fieldset>
+                  <label class="form-label-bold label-no-hint" for="ba-account-holder">Account holder name</label>
+                  <input type="text" class="form-control" id="ba-account-holder" name="ba-account-holder" value="">
+                </fieldset>
+              </div>
+
+              <legend class="form-label-bold">Sort code</legend>
+              <div class="form-date form-group">
+                <fieldset>
+                  <div class="form-group form-group-day">
+                    <label for="ba-sort1"></label>
+                    <input class="form-control" id="ba-sort1" maxlength="2" name="ba-sort1" value="" type="text">
+                  </div>
+
+                  <div class="form-group form-group-month">
+                    <label for="ba-sort2"></label>
+                    <input class="form-control" id="ba-sort2" maxlength="2" name="ba-sort2" value="" type="text">
+                  </div>
+
+                  <div class="form-group form-group-month">
+                    <label for="ba-sort3"></label>
+                    <input class="form-control" id="ba-sort3" maxlength="2" name="ba-sort3" value="" type="text">
+                  </div>
+                </fieldset>
+              </div>
+
+              <div class="form-group">
+                <fieldset>
+                  <label class="form-label-bold" for="ba-account-number">
+                    Account number
+                  </label>
+                  <input type="text" class="form-control" id="ba-account-number" name="ba-account-number" value="" maxlength="10">
+                </fieldset>
+              </div>
+
+              <div class="form-group">
+                <fieldset>
+                  <label class="form-label-bold" for="bs-society-roll">
+                    Building society roll or reference number (optional)
+                    <span class="form-hint">If your building society uses a roll or reference number, you will find it on your passbook</span>
+                  </label>
+                  <input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll" value="" data-required="true">
+                </fieldset>
+              </div>
+            </div>
+
+
+            <div class="js-hidden" id="warningmessage">
+              <div class="panel">
+               <p>You won't be paid Carer's Allowance without a bank account.<br>
+                You can add bank details after you apply by contacting the Carer's Allowance Unit.</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <details>
+        <summary role="button"><span class="summary">View code snippet</span></summary>
+
+        <div class="panel panel-border-narrow">
+          <div class="tab-panel">
+            <div class="tab-panel-menu">
+              <a href="#" class="tab-link tab-link-active">HTML</a>
+              <a href="#" class="tab-link">JS</a>
+            </div>
+
+            <div class="tab-panes">
+              <div class="tab-pane" style="display: block;">
+                <pre class="language-markup">
+                  <code>
+    &lt;h1 class="heading-xlarge"&gt;Your bank details&lt;/h1&gt;
+      &lt;p&gt;Carer's Allowance can be paid into a UK bank account, 
+      either your own or someone else's, or your own Post Office card account. 
+        You're responsible for repaying any overpayments, even if the money is 
+        paid into someone else's account
+        
+
+      &lt;form&gt;
+        &lt;legend&gt;Do you have a bank account?&lt;/legend&gt;
+        &lt;fieldset class="inline"&gt;
+          &lt;div class="form-group"&gt;
+            &lt;label class="block-label" for="bank-account-yes2"&gt;
+              &lt;input id="bank-account-yes2" type="radio" name="account-select" value="Yes"&gt;
+              Yes
+            &lt;/label&gt;
+
+            &lt;label class="block-label" for="bank-account-no2"&gt;
+              &lt;input id="bank-account-no2" type="radio" name="account-select" value="No"&gt;
+              No
+            &lt;/label&gt;
+          &lt;/div&gt;
+        &lt;/fieldset&gt;
+
+        &lt;div class="js-hidden" id="bank-details2"&gt;
+          &lt;div class="form-group"&gt;
+            &lt;fieldset&gt;
+              &lt;label class="form-label-bold label-no-hint" for="ba-account-holder"&gt;Account holder name&lt;/label&gt;
+              &lt;input type="text" class="form-control" id="ba-account-holder" name="ba-account-holder" value=""&gt;
+            &lt;/fieldset&gt;
+          &lt;/div&gt;
+
+          &lt;legend class="form-label-bold"&gt;Sort code&lt;/legend&gt;
+          &lt;div class="form-date form-group"&gt;
+            &lt;fieldset&gt;
+              &lt;div class="form-group form-group-day"&gt;
+                &lt;label for="ba-sort1"&gt;&lt;/label&gt;
+                &lt;input class="form-control" id="ba-sort1" maxlength="2" name="ba-sort1" value="" type="text"&gt;
+              &lt;/div&gt;
+
+              &lt;div class="form-group form-group-month"&gt;
+                &lt;label for="ba-sort2"&gt;&lt;/label&gt;
+                &lt;input class="form-control" id="ba-sort2" maxlength="2" name="ba-sort2" value="" type="text"&gt;
+              &lt;/div&gt;
+
+              &lt;div class="form-group form-group-month"&gt;
+                &lt;label for="ba-sort3"&gt;&lt;/label&gt;
+                &lt;input class="form-control" id="ba-sort3" maxlength="2" name="ba-sort3" value="" type="text"&gt;
+              &lt;/div&gt;
+            &lt;/fieldset&gt;
+          &lt;/div&gt;
+
+          &lt;div class="form-group"&gt;
+            &lt;fieldset&gt;
+              &lt;label class="form-label-bold" for="ba-account-number"&gt;
+                Account number
+              &lt;/label&gt;
+              &lt;input type="text" class="form-control" id="ba-account-number" name="ba-account-number" value="" maxlength="10"&gt;
+            &lt;/fieldset&gt;
+          &lt;/div&gt;
+
+          &lt;div class="form-group"&gt;
+            &lt;fieldset&gt;
+              &lt;label class="form-label-bold" for="bs-society-roll"&gt;
+                Building society roll or reference number (optional)
+                &lt;span class="form-hint"&gt;If your building society uses a roll or reference number, you will find it on your passbook&lt;/span&gt;
+              &lt;/label&gt;
+              &lt;input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll" value="" data-required="true"&gt;
+            &lt;/fieldset&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+
+        &lt;div class="js-hidden" id="warningmessage"&gt;
+          &lt;div class="panel"&gt;
+           &lt;p&gt;You won't be paid Carer's Allowance without a bank account.&lt;br&gt;
+            You can add bank details after you apply by contacting the Carer's Allowance Unit.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+                  </code>
+                </pre>
+              </div>
+
+              <div class="tab-pane" style="display: none;">
+                <pre class="language-javascript">
+                  <code>
+   $(document).on('click', 'input[type="radio"]', function (e) {
+      if ($(e.target).attr('id') === 'bank-account-yes2' || $(e.target).attr('id') === 'bank-account-no2') {
+        $('#bank-details2').show();
+        if ($(this).attr('id') === 'bank-account-no2') {
+          $('#warningmessage').show();
+          $('#bank-details2').hide();
+        } else {
+          $('#warningmessage').hide();
+        }
+      }
+    });
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h2 class="heading-medium">Research notes</h2>
+        <ul class="list list-bullet">
+          <li>User research for <a href="http://dwp-digital-services.herokuapp.com/projects/8/carers_allowance_digital_service">Carer’s Allowance</a> found that some people don’t have a bank account. They needed to be able to complete the transaction without providing any bank details.</li>
+        </ul>
+      </div>
+    </div>
   </main>
 {% endblock %}
 
@@ -366,5 +590,18 @@
         }
       }
     });
+
+    $(document).on('click', 'input[type="radio"]', function (e) {
+      if ($(e.target).attr('id') === 'bank-account-yes2' || $(e.target).attr('id') === 'bank-account-no2') {
+        $('#bank-details2').show();
+        if ($(this).attr('id') === 'bank-account-no2') {
+          $('#warningmessage').show();
+          $('#bank-details2').hide();
+        } else {
+          $('#warningmessage').hide();
+        }
+      }
+    });
+
   </script>
 {% endblock %}
