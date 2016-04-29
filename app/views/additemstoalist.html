@@ -133,6 +133,11 @@
     .no-padding {
       padding-left: 0;
       padding-right: 0;
+
+      @media (max-width: 640px) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
     }
 
     .remove-list-item {
@@ -182,6 +187,12 @@
         color: #000;
         box-shadow: 0 2px 0 #666;
       }
+
+      @media (max-width: 640px) {
+        width: 90%;
+        margin: auto;
+        display: block;
+      }
     }
                 </code>
               </pre>
@@ -220,12 +231,6 @@
       width: 90%;
     }
 
-    @media (max-width: 640px) {
-      .list-item-wrapper .column-one-third input {
-        width: 100%;
-      }
-    }
-
     .button-add-another {
       background-color: #eee;
       color: #000;
@@ -242,6 +247,23 @@
       background-color: #ccc;
       color: #000;
       box-shadow: 0 2px 0 #666;
+    }
+
+    @media (max-width: 640px) {
+      .list-item-wrapper .column-one-third input {
+        width: 100%;
+      }
+
+      .no-padding {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .button-add-another {
+        width: 90%;
+        margin: auto;
+        display: block;
+      }
     }
                 </code>
               </pre>
@@ -336,19 +358,403 @@
       </div>
     </details>
 
-
     <div class="grid-row">
-      <h2 class="heading-medium">Variant version - vertical fields</h2>
-      <p class="text">
-      Use this version when you're asking for more fields than will fit on the
-      page horizontally.
-      </p>
-      <img src="/public/images/additemstolist_variant.png" alt="" width="1024" height="905" style="margin-left:-32px"; />
-    <div>
+      <div class="column-two-thirds">
+        <h2 class="heading-medium">Variant version - vertical fields</h2>
+
+        <p class="text">
+        Use this version when you're asking for more fields than will fit on the
+        page horizontally.
+        </p>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="list-item-wrapper-vertical">
+        <div class="grid-row">
+          <div class="column-two-thirds">
+            <div class="form-group-compound">
+              <h2 class="heading-medium">Item 1</h2>
+
+              <div class="form-group">
+                <label class="form-label" for="field-1">
+                  Field label
+                </label>
+
+                <input type="text" class="form-control" id="field-1" name="field-1">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="field-2">
+                  Field label
+                </label>
+
+                <input type="text" class="form-control" id="field-2" name="field-2">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="field-3">
+                  Field label
+                </label>
+
+                <input type="text" class="form-control" id="field-3" name="field-3">
+              </div>
+            </div>
+          </div>
+
+          <div class="column-one-third">
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="grid-row">
+          <div class="column-two-thirds">
+            <div class="form-group">
+              <button id="add-button" class="button button-add-another-vertical">Add another</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <details>
+      <summary><span class="summary">View code snippet</span></summary>
+      <div class="panel panel-border-narrow">
+        <div class="tab-panel">
+          <div class="tab-panel-menu">
+            <a href="#" class="tab-link">HTML</a>
+            <a href="#" class="tab-link">SCSS</a>
+            <a href="#" class="tab-link">CSS</a>
+            <a href="#" class="tab-link">JS</a>
+          </div>
+
+          <div class="tab-panes">
+            <div class="tab-pane">
+              <pre class="language-markup">
+                <code>
+    &lt;div class="list-item-wrapper-vertical"&gt;
+      &lt;div class="grid-row"&gt;
+        &lt;div class="column-two-thirds"&gt;
+          &lt;div class="form-group-compound"&gt;
+            &lt;h2 class="heading-medium"&gt;Item 1&lt;/h2&gt;
+
+            &lt;div class="form-group"&gt;
+              &lt;label class="form-label" for="field-1"&gt;
+                Field label
+              &lt;/label&gt;
+
+              &lt;input type="text" class="form-control" id="field-1" name="field-1"&gt;
+            &lt;/div&gt;
+
+            &lt;div class="form-group"&gt;
+              &lt;label class="form-label" for="field-2"&gt;
+                Field label
+              &lt;/label&gt;
+
+              &lt;input type="text" class="form-control" id="field-2" name="field-2"&gt;
+            &lt;/div&gt;
+
+            &lt;div class="form-group"&gt;
+              &lt;label class="form-label" for="field-3"&gt;
+                Field label
+              &lt;/label&gt;
+
+              &lt;input type="text" class="form-control" id="field-3" name="field-3"&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="column-one-third"&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;hr /&gt;
+
+      &lt;div class="grid-row"&gt;
+        &lt;div class="column-two-thirds"&gt;
+          &lt;div class="form-group"&gt;
+            &lt;button id="add-button" class="button button-add-another-vertical"&gt;Add another&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+                </code>
+              </pre>
+            </div>
+
+            <div class="tab-pane">
+              <pre class="language-css">
+                <code>
+    .list-item-wrapper-vertical {
+      padding-left: 20px;
+      padding-right: 20px;
+
+      input {
+        width: 80%;
+
+        @media (max-width: 640px) {
+          width: 100%;
+        }
+      }
+
+      .remove-list-item-vertical {
+        margin-top: 4.4em;
+        display: block;
+      }
+
+      .heading-medium {
+        margin-top: 0;
+      }
+    }
+
+    .button-add-another-vertical {
+      background-color: #eee;
+      color: #000;
+      box-shadow: 0 2px 0 #666;
+
+      &:hover {
+        background-color: #ccc;
+        color: #000;
+        box-shadow: 0 2px 0 #666;
+      }
+
+      &:focus {
+        background-color: #ccc;
+        color: #000;
+        box-shadow: 0 2px 0 #666;
+      }
+
+      @media (max-width: 640px) {
+        width: 90%;
+        margin: auto;
+        display: block;
+      }
+    }
+                </code>
+              </pre>
+            </div>
+
+            <div class="tab-pane">
+              <pre class="language-css">
+                <code>
+    .list-item-wrapper-vertical {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .list-item-wrapper-vertical input {
+      width: 80%;
+    }
+
+    .list-item-wrapper-vertical .remove-list-item-vertical {
+      margin-top: 4.4em;
+      display: block;
+    }
+
+    .list-item-wrapper-vertical .heading-medium {
+      margin-top: 0;
+    }
+
+    .button-add-another-vertical {
+      background-color: #eee;
+      color: #000;
+      box-shadow: 0 2px 0 #666;
+    }
+
+    .button-add-another-vertical:hover {
+      background-color: #ccc;
+      color: #000;
+      box-shadow: 0 2px 0 #666;
+    }
+
+    .button-add-another-vertical:focus {
+      background-color: #ccc;
+      color: #000;
+      box-shadow: 0 2px 0 #666;
+    }
+
+    @media (max-width: 640px) {
+      .list-item-wrapper-vertical inpit {
+        width: 100%;
+      }
+
+      .button-add-another-vertical {
+        width: 90%;
+        margin: auto;
+        display: block;
+      }
+    }
+                </code>
+              </pre>
+            </div>
+
+            <div class="tab-pane">
+              <pre class="language-javascript">
+                <code>
+    $(document).on('click', '.button-add-another-vertical', function (e) {
+      e.preventDefault();
+      var beforeThis = $(this).parents('.list-item-wrapper-vertical').find('.grid-row').last();
+      $(beforeThis).before(
+        '&lt;div class="grid-row"&gt;' +
+          '&lt;div class="column-two-thirds"&gt;' +
+            '&lt;div class="form-group-compound"&gt;' +
+              '&lt;h2 class="heading-medium"&gt;Item 1&lt;/h2&gt;' +
+              '&lt;div class="form-group"&gt;' +
+                '&lt;label class="form-label" for="field-1"&gt;' +
+                  'Field label' +
+                '&lt;/label&gt;' +
+                '&lt;input type="text" class="form-control" id="field-1" name="field-1"&gt;' +
+              '&lt;/div&gt;' +
+              '&lt;div class="form-group"&gt;' +
+                '&lt;label class="form-label" for="field-2"&gt;' +
+                  'Field label' +
+                '&lt;/label&gt;' +
+                '&lt;input type="text" class="form-control" id="field-2" name="field-2"&gt;' +
+              '&lt;/div&gt;' +
+              '&lt;div class="form-group"&gt;' +
+                '&lt;label class="form-label" for="field-3"&gt;' +
+                  'Field label' +
+                '&lt;/label&gt;' +
+                '&lt;input type="text" class="form-control" id="field-3" name="field-3"&gt;' +
+              '&lt;/div&gt;' +
+            '&lt;/div&gt;' +
+          '&lt;/div&gt;' +
+          '&lt;div class="column-one-third"&gt;' +
+          '&lt;/div&gt;' +
+        '&lt;/div&gt;' +
+        '&lt;hr /&gt;'
+      );
+      sortFieldsVertical();
+    });
+
+    function sortFieldsVertical() {
+      var listCounter = 1;
+      var inputCounter = 1;
+
+      $(document).find('.list-item-wrapper-vertical .grid-row').each(function () {
+        $(this).find('h2').text('Item ' + listCounter);
+
+        if ($(this).find('.remove-list-item-vertical').length === 0) {
+          $(this).find('.column-one-third:last').append('&lt;a id="remove-item-vertical-' + listCounter + '" class="remove-list-item-vertical" href="#">Remove this&lt;/a>');
+        } else {
+          $(this).find('.remove-list-item-vertical').attr('id', 'remove-item-vertical-' + listCounter);
+        }
+
+        $(this).find('label').each(function () {
+          $(this).attr('for', 'field-' + inputCounter);
+          inputCounter++;
+        });
+
+        $(this).find('input').each(function () {
+          var labelNo = $(this).parent().find('label').attr('for').split('-').pop();
+          $(this).attr('id', 'field-' + labelNo);
+          $(this).attr('name', 'field-' + labelNo);
+        });
+
+        listCounter++;
+      });
+
+      if ($(document).find('.list-item-wrapper-vertical .grid-row').length === 2) {
+        $('.remove-list-item-vertical').remove();
+      }
+    }
+
+    $(document).on('click', '.remove-list-item-vertical', function (e) {
+      e.preventDefault();
+      $(this).parents('.grid-row').prev('hr').remove();
+      $(this).parents('.grid-row').remove();
+      sortFieldsVertical();
+    });
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </details>
   </main>
 {% endblock %}
 
 {% block page_scripts %}
+<script>
+  $(document).on('click', '.button-add-another-vertical', function (e) {
+    e.preventDefault();
+    var beforeThis = $(this).parents('.list-item-wrapper-vertical').find('.grid-row').last();
+    $(beforeThis).before(
+      '<div class="grid-row">' +
+        '<div class="column-two-thirds">' +
+          '<div class="form-group-compound">' +
+            '<h2 class="heading-medium">Item 1</h2>' +
+            '<div class="form-group">' +
+              '<label class="form-label" for="field-1">' +
+                'Field label' +
+              '</label>' +
+              '<input type="text" class="form-control" id="field-1" name="field-1">' +
+            '</div>' +
+            '<div class="form-group">' +
+              '<label class="form-label" for="field-2">' +
+                'Field label' +
+              '</label>' +
+              '<input type="text" class="form-control" id="field-2" name="field-2">' +
+            '</div>' +
+            '<div class="form-group">' +
+              '<label class="form-label" for="field-3">' +
+                'Field label' +
+              '</label>' +
+              '<input type="text" class="form-control" id="field-3" name="field-3">' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="column-one-third">' +
+        '</div>' +
+      '</div>' +
+      '<hr />'
+    );
+    sortFieldsVertical();
+  });
+
+  function sortFieldsVertical() {
+    var listCounter = 1;
+    var inputCounter = 1;
+
+    $(document).find('.list-item-wrapper-vertical .grid-row').each(function () {
+      $(this).find('h2').text('Item ' + listCounter);
+
+      if ($(this).find('.remove-list-item-vertical').length === 0) {
+        $(this).find('.column-one-third:last').append('<a id="remove-item-vertical-' + listCounter + '" class="remove-list-item-vertical" href="#">Remove this</a>');
+      } else {
+        $(this).find('.remove-list-item-vertical').attr('id', 'remove-item-vertical-' + listCounter);
+      }
+
+      $(this).find('label').each(function () {
+        $(this).attr('for', 'field-' + inputCounter);
+        inputCounter++;
+      });
+
+      $(this).find('input').each(function () {
+        var labelNo = $(this).parent().find('label').attr('for').split('-').pop();
+        $(this).attr('id', 'field-' + labelNo);
+        $(this).attr('name', 'field-' + labelNo);
+      });
+
+      listCounter++;
+    });
+
+    if ($(document).find('.list-item-wrapper-vertical .grid-row').length === 2) {
+      $('.remove-list-item-vertical').remove();
+    }
+  }
+
+  $(document).on('click', '.remove-list-item-vertical', function (e) {
+    e.preventDefault();
+    $(this).parents('.grid-row').prev('hr').remove();
+    $(this).parents('.grid-row').remove();
+    sortFieldsVertical();
+  });
+</script>
+
 <script>
   $(document).on('click', '.button-add-another', function (e) {
     var beforeThis = $(this).parents('.grid-row');
