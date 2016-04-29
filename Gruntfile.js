@@ -1,21 +1,5 @@
-module.exports = function (grunt) {
-  require('load-grunt-tasks')(grunt);
+module.exports = function(grunt){
   grunt.initConfig({
-    babel: {
-      options: {
-        sourceMap: false,
-        presets: ['es2015']
-      },
-      dist: {
-        files: [{
-          expand: true,
-          cwd: 'app/assets/javascripts',
-          src: ['**/*.js', '!jquery-1.11.3.js'],
-          dest: 'public/javascripts',
-          ext: '.js'
-        }]
-      }
-    },
 
     // Builds Sass
     sass: {
@@ -45,7 +29,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: 'app/assets/',
-          src: ['**/*', '!sass/**', '!javascripts/es6/**'],
+          src: ['**/*', '!sass/**'],
           dest: 'public/'
         }],
         ignoreInDest: "**/stylesheets/**",
@@ -86,7 +70,7 @@ module.exports = function (grunt) {
           src: ['**'],
           dest: 'app/assets/sass/'
         }]
-      }
+      },
     },
 
     // Watches assets and sass for changes
@@ -95,14 +79,14 @@ module.exports = function (grunt) {
         files: ['app/assets/sass/**/*.scss'],
         tasks: ['sass'],
         options: {
-          spawn: false
+          spawn: false,
         }
       },
-      assets: {
+      assets:{
         files: ['app/assets/**/*', '!app/assets/sass/**'],
-        tasks: ['babel', 'sync:assets'],
+        tasks: ['sync:assets'],
         options: {
-          spawn: false
+          spawn: false,
         }
       }
     },
@@ -140,7 +124,6 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('generate-assets', [
-    'babel',
     'sync',
     'sass'
   ]);
