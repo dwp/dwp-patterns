@@ -2033,11 +2033,11 @@ input[type=number] {
 }
 
 *:not(.token) {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', 'Droid Sans', 'Liberation Sans', Arial, Helvetica, sans-serif;
 }
 
 #proposition-name {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  font-family: 'Helvetica Neue', 'Droid Sans', 'Liberation Sans', Arial, Helvetica, sans-serif !important;
 }
 
 .example * {
