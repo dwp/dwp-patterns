@@ -13,13 +13,14 @@
 
       <h1 class="heading-xlarge">Enter bank details</h1>
 
-      <p class="lede">
-       The user needs to give details of where they want to receive payments.
+     <h2 class="heading-medium">Standard pattern</h2>
+     <p class="text">
+       Use this when:
+       <ul class="list list-bullet">
+         <li>the user needs to give details of the bank account they want to
+           receive payment</li>
+       </ul>
      </p>
-
-     <hr />
-
-     <h2 class="heading-medium">Version 1 - Simple </h2>
     </div>
   </div>
 
@@ -150,7 +151,22 @@
       </details>
     </div>
 
-    <h2 class="heading-medium">Version 2 - choose type of account</h2>
+    <div class="grid-row">
+      <div class="column-two-thirds">
+    <h2 class="heading-medium">Alternative pattern 1</h2>
+    <p class="text">
+      Use this when:
+      <ul class="list list-bullet">
+        <li>you want the user to consider which account they want the money paid into</li>
+      </ul>
+    </p>
+    <h2 class="heading-small">Research notes</h2>
+    <p class="text">User research for <a href="http://dwp-digital-services.herokuapp.com/projects/0/get_your_state_pension">Get your State Pension</a>
+      found that asking people whether they want to be paid into a bank account or a building
+      society account makes them think about whether they need their pension for
+      everyday spending or for savings.</p>
+    </div>
+  </div>
 
     <div class="grid-row">
       <div class="example">
@@ -354,21 +370,28 @@
 
     <div class="grid-row">
       <div class="column-two-thirds">
-        <h2 class="heading-medium">Research notes</h2>
-        <ul class="list list-bullet">
-          <li>User research for <a href="http://dwp-digital-services.herokuapp.com/projects/0/get_your_state_pension">Get your State Pension</a> found that asking people about the type of account (Bank or Building society) makes them think about whether they need their pension for everyday spending or for savings.</li>
-        </ul>
-      </div>
-    </div>
-   
-    <h2 class="heading-medium">Version 3 - need to know if user has a bank account to receive payments</h2>
+    <h2 class="heading-medium">Alternative pattern 2</h2>
+    <p class="text">
+      Use this when:
+      <ul class="list list-bullet">
+        <li>you need to know whether the user has a bank account to receive payment</li>
+      </ul>
+    </p>
+      <h2 class="heading-small">Research notes</h2>
+    <p class="text">User research for <a href="http://dwp-digital-services.herokuapp.com/projects/8/carers_allowance_digital_service">Carer’s Allowance</a>
+      found that some people don’t have a bank account. They needed to be able to
+      complete the transaction without providing any bank details.
+    </p>
+  </div>
+</div>
+
     <div class="grid-row">
       <div class="example">
         <div class="column-two-thirds">
           <h1 class="heading-xlarge">Your bank details</h1>
-          <p>Carer's Allowance can be paid into a UK bank account, either your own or someone else's, or your own Post Office card account. 
+          <p>Carer's Allowance can be paid into a UK bank account, either your own or someone else's, or your own Post Office card account.
             You're responsible for repaying any overpayments, even if the money is paid into someone else's account
-            
+
 
           <form>
             <legend>Do you have a bank account?</legend>
@@ -463,11 +486,11 @@
                 <pre class="language-markup">
                   <code>
     &lt;h1 class="heading-xlarge"&gt;Your bank details&lt;/h1&gt;
-      &lt;p&gt;Carer's Allowance can be paid into a UK bank account, 
-      either your own or someone else's, or your own Post Office card account. 
-        You're responsible for repaying any overpayments, even if the money is 
+      &lt;p&gt;Carer's Allowance can be paid into a UK bank account,
+      either your own or someone else's, or your own Post Office card account.
+        You're responsible for repaying any overpayments, even if the money is
         paid into someone else's account
-        
+
 
       &lt;form&gt;
         &lt;legend&gt;Do you have a bank account?&lt;/legend&gt;
@@ -566,14 +589,6 @@
           </div>
         </div>
       </details>
-    </div>
-    <div class="grid-row">
-      <div class="column-two-thirds">
-        <h2 class="heading-medium">Research notes</h2>
-        <ul class="list list-bullet">
-          <li>User research for <a href="http://dwp-digital-services.herokuapp.com/projects/8/carers_allowance_digital_service">Carer’s Allowance</a> found that some people don’t have a bank account. They needed to be able to complete the transaction without providing any bank details.</li>
-        </ul>
-      </div>
     </div>
   </main>
 {% endblock %}
