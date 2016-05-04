@@ -11,15 +11,11 @@
 .example * {
   font-family: 'nta', Helvetica, Arial, sans-serif;
 }
-// Import prism for code syntax
 @import 'prism';
-// Import tabs styling
 @import 'tabbing';
-
-
-// import example box
 @import 'example-box';
 @import 'remove-items-from-list';
+@import 'admin-menu';
 
 .dwplogo {
   margin-top: -2px !important;
