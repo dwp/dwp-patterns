@@ -64,12 +64,13 @@
   box-sizing: border-box;
 }
 
-.admin-submenu {
-  margin-top: -30px;
+.admin-submenu-container h1 {
+  margin-bottom :10px;
 }
 
 .admin-submenu ul {
   border-bottom: 1px solid #999;
+  margin-bottom: 50px;
 }
 
 .admin-submenu li {
@@ -103,9 +104,5 @@
 
   .admin-sidebar-content {
     padding: 20px 0;
-  }
-
-  .admin-submenu {
-    margin-top: -60px;
   }
 }
