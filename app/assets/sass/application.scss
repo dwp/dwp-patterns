@@ -6,12 +6,16 @@
 @import 'patterns';
 
 // Font Overrides
-*:not(.token),
-#proposition-name,
-.example * {
-  font-family: $Helvetica-Regular;
+*:not(.token) {
+  font-family: $Helvetica-Regular; 
+}
+#proposition-name {
+  font-family: $Helvetica-Regular !important;
 }
 
+.example * {
+  font-family: 'nta', Helvetica, Arial, sans-serif;
+}
 @import 'prism';
 @import 'tabbing';
 @import 'example-box';
