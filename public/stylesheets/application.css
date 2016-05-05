@@ -2033,7 +2033,7 @@ input[type=number] {
 }
 
 *:not(.token) {
-  font-family: 'Helvetica Neue', 'Droid Sans', 'Liberation Sans', Arial, Helvetica, sans-serif;
+  font-family: "GDS-Logo", sans-serif;
 }
 
 #proposition-name {
