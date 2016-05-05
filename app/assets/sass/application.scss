@@ -7,11 +7,11 @@
 
 // Font Overrides
 *:not(.token),
-#proposition-name { font-family: $Helvetica-Regular; }
-
+#proposition-name,
 .example * {
-  font-family: 'nta', Helvetica, Arial, sans-serif;
+  font-family: $Helvetica-Regular;
 }
+
 @import 'prism';
 @import 'tabbing';
 @import 'example-box';

@@ -2033,12 +2033,9 @@ input[type=number] {
 }
 
 *:not(.token),
-#proposition-name {
-  font-family: "GDS-Logo", sans-serif;
-}
-
+#proposition-name,
 .example * {
-  font-family: 'nta', Helvetica, Arial, sans-serif;
+  font-family: "GDS-Logo", sans-serif;
 }
 
 code[class*="language-"],
