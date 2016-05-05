@@ -2032,10 +2032,7 @@ input[type=number] {
   padding-right: 0;
 }
 
-*:not(.token) {
-  font-family: "GDS-Logo", sans-serif !important;
-}
-
+*:not(.token),
 #proposition-name {
   font-family: "GDS-Logo", sans-serif !important;
 }

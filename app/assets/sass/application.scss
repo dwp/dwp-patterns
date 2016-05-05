@@ -6,8 +6,11 @@
 @import 'patterns';
 
 // Font Overrides
-*:not(.token) { font-family: $Helvetica-Regular !important; }
-#proposition-name { font-family: $Helvetica-Regular !important; }
+*:not(.token),
+#proposition-name {
+  font-family: $Helvetica-Regular !important;
+}
+
 .example * {
   font-family: 'nta', Helvetica, Arial, sans-serif;
 }
