@@ -1,0 +1,55 @@
+{% extends "layout_dwp.html" %}
+
+{% block page_title %}
+  DWP design patterns
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a class="link-back" href="/">Back</a>
+
+        <h1 class="heading-xlarge">Search and filter</h1>
+
+        <h2 class="heading-medium">Standard pattern</h2>
+        <p class="text">
+          Use this when:
+          <ul class="list list-bullet">
+            <li>the user requires the ability to do a global search within the
+              service itself and have the results displayed immediately.
+            </li>
+          </ul>
+        </p>
+      <hr/>
+        <h2 class="heading-small">Location of the search field</h2>
+        <p>
+        </p>
+          <img src="/public/images/search_field.png" alt="" width="800" height="147" style="margin-left:-32px"; />
+            <p>
+            </p>
+              <hr/>
+            <h2 class="heading-small">Search results view</h2>
+            <p>
+            </p>
+          <img src="/public/images/search_results.png" alt="" width="800" height="449" style="margin-left:-32px"; />
+          <p>
+          </p>
+          <p>
+          </p>
+          <hr/>
+          <h2 class="heading-small">Search filter</h2>
+          <p>
+            Selecting the 'Show filters' toggle opens out the filter section and
+            moves the search results to the right. The filter styles shown here
+            are shown to indicate that there are a number of ways you could filter the content.
+          </p>
+        <img src="/public/images/search_filters.png" alt="" width="800" height="531" style="margin-left:-32px"; />
+        <p>
+        </p>
+
+
+      </div>
+    </div>
+  </main>
+{% endblock %}
