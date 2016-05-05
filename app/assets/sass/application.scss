@@ -6,8 +6,9 @@
 @import 'patterns';
 
 // Font Overrides
-*:not(.token) { font-family: 'Helvetica Neue', 'Droid Sans', 'Liberation Sans', Arial, Helvetica, sans-serif; }
-#proposition-name { font-family: 'Helvetica Neue', 'Droid Sans', 'Liberation Sans', Arial, Helvetica, sans-serif !important; }
+*:not(.token) { font-family: $Helvetica-Regular !important; }
+#proposition-name { font-family: $Helvetica-Regular !important;
+ !important; }
 .example * {
   font-family: 'nta', Helvetica, Arial, sans-serif;
 }
