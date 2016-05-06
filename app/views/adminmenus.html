@@ -290,52 +290,40 @@
     </div>
 
     <div class="example">
-      <div class="admin-wrapper">
-        <div class="grid-row">
-          <header role="banner" id="global-header" class="with-proposition">
-            <div class="header-wrapper">
-              <div class="header-global">
-                <div class="header-logo">
-                  <a href="/" id="logo" class="content dwplogo">
-                    DWP
-                  </a>
-                </div>
-              </div>
-
-              <div class="header-proposition">
-                <div class="content">
-                  <nav id="proposition-menu">
-                    <a href="/" id="proposition-name">{{serviceName}}</a>
-                  </nav>
-                </div>
-              </div>
+      <header role="banner" id="global-header" class="with-proposition">
+        <div class="header-wrapper">
+          <div class="header-global">
+            <div class="header-logo">
+              <a href="/" id="logo" class="content dwplogo">
+                DWP
+              </a>
             </div>
-          </header>
+          </div>
 
-          <div class="admin-header-wrapper">
-            <div class="admin-header-content">
-              <ul>
-                <li><a href="#">Action link 1</a></li>
-                <li><a href="#">Action link 2</a></li>
-              </ul>
+          <div class="header-proposition">
+            <div class="content">
+              <nav id="proposition-menu">
+                <a href="/" id="proposition-name">Design patterns</a>
+              </nav>
             </div>
           </div>
         </div>
 
-        <div class="grid-row">
-          <div class="column-one-quarter admin-sidebar-wrapper">
-            <div class="admin-sidebar-content">
-              <ul>
-                <li><a href="adminmenus">Area 1</a></li>
-                <li><a href="#">Area 2</a></li>
-                <li><a href="#">Area 3</a></li>
-                <li><a href="#">Area 4</a></li>
-              </ul>
-            </div>
+        <div class="admin-header-wrapper">
+          <div class="admin-header-content">
+            <ul>
+              <li><a href="#">Action link 1</a></li>
+              <li><a href="#">Action link 2</a></li>
+            </ul>
           </div>
+        </div>
+      </header>
 
-          <div class="column-three-quarters">
-            <div class="admin-submenu-container">
+      <div class="admin-wrapper">
+        <div class="admin-column-wrapper">
+          <div class="admin-content-wrapper">
+            <div class="admin-content">
+              <div class="admin-submenu-container">
               <h1 class="heading-xlarge">Section heading</h1>
 
               <div class="admin-submenu">
@@ -369,6 +357,18 @@
                   Section 5
                 </div>
               </div>
+            </div>
+            </div>
+          </div>
+
+          <div class="admin-sidebar-wrapper">
+            <div class="admin-sidebar-content">
+              <ul>
+                <li><a href="adminmenus">Area 1</a></li>
+                <li><a href="#">Area 2</a></li>
+                <li><a href="#">Area 3</a></li>
+                <li><a href="#">Area 4</a></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -656,17 +656,17 @@
         $(this).parents('li').addClass('active');
       }
     });
+  });
 
-    // Tab Panes
-    $('.admin-panes').each(function() {
-      $(this).children('div').hide();
-      $(this).children('.admin-pane:first').show();
-      $(this).parent().find('li:first').addClass('active');
-      $(this).parents('.admin-submenu-container').find('h1').text($('.active').find('a').text());
-    });
-    });
+  // Tab Panes
+  $('.admin-panes').each(function() {
+    $(this).children('div').hide();
+    $(this).children('.admin-pane:first').show();
+    $(this).parent().find('li:first').addClass('active');
+    $(this).parents('.admin-submenu-container').find('h1').text($('.active').find('a').text());
+  });
 
-    $(document).on('click', '.admin-submenu a', function(e) {
+  $(document).on('click', '.admin-submenu a', function(e) {
     e.preventDefault();
 
     var nth = $(this).parent().index() + 1;
