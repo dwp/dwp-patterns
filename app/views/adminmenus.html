@@ -389,52 +389,40 @@
             <div class="tab-pane">
               <pre class="language-markup">
                 <code>
-    &lt;div class="admin-wrapper"&gt;
-      &lt;div class="grid-row"&gt;
-        &lt;header role="banner" id="global-header" class="with-proposition"&gt;
-          &lt;div class="header-wrapper"&gt;
-            &lt;div class="header-global"&gt;
-              &lt;div class="header-logo"&gt;
-                &lt;a href="/" id="logo" class="content dwplogo"&gt;
-                  DWP
-                &lt;/a&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-
-            &lt;div class="header-proposition"&gt;
-              &lt;div class="content"&gt;
-                &lt;nav id="proposition-menu"&gt;
-                  &lt;a href="/" id="proposition-name"&gt;{{serviceName}}&lt;/a&gt;
-                &lt;/nav&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
+    &lt;header role="banner" id="global-header" class="with-proposition"&gt;
+      &lt;div class="header-wrapper"&gt;
+        &lt;div class="header-global"&gt;
+          &lt;div class="header-logo"&gt;
+            &lt;a href="/" id="logo" class="content dwplogo"&gt;
+              DWP
+            &lt;/a&gt;
           &lt;/div&gt;
-        &lt;/header&gt;
+        &lt;/div&gt;
 
-        &lt;div class="admin-header-wrapper"&gt;
-          &lt;div class="admin-header-content"&gt;
-            &lt;ul&gt;
-              &lt;li&gt;&lt;a href="#"&gt;Action link 1&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href="#"&gt;Action link 2&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
+        &lt;div class="header-proposition"&gt;
+          &lt;div class="content"&gt;
+            &lt;nav id="proposition-menu"&gt;
+              &lt;a href="/" id="proposition-name"&gt;Design patterns&lt;/a&gt;
+            &lt;/nav&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
 
-      &lt;div class="grid-row"&gt;
-        &lt;div class="column-one-quarter admin-sidebar-wrapper"&gt;
-          &lt;div class="admin-sidebar-content"&gt;
-            &lt;ul&gt;
-              &lt;li&gt;&lt;a href="adminmenus"&gt;Area 1&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href="#"&gt;Area 2&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href="#"&gt;Area 3&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href="#"&gt;Area 4&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/div&gt;
+      &lt;div class="admin-header-wrapper"&gt;
+        &lt;div class="admin-header-content"&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Action link 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Action link 2&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
         &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/header&gt;
 
-        &lt;div class="column-three-quarters"&gt;
-          &lt;div class="admin-submenu-container"&gt;
+    &lt;div class="admin-wrapper"&gt;
+      &lt;div class="admin-column-wrapper"&gt;
+        &lt;div class="admin-content-wrapper"&gt;
+          &lt;div class="admin-content"&gt;
+            &lt;div class="admin-submenu-container"&gt;
             &lt;h1 class="heading-xlarge"&gt;Section heading&lt;/h1&gt;
 
             &lt;div class="admin-submenu"&gt;
@@ -469,6 +457,18 @@
               &lt;/div&gt;
             &lt;/div&gt;
           &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="admin-sidebar-wrapper"&gt;
+          &lt;div class="admin-sidebar-content"&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href="adminmenus"&gt;Area 1&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Area 2&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Area 3&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Area 4&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
@@ -479,10 +479,6 @@
             <div class="tab-pane">
               <pre class="language-css">
                 <code>
-    .admin-wrapper {
-      margin: 0 15px;
-    }
-
     .admin-wrapper a {
       text-decoration: none;
       color: #000;
@@ -513,15 +509,47 @@
       border-right: none;
     }
 
-    .admin-sidebar-content {
-      padding: 10px 0;
+    .admin-wrapper {
+      position:relative;
+      clear:both;
+      float:left;
+      width:100%;
+      overflow:hidden;
+      background-color: #F8F8F8;
     }
 
-    .admin-sidebar-wrapper {
-      background-color: #F8F8F8;
-      border-right: 2px solid #C3C4C6;
-      padding: 0;
-      height: auto;
+    .admin-wrapper .admin-column-wrapper {
+      float:left;
+      width:200%;
+      position:relative;
+      left: 20%;
+      background:#fff;
+      border-left: 2px solid #999;
+    }
+
+    .admin-wrapper .admin-content-wrapper {
+      float:right;
+      width:50%;
+      position:relative;
+      padding-bottom:1em;
+
+    }
+
+    .admin-wrapper .admin-content {
+      margin-left: 50px;
+      position:relative;
+      right:100%;
+      overflow:hidden;
+    }
+    .admin-wrapper .admin-sidebar-wrapper {
+      float:left;
+      width: 10%;
+      position:relative;
+      right: 10%;
+    }
+
+    .admin-sidebar-content {
+      padding: 10px 0;
     }
 
     .admin-sidebar-content li {
@@ -538,11 +566,8 @@
       color: #fff;
     }
 
-    .column-three-quarters {
-      padding: 0 15px;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
+    .admin-sidebar-content {
+      padding: 20px 0;
     }
 
     .admin-submenu-container h1 {
@@ -572,21 +597,6 @@
     .admin-submenu a {
       font-size: 16px;
     }
-
-    @media (min-width: 641px) {
-      .column-three-quarters {
-        float: left;
-        width: 75%;
-      }
-
-      .admin-sidebar-wrapper {
-        min-height: 400px;
-      }
-
-      .admin-sidebar-content {
-        padding: 20px 0;
-      }
-    }
                 </code>
               </pre>
             </div>
@@ -598,6 +608,10 @@
       // Get the URL
       var url = window.location.href.split('/').pop();
 
+      if (url === '') {
+        url = '/';
+      }
+
       // Check the href of each link in the sidebar
       $('.admin-sidebar-content a').each(function () {
         if (url === $(this).attr('href')) {
@@ -605,14 +619,14 @@
           $(this).parents('li').addClass('active');
         }
       });
+    });
 
-      // Tab Panes
-      $('.admin-panes').each(function() {
-        $(this).children('div').hide();
-        $(this).children('.admin-pane:first').show();
-        $(this).parent().find('li:first').addClass('active');
-        $(this).parents('.admin-submenu-container').find('h1').text($('.active').find('a').text());
-      });
+    // Tab Panes
+    $('.admin-panes').each(function() {
+      $(this).children('div').hide();
+      $(this).children('.admin-pane:first').show();
+      $(this).parent().find('li:first').addClass('active');
+      $(this).parents('.admin-submenu-container').find('h1').text($('.active').find('a').text());
     });
 
     $(document).on('click', '.admin-submenu a', function(e) {
