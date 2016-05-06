@@ -1,12 +1,10 @@
-.admin-wrapper {
-  margin: 0 15px;
-}
-
+// All styles
 .admin-wrapper a {
   text-decoration: none;
   color: #000;
 }
 
+// Header stuff
 .admin-header-wrapper {
   background-color: #DEE0E2;
   height: 40px;
@@ -32,15 +30,49 @@
   border-right: none;
 }
 
-.admin-sidebar-content {
-  padding: 10px 0;
+// Wrapper stuff
+.admin-wrapper {
+  position:relative;
+  clear:both;
+  float:left;
+  width:100%;
+  overflow:hidden;
+  background-color: #F8F8F8;
 }
 
-.admin-sidebar-wrapper {
-  background-color: #F8F8F8;
-  border-right: 2px solid #C3C4C6;
-  padding: 0;
-  height: auto;
+.admin-wrapper .admin-column-wrapper {
+  float:left;
+  width:200%;
+  position:relative;
+  left: 20%;
+  background:#fff;
+  border-left: 2px solid #999;
+}
+
+.admin-wrapper .admin-content-wrapper {
+  float:right;
+  width:50%;
+  position:relative;
+  padding-bottom:1em;
+
+}
+
+.admin-wrapper .admin-content {
+  margin-left: 50px;
+  position:relative;
+  right:100%;
+  overflow:hidden;
+}
+.admin-wrapper .admin-sidebar-wrapper {
+  float:left;
+  width: 10%;
+  position:relative;
+  right: 10%;
+}
+
+// Sidebar stuff
+.admin-sidebar-content {
+  padding: 10px 0;
 }
 
 .admin-sidebar-content li {
@@ -57,13 +89,11 @@
   color: #fff;
 }
 
-.column-three-quarters {
-  padding: 0 15px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+.admin-sidebar-content {
+  padding: 20px 0;
 }
 
+// Submenu stuff
 .admin-submenu-container h1 {
   margin-bottom :10px;
 }
@@ -90,19 +120,4 @@
 
 .admin-submenu a {
   font-size: 16px;
-}
-
-@media (min-width: 641px) {
-  .column-three-quarters {
-    float: left;
-    width: 75%;
-  }
-
-  .admin-sidebar-wrapper {
-    min-height: 400px;
-  }
-
-  .admin-sidebar-content {
-    padding: 20px 0;
-  }
 }
