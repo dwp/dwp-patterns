@@ -1,0 +1,95 @@
+{% extends "layout_dwp.html" %}
+
+{% block page_title %}
+  DWP design patterns
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a class="link-back" href="/">Back</a>
+
+        <h1 class="heading-xlarge">Payments from abroad</h1>
+
+
+        <h2 class="heading-medium">Standard pattern</h2>
+        <p class="text">
+          Use this when:
+          <ul class="list list-bullet">
+            <li>the user needs to confirm whether or not they are receiving
+            any form of payments from another country within the European Economic Area (EEA)</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="grid-row">
+        <div class="column-two-thirds">
+          <header>
+            <h1 class="form-title heading-xlarge">
+              Payments from abroad</h1>
+            </header>
+            <p class="lede">This question is to check that we are the correct country to pay your benefit.</p>
+            <fieldset id="workedAbroad" class="inline">
+              <legend for="workedAbroad">
+                <span class="frequency-question">Have you or any of your close family worked abroad or been paid benefits from outside the United Kingdom?</span>
+                <span class="form-hint">This means your partner or a parent that you&#39;re financially dependent on.</span>
+              </legend>
+              <div class="form-group">
+                <label class="block-label" for="workedAbroad-Yes"
+                data-target="benefitsAbroad" >
+                <input id="workedAbroad-Yes" type="radio" name="workedAbroad"
+                value="Yes" aria-controls="benefitsAbroad">Yes
+              </label>
+              <label class="block-label" for="workedAbroad-No">
+                <input id="workedAbroad-No" type="radio" name="workedAbroad"
+                value="No" aria-controls="">No
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="form-group panel-indent js-hidden" id="benefitsAbroad">
+            <p>
+              These questions are about the following countries: <br />
+              Austria, Belgium, Bulgaria, Croatia, Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Gibraltar, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden and Switzerland.
+            </p>
+            <fieldset id="benefitsAbroadPayment" class="form-group inline">
+              <legend for="benefitsAbroadPayment">
+                <span class="frequency-question">Are you or your close family claiming or being paid any benefits or pensions from any of these countries?</span>
+              </legend>
+              <div class="form-group">
+                <label class="block-label" for="benefitsAbroadPayment-Yes">
+                  <input id="benefitsAbroadPayment-Yes" type="radio" name="benefitsAbroadPayment"
+                  value="Yes" aria-controls="">Yes
+                </label>
+                <label class="block-label" for="benefitsAbroadPayment-No">
+                  <input id="benefitsAbroadPayment-No" type="radio" name="benefitsAbroadPayment"
+                  value="No" aria-controls="">No
+                </label>
+              </div>
+            </fieldset>
+            <fieldset id="payInsuranceAbroad" class="form-group inline">
+              <legend for="payInsuranceAbroad">
+                <span class="frequency-question">Are you or your close family working or paying National Insurance in any of these countries?</span>
+              </legend>
+              <div class="form-group">
+                <label class="block-label" for="payInsuranceAbroad-Yes">
+                  <input id="payInsuranceAbroad-Yes" type="radio" name="payInsuranceAbroad"
+                 value="Yes" aria-controls="">Yes
+                </label>
+                <label class="block-label" for="payInsuranceAbroad-No">
+                  <input id="payInsuranceAbroad-No" type="radio" name="payInsuranceAbroad"
+                  value="No" aria-controls="">No
+                </label>
+              </div>
+            </fieldset>
+          		</div>
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+{% endblock %}
