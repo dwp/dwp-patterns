@@ -67,11 +67,18 @@ app.use(function (req, res, next) {
   next();
 });
 
+function htmlToPrism(text){
+  text.replace('<','&lt;');
+  text.replace('>','&rt;');
+  return text;
+}
+
 // Add variables that are available in all views
 app.use(function (req, res, next) {
   _.merge(res.locals,{
     serviceName: config.serviceName,
     cookieText: config.cookieText,
+    htmlToPrism: htmlToPrism,
     releaseVersion: 'v' + releaseVersion,
     postData: (req.body ? req.body : false)
   });
