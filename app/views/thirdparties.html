@@ -177,8 +177,33 @@
                 </label>
               </fieldset>
             </div>
-              
 
+             <div class="js-hidden panel panel-border-narrow" id="you-contact">
+              <div class="form-group">
+                <fieldset>
+                  <legend>
+                   How do you want to be contacted?
+                  </legend>
+                  <p>Select as many as you like.</p>
+                  <label for="email" class="block-label">
+                    <input id="email" type="checkbox" name="contact-method-you" value="email">
+                    Email
+                  </label>
+                  <label for="phone-call" class="block-label">
+                    <input id="phone-call" type="checkbox" name="contact-method-you" value="phone call">
+                    Phone call
+                  </label>
+                  <label for="text" class="block-label">
+                    <input id="text" type="checkbox" name="contact-method-you" value="text message">
+                    Text message
+                  </label>
+                   <label for="letter" class="block-label">
+                    <input id="letter" type="checkbox" name="contact-method-you" value="letter">
+                    Letter
+                  </label>
+                 </fieldset>
+              </div>
+            </div>
             <div class="js-hidden panel panel-border-narrow" id="representative">
               <div class="form-group">
                 <fieldset>
@@ -322,8 +347,10 @@
                   <code>
     $(document).on('click', 'input[type="radio"]', function (e) {
       if ($(e.target).attr('id') === 'yourself' || $(e.target).attr('id') === 'someone-else') {
+        $('#you-contact').show();
         if ($(this).attr('id') === 'someone-else') {
           $('#representative').show();
+          $('#you-contact').hide();
         } else {
           $('#representative').hide();
         }
@@ -345,6 +372,8 @@
 
 {% block page_scripts %}
   <script>
+
+
     $(document).on('click', 'input[type="radio"]', function (e) {
       if ($(e.target).attr('id') === 'carer-yes' || $(e.target).attr('id') === 'carer-no') {
         if ($(this).attr('id') === 'carer-no') {
@@ -355,15 +384,19 @@
       }
     });
 
+
     $(document).on('click', 'input[type="radio"]', function (e) {
       if ($(e.target).attr('id') === 'yourself' || $(e.target).attr('id') === 'someone-else') {
+        $('#you-contact').show();
         if ($(this).attr('id') === 'someone-else') {
           $('#representative').show();
+          $('#you-contact').hide();
         } else {
           $('#representative').hide();
         }
       }
     });
+
 
   </script>
 {% endblock %}
