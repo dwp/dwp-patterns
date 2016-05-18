@@ -243,83 +243,76 @@
               <div class="tab-pane" style="display: block;">
                 <pre class="language-markup">
                   <code>
-    &lt;h1 class="heading-xlarge"&gt;Your payment details&lt;/h1&gt;
+     &lt;h1 class="heading-xlarge"&gt;Who do you want to be contacted about your condition, award or application?&lt;/h1&gt;
 
-    &lt;p&gt;How would you like to get paid?&lt;/p&gt;
+        &lt;div class="column-two-thirds"&gt;
+          
 
-    &lt;form&gt;
-      &lt;fieldset&gt;
-        &lt;div class="form-group"&gt;
-          &lt;!-- No data-targets to avoid duplication, see JS tab --&gt;
-          &lt;label class="block-label" for="bank-account-yes"&gt;
-          &lt;input id="bank-account-yes" type="radio" name="account-select" value="bank"&gt;
-            Bank account
-          &lt;/label&gt;
+          &lt;form&gt;
+          
+            &lt;div class="form-group"&gt;
+              &lt;fieldset&gt;
+                &lt;legend class="hidden"&gt;Who do you want to be contacted about your condition, award or application?&lt;/legend&gt;
+                &lt;!-- No data-targets to avoid duplication, see jQuery at bottom of this page --&gt;
+                &lt;label class="block-label" for="yourself"&gt;
+                  &lt;input id="yourself" type="radio" name="contact" value="Yourself"&gt;
+                  Yourself
+                &lt;/label&gt;
 
-          &lt;label class="block-label" for="building-society-yes"&gt;
-            &lt;input id="building-society-yes" type="radio" name="account-select" value="building"&gt;
-            Building society account
-          &lt;/label&gt;
-        &lt;/div&gt;
-      &lt;/fieldset&gt;
+                &lt;label class="block-label" for="someone-else"&gt;
+                  &lt;input id="someone-else" type="radio" name="contact" value="Someone else"&gt;
+                 Someone else, who can speak for you
+                &lt;/label&gt;
+              &lt;/fieldset&gt;
+            &lt;/div&gt;
+              
 
-      &lt;div class="js-hidden" id="bank-details"&gt;
-        &lt;div class="form-group"&gt;
-          &lt;fieldset&gt;
-            &lt;label class="form-label-bold" for="account-name"&gt;
-              Account holder name
-            &lt;/label&gt;
-            &lt;input type="text" class="form-control" id="account-name" name="account-name"&gt;
-          &lt;/fieldset&gt;
-        &lt;/div&gt;
+            &lt;div class="js-hidden panel panel-border-narrow" id="representative"&gt;
+              &lt;div class="form-group"&gt;
+                &lt;fieldset&gt;
+                  &lt;label for="representative-name" class="form-label"&gt;
+                   &lt;span class="form-label-bold"&gt;Your representative&lt;/span&gt;
+                   This should be someone you trust and who can talk about your condition
+                  &lt;/label&gt;
+                  &lt;input type="text" class="form-control" id="representative-name" name="representative-name"&gt;
+                &lt;/fieldset&gt;
+              &lt;/div&gt;
+              &lt;div class="form-group"&gt;
+                &lt;fieldset&gt;
+                  &lt;legend&gt;
+                   How can they be contacted?
+                  &lt;/legend&gt;
+                  &lt;p&gt;Select as many as you like.&lt;/p&gt;
+                  &lt;label for="email" class="block-label"&gt;
+                    &lt;input id="email" type="checkbox" name="contact-method" value="email"&gt;
+                    Email
+                  &lt;/label&gt;
+                  &lt;label for="phone-call" class="block-label"&gt;
+                    &lt;input id="phone-call" type="checkbox" name="contact-method" value="phone call"&gt;
+                    Phone call
+                  &lt;/label&gt;
+                  &lt;label for="text" class="block-label"&gt;
+                    &lt;input id="text" type="checkbox" name="contact-method" value="text message"&gt;
+                    Text message
+                  &lt;/label&gt;
+                   &lt;label for="letter" class="block-label"&gt;
+                    &lt;input id="letter" type="checkbox" name="contact-method" value="letter"&gt;
+                    Letter
+                  &lt;/label&gt;
+                 &lt;/fieldset&gt;
+              &lt;/div&gt;
 
-        &lt;legend class="form-label-bold"&gt;Sort code&lt;/legend&gt;
-
-        &lt;div class="form-date form-group"&gt;
-          &lt;fieldset&gt;
-            &lt;div class="form-group form-group-day"&gt;
-              &lt;label for="sort-code-1"&gt;&lt;/label&gt;
-              &lt;input class="form-control" id="sort-code-1" maxlength="2" name="sort-code-1" type="text" /&gt;
+              &lt;div class="form-group"&gt;
+                &lt;fieldset&gt;
+                  &lt;label for="relationship"&gt;
+                  What's your relationship with this person?
+                  &lt;/label&gt;
+                  &lt;input type="text" class="form-control" id="relationship" name="relationship"&gt;
+                &lt;/fieldset&gt;
+              &lt;/div&gt;
             &lt;/div&gt;
 
-            &lt;div class="form-group form-group-month"&gt;
-              &lt;label for="sort-code-2"&gt;&lt;/label&gt;
-              &lt;input class="form-control" id="sort-code-2" maxlength="2"  name="sort-code-2" type="text" /&gt;
-            &lt;/div&gt;
-
-            &lt;div class="form-group form-group-month"&gt;
-              &lt;label for="sort-code-3"&gt;&lt;/label&gt;
-              &lt;input class="form-control" id="sort-code-3" maxlength="2"  name="sort-code-3" type="text" /&gt;
-            &lt;/div&gt;
-          &lt;/fieldset&gt;
-        &lt;/div&gt;
-
-        &lt;div class="form-group"&gt;
-          &lt;fieldset&gt;
-            &lt;label class="form-label-bold" for="account-number"&gt;
-              Account number
-            &lt;/label&gt;
-            &lt;input type="text" class="form-control" id="account-number" name="account-number"&gt;
-          &lt;/fieldset&gt;
-        &lt;/div&gt;
-
-      &lt;/div&gt;
-
-      &lt;div class="js-hidden" id="building-society-details"&gt;
-        &lt;div class="form-group"&gt;
-          &lt;fieldset&gt;
-            &lt;label class="form-label-bold" for="bs-society-roll"&gt;
-              Building society roll or reference number
-              &lt;span class="form-hint"&gt;If your building society uses a roll or reference number, you will find it on your passbook&lt;/span&gt;
-            &lt;/label&gt;
-
-            &lt;input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll"&gt;
-          &lt;/fieldset&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-
-      &lt;input type="submit" class="button" value="Continue"&gt;
-    &lt;/form&gt;
+          &lt;/form&gt;
                   </code>
                 </pre>
               </div>
