@@ -61,22 +61,24 @@
               <div class="tab-pane" style="display: block;">
                 <pre class="language-markup">
                   <code>
-  &lt;h1 class="heading-xlarge"&gt;Declaration&lt;/h1&gt;
 
-  &lt;p class="text"&gt;By sending the application you agree that:&lt;/p&gt;
+{{ htmlToPrism('<h1 class="heading-xlarge">Declaration</h1>
 
-  &lt;ul class="list-bullet"&gt;
-    &lt;li&gt;the information is correct and complete as far as you know&lt;/li&gt;
-    &lt;li&gt;you&rsquo;ll pay back any money you're overpaid if you&rsquo;re asked to&lt;/li&gt;
-  &lt;/ul&gt;
+  <p class="text">By sending the application you agree that:</p>
 
-  &lt;div class="legal_message"&gt;
+  <ul class="list-bullet">
+    <li>the information is correct and complete as far as you know</li>
+    <li>you&rsquo;ll pay back any money you&rsquo;re overpaid if you&rsquo;re asked to</li>
+  </ul>
+
+  <div class="legal_message">
     You could be prosecuted or have to pay a financial penalty if you
     deliberately give the wrong or incomplete information or don&rsquo;t
     report changes.
-  &lt;/div&gt;
+  </div>
 
-  &lt;p&gt;&lt;a href="#" class="button"&gt;I agree - send my application&lt;/a&gt;&lt;/p&gt;
+  <p><a href="#" class="button">I agree - send my application</a></p>')  }}
+
                   </code>
                 </pre>
               </div>
@@ -136,7 +138,7 @@
 
             <ul class="list-bullet">
               <li>the information is correct and complete as far as you know</li>
-              <li>you&rsquo;ll pay back any money you're overpaid if you&rsquo;re asked to</li>
+              <li>you&rsquo;ll pay back any money you&rsquo;re overpaid if you&rsquo;re asked to</li>
               <li>
                 you&rsquo;ll report changes of circumstances or those of the person you
                 care for promptly either <a href="" rel="external">online</a> or
@@ -169,36 +171,49 @@
             <div class="tab-pane" style="display: block;">
               <pre class="language-markup">
                 <code>
-      &lt;h1 class="heading-xlarge"&gt;Consent and declaration&lt;/h1&gt;
 
-      &lt;form&gt;
-        &lt;fieldset class="inline"&gt;
-          &lt;legend&gt;Do you agree to the Carer's Allowance unit contacting anyone mentioned in this form?&lt;/legend&gt;
-          &lt;label class="block-label" for="radio-inline-1"&gt;
-            &lt;input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes"&gt;
-            Yes
-          &lt;/label&gt;
+{{ htmlToPrism('<h1 class="heading-xlarge">Consent and declaration</h1>
 
-          &lt;label class="block-label" for="radio-inline-2"&gt;
-            &lt;input id="radio-inline-2" type="radio" name="radio-inline-group" value="No"&gt;
-            No
-          &lt;/label&gt;
-        &lt;/fieldset&gt;
+<form>
+  <fieldset class="inline">
+    <legend>
+      Do you agree to the Carer&rsquo;s Allowance unit contacting anyone
+      mentioned in this form?
+    </legend>
 
-        &lt;p class="text"&gt;By sending the application you agree that:&lt;/p&gt;
+    <label class="block-label" for="radio-inline-1">
+      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+      Yes
+    </label>
 
-        &lt;ul class="list-bullet"&gt;
-          &lt;li&gt;the information is correct and complete as far as you know&lt;/li&gt;
-          &lt;li&gt;you'll pay back any money you're overpaid if you're asked to&lt;/li&gt;
-          &lt;li&gt;you'll report changes of circumstances or those of the person you care for promptly either &lt;a href="" rel="external"&gt;online&lt;/a&gt; or by contacting the &lt;a href="" rel="external"&gt;Carer's Allowance Unit&lt;/a&gt;.&lt;/li&gt;
-        &lt;/ul&gt;
+    <label class="block-label" for="radio-inline-2">
+      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+      No
+    </label>
+  </fieldset>
 
-        &lt;div class="legal_message"&gt;
-          You could be prosecuted or have to pay a financial penalty if you deliberately give the wrong or incomplete information or don't report changes. Your Carer's allowance may also be stopped or reduced.
-        &lt;/div&gt;
+  <p class="text">By sending the application you agree that:</p>
 
-        &lt;input type="button" value="I agree - send my application" class="button"&gt;
-      &lt;/form&gt;
+  <ul class="list-bullet">
+    <li>the information is correct and complete as far as you know</li>
+    <li>you&rsquo;ll pay back any money you&rsquo;re overpaid if you&rsquo;re asked to</li>
+    <li>
+      you&rsquo;ll report changes of circumstances or those of the person you
+      care for promptly either <a href="" rel="external">online</a> or
+      by contacting the <a href="" rel="external">Carer&rsquo;s Allowance Unit</a>.
+    </li>
+  </ul>
+
+  <div class="legal_message">
+    You could be prosecuted or have to pay a financial penalty if you
+    deliberately give the wrong or incomplete information or don&rsquo;t
+    report changes. Your Carer&rsquo;s allowance may also be stopped or reduced.
+  </div>
+
+  <input type="button" value="I agree - send my application" class="button">
+</form>')  }}
+
+
                 </code>
               </pre>
             </div>

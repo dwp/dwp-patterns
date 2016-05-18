@@ -61,8 +61,15 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+function htmlToPrism(s) {
+  s.replace('<', '&lt;');
+  s.replace('>', '&rt;');
+  return s;
+}
+
 // send assetPath to all views
 app.use(function (req, res, next) {
+  res.locals.htmlToPrism = htmlToPrism;
   res.locals.asset_path="/public/";
   next();
 });
