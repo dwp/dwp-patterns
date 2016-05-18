@@ -1,0 +1,376 @@
+{% extends "layout_dwp.html" %}
+
+{% block page_title %}
+  DWP design patterns
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a class="link-back" href="/">Back</a>
+
+      <h1 class="heading-xlarge">
+        <span class="heading-secondary">
+            Draft
+        </span>
+      Third party details</h1>
+
+     <h2 class="heading-medium">Standard pattern</h2>
+     <p class="text">
+       Use this when:
+       <ul class="list list-bullet">
+         <li>the user needs to declare that they are completing the transaction on behalf of someone else.</li>
+       </ul>
+     </p>
+     <h2 class="heading-small">Research notes</h2>
+    <p class="text">User research for <a href="http://dwp-digital-services.herokuapp.com/projects/8/carers_allowance_digital_service">Carer's Allowance</a>
+      found that asking people early in the transaction if they were completing it on behalf of the carer prevented them from entering their own details.</p>
+    </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="example">
+      <h1 class="heading-xlarge">Are you applying for Carer's Allowance for yourself?</h1>
+
+        <div class="column-two-thirds">
+          
+          <form>
+            <fieldset>
+              <div class="form-group">
+                <legend class="hidden">Are you applying for Carer's Allowance for yourself?</legend>
+                <!-- No data-targets to avoid duplication, see jQuery at bottom of this page -->
+                <label class="block-label" for="carer-yes">
+                  <input id="carer-yes" type="radio" name="carer" value="yes">
+                  Yes, you're the Carer
+                </label>
+
+                <label class="block-label" for="carer-no">
+                  <input id="carer-no" type="radio" name="carer" value="no">
+                 No, you're applying on behalf of the carer
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="js-hidden panel panel-border-narrow" id="third-party-details">
+              <div class="form-group">
+                  <fieldset>
+                    <label class="form-label-bold" for="third-party-name">
+                     Your name and organisation
+                   </label>
+                   <input type="text" class="form-control form-control-2-3" id="third-party-name" name="third-party-name">
+                 </fieldset>
+              </div>
+              <p>Fill in the rest of the form as if you're the carer. For example, if asked for 'your address' put the address of the person doing the caring.
+             </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <details>
+        <summary><span class="summary">View code snippet</span></summary>
+
+        <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+            <div class="tab-panel">
+            <div class="tab-panel-menu">
+              <a href="#" class="tab-link tab-link-active">HTML</a>
+              <a href="#" class="tab-link">JS</a>
+            </div>
+
+            <div class="tab-panes">
+              <div class="tab-pane" style="display: block;">
+                <pre class="language-markup">
+                  <code>
+    &lt;h1 class="heading-xlarge"&gt;Are you applying for Carer's Allowance for yourself?&lt;/h1&gt;
+    
+    &lt;form&gt;
+      &lt;fieldset&gt;
+        &lt;div class="form-group"&gt;
+          &lt;label class="block-label" for="carer-yes"&gt;
+            &lt;input id="carer-yes" type="radio" name="carer" value="yes"&gt;
+            Yes, you're the Carer
+          &lt;/label&gt;
+
+          &lt;label class="block-label" for="carer-no"&gt;
+            &lt;input id="carer-no" type="radio" name="carer" value="no"&gt;
+           No, you're applying on behalf of the carer
+          &lt;/label&gt;
+        &lt;/div&gt;
+      &lt;/fieldset&gt;
+
+        &lt;div class="js-hidden" id="third-party-details"&gt;
+          &lt;div class="form-group"&gt;
+            &lt;fieldset&gt;
+              &lt;label class="form-label-bold" for="third-party-name"&gt;
+               Your name and organisation
+             &lt;/label&gt;
+             &lt;input type="text" class="form-control" id="third-party-name" name="third-party-name"&gt;
+           &lt;/fieldset&gt;
+         &lt;/div&gt;
+         &lt;p&gt;Fill in the rest of the form as if you're the carer. For example, if asked for 'your address' put the address of the person doing the caring.
+       &lt;/div&gt;
+    &lt;/form&gt;
+                  </code>
+                </pre>
+              </div>
+              <div class="tab-pane" style="display: none;">
+                <pre class="language-javascript">
+                  <code>
+    $(document).on('click', 'input[type="radio"]', function (e) {
+      if ($(e.target).attr('id') === 'carer-yes' || $(e.target).attr('id') === 'carer-no') {
+        $('#third-party-details').show();
+        if ($(this).attr('id') === 'carer-no') {
+          $('#third-party-details').show();
+        } else {
+          $('#third-party-details').hide();
+        }
+      }
+    });
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+    <h2 class="heading-medium">Alternative pattern</h2>
+    <p class="text">
+      Use this when:
+      <ul class="list list-bullet">
+        <li>the user needs to give the contact details of the person who will represent the claimant</li>
+      </ul>
+    </p>
+    
+    </div>
+  </div>
+
+    <div class="grid-row">
+      <div class="example">
+        <h1 class="heading-xlarge">Who do you want to be contacted about your condition, award or application?</h1>
+
+        <div class="column-two-thirds">
+          
+
+          <form>
+          
+            <div class="form-group">
+              <fieldset>
+                <legend class="hidden">Who do you want to be contacted about your condition, award or application?</legend>
+                <!-- No data-targets to avoid duplication, see jQuery at bottom of this page -->
+                <label class="block-label" for="yourself">
+                  <input id="yourself" type="radio" name="contact" value="Yourself">
+                  Yourself
+                </label>
+
+                <label class="block-label" for="someone-else">
+                  <input id="someone-else" type="radio" name="contact" value="Someone else">
+                 Someone else, who can speak for you
+                </label>
+              </fieldset>
+            </div>
+              
+
+            <div class="js-hidden panel panel-border-narrow" id="representative">
+              <div class="form-group">
+                <fieldset>
+                  <label for="representative-name" class="form-label">
+                   <span class="form-label-bold">Your representative</span>
+                   This should be someone you trust and who can talk about your condition
+                  </label>
+                  <input type="text" class="form-control" id="representative-name" name="representative-name">
+                </fieldset>
+              </div>
+              <div class="form-group">
+                <fieldset>
+                  <legend>
+                   How can they be contacted?
+                  </legend>
+                  <p>Select as many as you like.</p>
+                  <label for="email" class="block-label">
+                    <input id="email" type="checkbox" name="contact-method" value="email">
+                    Email
+                  </label>
+                  <label for="phone-call" class="block-label">
+                    <input id="phone-call" type="checkbox" name="contact-method" value="phone call">
+                    Phone call
+                  </label>
+                  <label for="text" class="block-label">
+                    <input id="text" type="checkbox" name="contact-method" value="text message">
+                    Text message
+                  </label>
+                   <label for="letter" class="block-label">
+                    <input id="letter" type="checkbox" name="contact-method" value="letter">
+                    Letter
+                  </label>
+                 </fieldset>
+              </div>
+
+              <div class="form-group">
+                <fieldset>
+                  <label for="relationship">
+                  What's your relationship with this person?
+                  </label>
+                  <input type="text" class="form-control" id="relationship" name="relationship">
+                </fieldset>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <details>
+        <summary role="button"><span class="summary">View code snippet</span></summary>
+
+        <div class="panel panel-border-narrow">
+          <div class="tab-panel">
+            <div class="tab-panel-menu">
+              <a href="#" class="tab-link tab-link-active">HTML</a>
+              <a href="#" class="tab-link">JS</a>
+            </div>
+
+            <div class="tab-panes">
+              <div class="tab-pane" style="display: block;">
+                <pre class="language-markup">
+                  <code>
+    &lt;h1 class="heading-xlarge"&gt;Your payment details&lt;/h1&gt;
+
+    &lt;p&gt;How would you like to get paid?&lt;/p&gt;
+
+    &lt;form&gt;
+      &lt;fieldset&gt;
+        &lt;div class="form-group"&gt;
+          &lt;!-- No data-targets to avoid duplication, see JS tab --&gt;
+          &lt;label class="block-label" for="bank-account-yes"&gt;
+          &lt;input id="bank-account-yes" type="radio" name="account-select" value="bank"&gt;
+            Bank account
+          &lt;/label&gt;
+
+          &lt;label class="block-label" for="building-society-yes"&gt;
+            &lt;input id="building-society-yes" type="radio" name="account-select" value="building"&gt;
+            Building society account
+          &lt;/label&gt;
+        &lt;/div&gt;
+      &lt;/fieldset&gt;
+
+      &lt;div class="js-hidden" id="bank-details"&gt;
+        &lt;div class="form-group"&gt;
+          &lt;fieldset&gt;
+            &lt;label class="form-label-bold" for="account-name"&gt;
+              Account holder name
+            &lt;/label&gt;
+            &lt;input type="text" class="form-control" id="account-name" name="account-name"&gt;
+          &lt;/fieldset&gt;
+        &lt;/div&gt;
+
+        &lt;legend class="form-label-bold"&gt;Sort code&lt;/legend&gt;
+
+        &lt;div class="form-date form-group"&gt;
+          &lt;fieldset&gt;
+            &lt;div class="form-group form-group-day"&gt;
+              &lt;label for="sort-code-1"&gt;&lt;/label&gt;
+              &lt;input class="form-control" id="sort-code-1" maxlength="2" name="sort-code-1" type="text" /&gt;
+            &lt;/div&gt;
+
+            &lt;div class="form-group form-group-month"&gt;
+              &lt;label for="sort-code-2"&gt;&lt;/label&gt;
+              &lt;input class="form-control" id="sort-code-2" maxlength="2"  name="sort-code-2" type="text" /&gt;
+            &lt;/div&gt;
+
+            &lt;div class="form-group form-group-month"&gt;
+              &lt;label for="sort-code-3"&gt;&lt;/label&gt;
+              &lt;input class="form-control" id="sort-code-3" maxlength="2"  name="sort-code-3" type="text" /&gt;
+            &lt;/div&gt;
+          &lt;/fieldset&gt;
+        &lt;/div&gt;
+
+        &lt;div class="form-group"&gt;
+          &lt;fieldset&gt;
+            &lt;label class="form-label-bold" for="account-number"&gt;
+              Account number
+            &lt;/label&gt;
+            &lt;input type="text" class="form-control" id="account-number" name="account-number"&gt;
+          &lt;/fieldset&gt;
+        &lt;/div&gt;
+
+      &lt;/div&gt;
+
+      &lt;div class="js-hidden" id="building-society-details"&gt;
+        &lt;div class="form-group"&gt;
+          &lt;fieldset&gt;
+            &lt;label class="form-label-bold" for="bs-society-roll"&gt;
+              Building society roll or reference number
+              &lt;span class="form-hint"&gt;If your building society uses a roll or reference number, you will find it on your passbook&lt;/span&gt;
+            &lt;/label&gt;
+
+            &lt;input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll"&gt;
+          &lt;/fieldset&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;input type="submit" class="button" value="Continue"&gt;
+    &lt;/form&gt;
+                  </code>
+                </pre>
+              </div>
+
+              <div class="tab-pane" style="display: none;">
+                <pre class="language-javascript">
+                  <code>
+    $(document).on('click', 'input[type="radio"]', function (e) {
+      if ($(e.target).attr('id') === 'yourself' || $(e.target).attr('id') === 'someone-else') {
+        if ($(this).attr('id') === 'someone-else') {
+          $('#representative').show();
+        } else {
+          $('#representative').hide();
+        }
+      }
+    });
+
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+
+  
+  </main>
+{% endblock %}
+
+{% block page_scripts %}
+  <script>
+    $(document).on('click', 'input[type="radio"]', function (e) {
+      if ($(e.target).attr('id') === 'carer-yes' || $(e.target).attr('id') === 'carer-no') {
+        if ($(this).attr('id') === 'carer-no') {
+          $('#third-party-details').show();
+        } else {
+          $('#third-party-details').hide();
+        }
+      }
+    });
+
+    $(document).on('click', 'input[type="radio"]', function (e) {
+      if ($(e.target).attr('id') === 'yourself' || $(e.target).attr('id') === 'someone-else') {
+        if ($(this).attr('id') === 'someone-else') {
+          $('#representative').show();
+        } else {
+          $('#representative').hide();
+        }
+      }
+    });
+
+  </script>
+{% endblock %}
