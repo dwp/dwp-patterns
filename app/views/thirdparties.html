@@ -32,23 +32,23 @@
 
   <div class="grid-row">
     <div class="example">
-      <h1 class="heading-xlarge">Are you applying for Carer's Allowance for yourself?</h1>
+      <h1 class="heading-xlarge">Are you the carer?</h1>
 
         <div class="column-two-thirds">
           
           <form>
             <fieldset>
               <div class="form-group">
-                <legend class="hidden">Are you applying for Carer's Allowance for yourself?</legend>
+                <legend class="hidden">Are you the carer?</legend>
                 <!-- No data-targets to avoid duplication, see jQuery at bottom of this page -->
                 <label class="block-label" for="carer-yes">
                   <input id="carer-yes" type="radio" name="carer" value="yes">
-                  Yes, you're the Carer
+                  Yes, you're the carer
                 </label>
 
                 <label class="block-label" for="carer-no">
                   <input id="carer-no" type="radio" name="carer" value="no">
-                 No, you're applying on behalf of the carer
+                 No, you're filling this in on behalf of the carer
                 </label>
               </div>
             </fieldset>
@@ -85,36 +85,37 @@
               <div class="tab-pane" style="display: block;">
                 <pre class="language-markup">
                   <code>
-    &lt;h1 class="heading-xlarge"&gt;Are you applying for Carer's Allowance for yourself?&lt;/h1&gt;
-    
-    &lt;form&gt;
-      &lt;fieldset&gt;
-        &lt;div class="form-group"&gt;
-        &lt;legend class="hidden"&gt;Are you applying for Carer's Allowance for yourself?&lt;/legend&gt;
-          &lt;label class="block-label" for="carer-yes"&gt;
-            &lt;input id="carer-yes" type="radio" name="carer" value="yes"&gt;
-            Yes, you're the Carer
-          &lt;/label&gt;
+  {{ htmlToPrism('<h1 class="heading-xlarge">Are you the carer?</h1>
+          
+  <form>
+    <fieldset>
+      <div class="form-group">
+        <legend class="hidden">Are you the carer?</legend>
+        <label class="block-label" for="carer-yes">
+          <input id="carer-yes" type="radio" name="carer" value="yes">
+          Yes, you&rsquo;re the carer
+        </label>
 
-          &lt;label class="block-label" for="carer-no"&gt;
-            &lt;input id="carer-no" type="radio" name="carer" value="no"&gt;
-           No, you're applying on behalf of the carer
-          &lt;/label&gt;
-        &lt;/div&gt;
-      &lt;/fieldset&gt;
+        <label class="block-label" for="carer-no">
+          <input id="carer-no" type="radio" name="carer" value="no">
+         No, you&rsquo;re filling this in on behalf of the carer
+        </label>
+      </div>
+    </fieldset>
 
-        &lt;div class="js-hidden" id="third-party-details"&gt;
-          &lt;div class="form-group"&gt;
-            &lt;fieldset&gt;
-              &lt;label class="form-label-bold" for="third-party-name"&gt;
-               Your name and organisation
-             &lt;/label&gt;
-             &lt;input type="text" class="form-control" id="third-party-name" name="third-party-name"&gt;
-           &lt;/fieldset&gt;
-         &lt;/div&gt;
-         &lt;p&gt;Fill in the rest of the form as if you're the carer. For example, if asked for 'your address' put the address of the person doing the caring.
-       &lt;/div&gt;
-    &lt;/form&gt;
+    <div class="js-hidden panel panel-border-narrow" id="third-party-details">
+      <div class="form-group">
+          <fieldset>
+            <label class="form-label-bold" for="third-party-name">
+             Your name and organisation
+           </label>
+           <input type="text" class="form-control form-control-2-3" id="third-party-name" name="third-party-name">
+         </fieldset>
+      </div>
+      <p>Fill in the rest of the form as if you&rsquo;re the carer. For example, if asked for &rsquo;your address&rsquo; put the address of the person doing the caring.
+     </div>
+  </form>')  }}
+
                   </code>
                 </pre>
               </div>
@@ -165,7 +166,6 @@
             <div class="form-group">
               <fieldset>
                 <legend class="hidden">Who do you want to be contacted about your condition, award or application?</legend>
-                <!-- No data-targets to avoid duplication, see jQuery at bottom of this page -->
                 <label class="block-label" for="yourself">
                   <input id="yourself" type="radio" name="contact" value="Yourself">
                   Yourself
@@ -269,75 +269,98 @@
               <div class="tab-pane" style="display: block;">
                 <pre class="language-markup">
                   <code>
- &lt;h1 class="heading-xlarge"&gt;Who do you want to be contacted about your 
- condition, award or application?&lt;/h1&gt;
-      
-    &lt;form&gt;
-    
-      &lt;div class="form-group"&gt;
-        &lt;fieldset&gt;
-          &lt;legend class="hidden"&gt;Who do you want to be contacted about your 
-          condition, award or application?&lt;/legend&gt;
-          &lt;!-- No data-targets to avoid duplication, see jQuery at bottom of this page --&gt;
-          &lt;label class="block-label" for="yourself"&gt;
-            &lt;input id="yourself" type="radio" name="contact" value="Yourself"&gt;
-            Yourself
-          &lt;/label&gt;
+  {{ htmlToPrism('<h1 class="heading-xlarge">Who do you want to be contacted about your condition, award or application?</h1>
 
-          &lt;label class="block-label" for="someone-else"&gt;
-            &lt;input id="someone-else" type="radio" name="contact" value="Someone else"&gt;
-           Someone else, who can speak for you
-          &lt;/label&gt;
-        &lt;/fieldset&gt;
-      &lt;/div&gt;
-        
+        <div class="column-two-thirds">
+          
 
-      &lt;div class="js-hidden panel panel-border-narrow" id="representative"&gt;
-        &lt;div class="form-group"&gt;
-          &lt;fieldset&gt;
-            &lt;label for="representative-name" class="form-label"&gt;
-             &lt;span class="form-label-bold"&gt;Your representative&lt;/span&gt;
-             This should be someone you trust and who can talk about your condition
-            &lt;/label&gt;
-            &lt;input type="text" class="form-control" id="representative-name" name="representative-name"&gt;
-          &lt;/fieldset&gt;
-        &lt;/div&gt;
-        &lt;div class="form-group"&gt;
-          &lt;fieldset&gt;
-            &lt;legend&gt;
-             How can they be contacted?
-            &lt;/legend&gt;
-            &lt;p&gt;Select as many as you like.&lt;/p&gt;
-            &lt;label for="email" class="block-label"&gt;
-              &lt;input id="email" type="checkbox" name="contact-method" value="email"&gt;
-              Email
-            &lt;/label&gt;
-            &lt;label for="phone-call" class="block-label"&gt;
-              &lt;input id="phone-call" type="checkbox" name="contact-method" value="phone call"&gt;
-              Phone call
-            &lt;/label&gt;
-            &lt;label for="text" class="block-label"&gt;
-              &lt;input id="text" type="checkbox" name="contact-method" value="text message"&gt;
-              Text message
-            &lt;/label&gt;
-             &lt;label for="letter" class="block-label"&gt;
-              &lt;input id="letter" type="checkbox" name="contact-method" value="letter"&gt;
-              Letter
-            &lt;/label&gt;
-           &lt;/fieldset&gt;
-        &lt;/div&gt;
+          <form>
+          
+            <div class="form-group">
+              <fieldset>
+                <legend class="hidden">Who do you want to be contacted about your condition, award or application?</legend>
+                <!-- No data-targets to avoid duplication, see jQuery at bottom of this page -->
+                <label class="block-label" for="yourself">
+                  <input id="yourself" type="radio" name="contact" value="Yourself">
+                  Yourself
+                </label>
 
-        &lt;div class="form-group"&gt;
-          &lt;fieldset&gt;
-            &lt;label for="relationship"&gt;
-            What's your relationship with this person?
-            &lt;/label&gt;
-            &lt;input type="text" class="form-control" id="relationship" name="relationship"&gt;
-          &lt;/fieldset&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
+                <label class="block-label" for="someone-else">
+                  <input id="someone-else" type="radio" name="contact" value="Someone else">
+                 Someone else, who can speak for you
+                </label>
+              </fieldset>
+            </div>
 
-    &lt;/form&gt;
+             <div class="js-hidden panel panel-border-narrow" id="you-contact">
+              <div class="form-group">
+                <fieldset>
+                  <legend>
+                   How do you want to be contacted?
+                  </legend>
+                  <p>Select as many as you like.</p>
+                  <label for="email" class="block-label">
+                    <input id="email" type="checkbox" name="contact-method-you" value="email">
+                    Email
+                  </label>
+                  <label for="phone-call" class="block-label">
+                    <input id="phone-call" type="checkbox" name="contact-method-you" value="phone call">
+                    Phone call
+                  </label>
+                  <label for="text" class="block-label">
+                    <input id="text" type="checkbox" name="contact-method-you" value="text message">
+                    Text message
+                  </label>
+                   <label for="letter" class="block-label">
+                    <input id="letter" type="checkbox" name="contact-method-you" value="letter">
+                    Letter
+                  </label>
+                 </fieldset>
+              </div>
+            </div>
+            <div class="js-hidden panel panel-border-narrow" id="representative">
+              <div class="form-group">
+                <fieldset>
+                  <label for="representative-name" class="form-label">
+                   <span class="form-label-bold">Your representative</span>
+                   This should be someone you trust and who can talk about your condition
+                  </label>
+                  <input type="text" class="form-control" id="representative-name" name="representative-name">
+                </fieldset>
+              </div>
+              <div class="form-group">
+                <fieldset>
+                  <legend>
+                   How can they be contacted?
+                  </legend>
+                  <p>Select as many as you like.</p>
+                  <label for="email" class="block-label">
+                    <input id="email" type="checkbox" name="contact-method" value="email">
+                    Email
+                  </label>
+                  <label for="phone-call" class="block-label">
+                    <input id="phone-call" type="checkbox" name="contact-method" value="phone call">
+                    Phone call
+                  </label>
+                  <label for="text" class="block-label">
+                    <input id="text" type="checkbox" name="contact-method" value="text message">
+                    Text message
+                  </label>
+                   <label for="letter" class="block-label">
+                    <input id="letter" type="checkbox" name="contact-method" value="letter">
+                    Letter
+                  </label>
+                 </fieldset>
+              </div>
+
+              <div class="form-group">
+                <fieldset>
+                  <label for="relationship">
+                  What&rsquo;s your relationship with this person?
+                  </label>
+                  <input type="text" class="form-control" id="relationship" name="relationship">
+                </fieldset>
+              </div>')  }}
                   </code>
                 </pre>
               </div>
