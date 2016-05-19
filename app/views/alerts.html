@@ -1,0 +1,340 @@
+{% extends "layout_dwp.html" %}
+
+{% block page_title %}
+  DWP design patterns
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+
+    <div class="grid-row">
+
+      <div class="column-two-thirds">
+        <a class="link-back" href="/">Back</a>
+
+        <h1 class="heading-xlarge">Alerts, reminders &amp; notifications</h1>
+
+        <h2 class="heading-large">Inset text</h2>
+
+        <p>Bordered text is used to draw attention to important content on the page. This can appear within the flow of body content. This element is detailed in the <a href="http://govuk-elements.herokuapp.com/typography#typography-inset-text">Government Service Design Manual</a>.</p>
+
+        <div class="example">
+
+          <div class="panel panel-border-wide">
+            It can take up to 8 weeks to register a lasting power of attorney if there are no mistakes in the application.
+          </div>
+
+        </div>{# /example #}
+
+        <h2 class="heading-large">Alert message</h2>
+
+        <p>Alert messages build upon <a href="http://govuk-elements.herokuapp.com/typography#typography-inset-text">inset text</a>. These often appear at the top of the page, underneath the main heading. Icons should not normally be necessary.</p>
+
+        <h3 class="heading-medium">Blue alert message</h3>
+
+        <p>Use this when:</p>
+
+        <ul class="list list-bullet">
+          <li>a section of text is the most important feature of the page</li>
+          <li>when text needs to be highlighted and standard inset text isn&rsquo;t enough</li>
+          <li>contact information is of particular significance</li>
+        </ul>
+
+        <div class="example">
+
+          <div class="panel panel-border-wide style1">
+            Contact <a href="https://www.gov.uk/contact-jobcentre-plus">Jobcentre Plus</a> to find out how much you owe the Social&nbsp;Fund.
+          </div>
+
+        </div>{# /example #}
+
+        <div class="example">
+
+          <div class="panel panel-border-wide style1">
+            <p>If you haven&rsquo;t already booked your Universal Credit interview, please call <strong class="bold-small">035 600 4272</strong> or <strong class="bold-small">0845 600 4272</strong> to arrange a date and time.</p>
+            <p>Open hours are 8am to 6pm, Monday to Friday.</p>
+          </div>
+
+        </div>{# /example #}
+
+        <div class="example">
+
+          <div class="panel panel-border-wide style1">
+            Make sure you register within <strong class="bold-small">7 days</strong> or you&rsquo;ll have to register again.
+          </div>
+
+        </div>{# /example #}
+
+        <h2 class="heading-medium">Red alert message</h2>
+
+        <p>These are different to <a href="#">form validation error messages</a>.</p>
+
+        <p>Use this when:</p>
+
+        <ul class="list list-bullet">
+          <li>there&rsquo;s an issue that a user should know about, but they didn&rsquo;t cause</li>
+        </ul>
+
+        <div class="example">
+
+          <div class="panel panel-border-wide style2">
+            <p>You may experience some technical issues when using this application due to ongoing maintenance.</p>
+
+{#             <ul class="list list-bullet">
+              <li>Personal details</li>
+              <li>Address</li>
+              <li>Housing</li>
+              <li>Who lives with you</li>
+              <li>Bank account details</li>
+            </ul> #}
+
+          </div>
+
+        </div>{# /example #}
+
+        <h2 class="heading-medium">Turquoise alert message</h2>
+
+        <p>These shouldn&rsquo;t be confused with <a href="#">confirmation messages</a> and are quite rare.</p>
+
+        <p>Use this when:</p>
+
+        <ul class="list list-bullet">
+          <li>a user has successfully completed an action during a transaction, but hasn&rsquo;t completed the full journey</li>
+        </ul>
+
+        <div class="example">
+
+          <div class="panel panel-border-wide style3">
+            <p>Application saved</p>
+          </div>
+
+        </div>{# /example #}
+
+        <h2 class="heading-large">Legal text</h2>
+
+        <p>Use bold text with an exclamation icon if there are legal consequences - for example, a fine or prison sentence. This element is detailed in the <a href="http://govuk-elements.herokuapp.com/typography#typography-legal-text">Government Service Design Manual</a>.</p>
+
+        <p>A border is not required around this element and it can be included anywhere within the main content of a page.</p>
+
+        <h3 class="heading-medium">Legal text - icon alignment centre</h3>
+
+        <p>Use this when:</p>
+
+        <ul class="list list-bullet">
+          <li>messages are short and up to around 75 characters (one line at wide browser viewports)</li>
+        </ul>
+
+        <div class="example">
+
+          <div class="notice">
+            <i class="icon icon-important">
+            <span class="visuallyhidden">Warning</span>
+            </i>
+            <strong class="bold-small">
+            You can be fined up to &pound;5,000 if you don&rsquo;t register.
+            </strong>
+          </div>
+
+        </div>{# /example #}
+
+        <h3 class="heading-medium">Legal text - icon alignment top</h3>
+
+        <p>Use this when:</p>
+
+        <ul class="list list-bullet">
+          <li>messages are longer than 75 characters (2 lines or more at wide browser viewports)</li>
+        </ul>
+
+        <div class="example">
+
+          <div class="notice long">
+            <i class="icon icon-important">
+            <span class="visuallyhidden">Warning</span>
+            </i>
+            <strong class="bold-small">
+            You could be prosecuted or have to pay a penalty if you deliberately give wrong or incomplete information, don't report changes or don't repay any money you owe when asked.
+            </strong>
+          </div>
+
+        </div>{# /example #}
+
+        <div class="example">
+
+          <div class="notice long">
+            <i class="icon icon-important">
+            <span class="visuallyhidden">Warning</span>
+            </i>
+            <p>
+              <strong class="bold-small">
+                It is important that you understand that in return for your Universal Credit payment you are agreeing to look for work.
+              </strong>
+            </p>
+
+            <p><strong class="bold-small">You&rsquo;ll need to commit to doing everything you reasonably can to find and take paid work. Your work coach will help you agree your commitments.</strong></p>
+          </div>
+
+        </div>{# /example #}
+
+        <h2 class="heading-large">Error messages</h2>
+
+        <p>This element is detailed in the <a href="http://govuk-elements.herokuapp.com/errors/">Government Service Design Manual</a> and normally appears above the main heading of a page.</p>
+
+        <p>Use this when:</p>
+
+        <ul class="list list-bullet">
+          <li>there&rsquo;s an error that&rsquo;s the result of something the user has done</li>
+        </ul>
+
+        <div class="example">
+
+          <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-2" tabindex="-1">
+
+            <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">There&rsquo;s a problem</h1>
+            <p>Check your form. You must:</p>
+            <ul class="error-summary-list">
+              <li><a href="#">Enter your full name</a></li>
+              <li><a href="#">Enter a valid email address</a></li>
+            </ul>
+
+          </div>
+
+        </div>{# /example #}
+
+        <div class="example">
+
+          <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-2" tabindex="-1">
+
+            <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">Your partner hasn&rsquo;t created their own account&nbsp;yet.</h1>
+            
+            <p>They should go to &lsquo;Register with a partner code&rsquo; on the homepage and use this code:</p>
+
+            <p>Partner code: <strong class="heading-small">YF92NEXT</strong></p>
+            <p>They have <strong class="bold-small">7 days left</strong> - the code expires on <strong class="bold-small">26/06/2016</strong></p>
+            <p>If they don&rsquo;t use it, you&rsquo;ll both have to register again.</p>
+
+          </div>
+
+        </div>{# /example #}
+
+        <h2 class="heading-medium">Confirmation messages</h2>
+
+        <p>Use this when:</p>
+
+        <ul class="list list-bullet">
+          <li>a user has completed an action successfully</li>
+          <li>a user has completed a transaction</li>
+        </ul>
+
+        <div class="example">
+
+          <div class="govuk-box-highlight padding-small">
+            <h1 class="bold-large m-b-s">Your application has been&nbsp;received</h1>
+            <p><strong class="heading-small">Your National Insurance number is your reference</strong></p>
+          </div>
+
+        </div>{# /example #}
+
+        <div class="example">
+
+          <div class="govuk-box-highlight">
+            <p class="bold-small">Invite sent to john.smith@example.com</p>
+          </div>
+
+        </div>{# /example #}
+
+        <div class="example">
+
+          <div class="govuk-box-highlight">
+            <p class="bold-small">You&rsquo;ve successfully unlocked your account</p>
+          </div>
+
+        </div>{# /example #}
+
+        <div class="example">
+
+          <div class="govuk-box-highlight">
+            <p class="bold-small">You have amended your business details</p>
+          </div>
+
+        </div>{# /example #}
+
+
+      </div>{# /column-two-thirds #}
+
+
+    </div>{# /grid-row #}
+
+{#     <div class="example">
+
+      <div class="text form-group">
+        <div class="notice">
+          <i class="icon icon-important">
+          <span class="visuallyhidden">Warning</span>
+          </i>
+          <strong class="bold-small">
+          You could be prosecuted or have to pay a penalty if you deliberately give wrong or incomplete information, don't report changes or don't repay any money you owe when asked.
+          </strong>
+        </div>
+      </div>
+
+    </div> #}
+    {# /example #}
+
+    <!-- <div class="grid-row">
+
+      <div class="column-two-thirds">
+
+        <h2 class="heading-medium">Reminders</h2>
+        <p class="text">
+          Define what is meant by an reminder
+        </p>
+      </div>
+      {# /column-two-thirds #}
+
+    </div>
+    {# /grid-row #}
+
+    <div class="example">
+
+      <div class="text form-group">
+        <div class="notice">
+          <i class="icon icon-important">
+          <span class="visuallyhidden">Warning</span>
+          </i>
+          <strong class="bold-small">
+          You could be prosecuted or have to pay a penalty if you deliberately give wrong or incomplete information, don't report changes or don't repay any money you owe when asked.
+          </strong>
+        </div>
+      </div>
+
+    </div>{# /example #}
+
+    <div class="grid-row">
+
+      <div class="column-two-thirds">
+
+        <h2 class="heading-medium">Notifications</h2>
+        <p class="text">
+          Define what is meant by an notification
+        </p>
+      </div>{# /column-two-thirds #}
+
+    </div>{# /grid-row #}
+
+    <div class="example">
+
+      <div class="text form-group">
+        <div class="notice">
+          <i class="icon icon-important">
+          <span class="visuallyhidden">Warning</span>
+          </i>
+          <strong class="bold-small">
+          You could be prosecuted or have to pay a penalty if you deliberately give wrong or incomplete information, don't report changes or don't repay any money you owe when asked.
+          </strong>
+        </div>
+      </div>
+
+    </div>{# /example #} -->
+   
+  </main>
+{% endblock %}

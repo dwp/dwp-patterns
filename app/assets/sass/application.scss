@@ -45,3 +45,39 @@ legend {
 	background: url(https://assets.digital.cabinet-office.gov.uk/static/icon-important-aab708504574eda2dc4a4de0802be03dbbd70d57b422de93e55e265c9ae2fc43.png) no-repeat scroll 0 0.5em;
 	background-size: 34px 34px
 }
+
+// alerts (need to tidy this up - Phil)
+
+.style1 {
+  border-color: $light-blue;
+  background-color: lighten($light-blue, 50%);
+}
+
+.style2 {
+  border-color: $red;
+  background-color: lighten($mellow-red, 43%);
+}
+
+.style3 {
+  border-color: $turquoise;
+  background-color: lighten($turquoise, 56%);
+}
+
+.notice.long .icon {
+  margin-top: 0;
+  top: 0px;
+}
+
+.padding-small {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.m-b-s {
+  margin-bottom: 12px !important;
+  @include media(tablet) {
+    margin-bottom: 15px !important;
+  }
+}
+
+// end of alerts
