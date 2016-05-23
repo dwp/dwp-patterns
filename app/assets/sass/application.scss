@@ -68,6 +68,9 @@ legend {
   top: 0px;
 }
 
+// Potentially look at using flexbox with a fallback so we don’t need to use different classes
+// See http://codepen.io/bootsified/pen/PNMOVg
+
 .padding-small {
   padding-left: 10px;
   padding-right: 10px;
