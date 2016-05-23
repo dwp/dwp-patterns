@@ -50,17 +50,17 @@ legend {
 
 .style1 {
   border-color: $light-blue;
-  background-color: lighten($light-blue, 50%);
+  background-color: mix(white, $light-blue, 90%);
 }
 
 .style2 {
   border-color: $red;
-  background-color: lighten($mellow-red, 43%);
+  background-color: mix(white, $mellow-red, 90%);
 }
 
 .style3 {
   border-color: $turquoise;
-  background-color: lighten($turquoise, 56%);
+  background-color: mix(white, $turquoise, 90%);
 }
 
 .notice.long .icon {
