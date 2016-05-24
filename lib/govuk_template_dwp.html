@@ -75,15 +75,9 @@
               DWP
             </a>
           </div>
+          {% block inside_header %}{% endblock %}
         </div>
-
-        <div class="header-proposition">
-          <div class="content">
-            <nav id="proposition-menu">
-              <a href="/" id="proposition-name">{{serviceName}}</a>
-            </nav>
-          </div>
-        </div>
+        {% block proposition_header %}{% endblock %}
       </div>
     </header>
     <!--end header-->

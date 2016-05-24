@@ -7,7 +7,7 @@
 
 // Font Overrides
 *:not(.token) {
-  font-family: $Helvetica-Regular; 
+  font-family: $Helvetica-Regular;
 }
 #proposition-name {
   font-family: $Helvetica-Regular !important;
@@ -30,6 +30,16 @@
 
 .built-by-dwp {
     font-size: 16px;
+}
+
+.list-contents li {
+  @include core-16;
+}
+
+// Secondary button
+.button-secondary {
+  @include button($grey-3);
+  padding: em(10) em(15) em(5) em(15);
 }
 
 // form styles
