@@ -1,0 +1,13 @@
+ul.todo li {
+  margin: 10px 0;
+  padding: 20px 15px;
+  border-left: 5px solid $black;
+  border-bottom: 1px solid $grey-2;
+  background-color: $grey-4;
+  box-sizing: border-box;
+  display: block;
+}
+
+ul.todo li:hover {
+  background-color: darken($grey-4, 5%);
+}

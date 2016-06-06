@@ -1,0 +1,72 @@
+{% extends "layout_dwp.html" %}
+
+{% block page_title %}
+  DWP design patterns
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="/">
+        Back
+      </a>
+
+      <h1 class="heading-xlarge">
+        <span class="heading-secondary">
+            Draft
+        </span>
+        Listing to-dos
+      </h1>
+
+     <h2 class="heading-medium">
+       Standard pattern
+     </h2>
+     <p>
+       Use this when:
+       <ul class="list list-bullet">
+         <li>
+           a list of things need to be done
+         </li>
+         <li>
+           each thing is assigned to a single user
+         </li>
+         <li>
+           each thing links to thing that needs to be done
+         </li>
+         <li>
+           completed things are stored and viewed elsewhere
+         </li>
+       </ul>
+     </p>
+
+     <h2 class="heading-small">
+       Research notes
+     </h2>
+
+    <div class="example">
+      {% include "includes/todo-standard.html" %}
+    </div>
+
+    <h2 class="heading-medium">
+      Alternative pattern
+    </h2>
+
+    <p>
+      Use this when:
+      <ul class="list list-bullet">
+        <li>
+          
+        </li>
+      </ul>
+    </p>
+
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}
