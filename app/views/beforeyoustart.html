@@ -1,0 +1,133 @@
+{% extends "layout_dwp.html" %}
+
+{% block page_title %}
+  Before you start - DWP design patterns
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+              <a class="link-back" href="/">Back</a>
+
+      <h1 class="heading-xlarge">
+        <span class="heading-secondary">
+            Draft
+        </span>
+     Before you start</h1>
+
+    <h2 class="heading-medium">Standard pattern</h2>
+    <p class="text">
+      Use this when :
+      <ul class="list list-bullet">
+        <li>people must (legally) do something outside the digital service before using the channel</li>
+        <li>people must do something outside the digital channel, either before or later, that could affect their decision whether or not to carry on</li>
+        <li>there's a genuine and proven risk of a negative consequence to the user or a third party if the user is not aware of this content</li>
+      </ul>
+    </p>
+         <h2 class="heading-small">Research notes</h2>
+    <p class="text">Qualitative research for <a href="http://dwp-digital-services.herokuapp.com/projects/8/carers_allowance_digital_service">Carer's Allowance</a>
+      found that GOV.UK content alone wasn't making people aware that applying for Carer's Allowance may (in certain circumstances) affect the benefits of the person they care for. Data analysis found that people were dropping out of the service when this was made clear to them later in their journey.</p>
+    
+    </div>
+  </div>
+
+    <div class="grid-row">
+      <div class="example">
+        <div class="grid-row">
+          <div class="column-two-thirds">
+            <h1 class="heading-xlarge">Before you start</h1>
+            <p class="text">When you claim Carer's Allowance the person you care for may stop getting:</p>
+
+            <ul class="list-bullet">
+              <li>a severe disability premium paid with their benefits, if they get one</li>
+              <li>an extra amount for severe disability paid with Pension Credit, if they get one</li>
+              <li>reduced Council Tax, if <a href='#'>their local council</a> offers it</li>
+            </ul>
+            <p>Read more about <a href='#'>how Carer's Allowance affects other benefits</a>.</p>
+            <p>You must tell the person you care for before you claim.</p>
+
+            <p><a href="#" class="button">I agree - start my application</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <details>
+        <summary role="button"><span class="summary">View code snippet</span></summary>
+
+        <div class="panel panel-border-narrow">
+          <div class="tab-panel">
+            <div class="tab-panel-menu">
+              <a href="#" class="tab-link tab-link-active">HTML</a>
+            </div>
+
+            <div class="tab-panes">
+              <div class="tab-pane" style="display: block;">
+                <pre class="language-markup">
+                  <code>
+{{ htmlToPrism('<h1 class="heading-xlarge">Before you start</h1>
+  <p class="text">When you claim Carer&rsquo;s Allowance the person you care for may stop getting:</p>
+  <ul class="list-bullet">
+    <li>a severe disability premium paid with their benefits, if they get one</li>
+    <li>an extra amount for severe disability paid with Pension Credit, if they get one</li>
+    <li>reduced Council Tax, if <a href="#">their local council</a> offers it</li>
+  </ul>
+  <p>Read more about <a href="#">how Carer&rsquo;s Allowance affects other benefits</a>.</p>
+  <p>You <strong>must</strong> tell the person you care for before you claim.</p>
+  <p><a href="#" class="button">I agree - send my application</a></p>')  }}
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+        <div class="column-two-thirds">
+    <h2 class="heading-medium">Content notes</h2>
+    <ul class="list list-bullet">
+      <li>Consider and research whether 'before you start' content would be effective on GOV.UK before using this pattern.</li>
+      <li>Always give the user an active instruction on what they must do (in this example - tell someone else what they're doing).</li>
+      <li>If the user is legally required to do something (or have done something) then the submit action on the page should be in the first person, otherwise use the standard pattern of 'continue' or 'next'.</li>
+      <li>Never use this pattern to rebuke or remind the user of something you 'think' they should consider or do before using the service.</li>
+      <li>Place this as early as possible in the journey, it is specifically designed to exit people for whom the service isn't appropriate at this time.</li>
+    </ul>
+  </div>
+  
+  </main>
+{% endblock %}
+
+{% block page_scripts %}
+  <script>
+
+
+    $(document).on('click', 'input[type="radio"]', function (e) {
+      if ($(e.target).attr('id') === 'carer-yes' || $(e.target).attr('id') === 'carer-no') {
+        if ($(this).attr('id') === 'carer-no') {
+          $('#third-party-details').show();
+        } else {
+          $('#third-party-details').hide();
+        }
+      }
+    });
+
+
+    $(document).on('click', 'input[type="radio"]', function (e) {
+      if ($(e.target).attr('id') === 'yourself' || $(e.target).attr('id') === 'someone-else') {
+        $('#you-contact').show();
+        if ($(this).attr('id') === 'someone-else') {
+          $('#representative').show();
+          $('#you-contact').hide();
+        } else {
+          $('#representative').hide();
+        }
+      }
+    });
+
+
+  </script>
+{% endblock %}
