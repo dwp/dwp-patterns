@@ -34,3 +34,38 @@ ul.todo li {
 ul.todo li:hover {
   background-color: #ebebeb;
 }
+
+.alert-default {
+  border-color: #2b8cc4;
+  background-color: #eaf4f9;
+}
+
+.alert-warning {
+  border-color: #b10e1e;
+  background-color: #fceaeb;
+}
+
+.alert-success {
+  border-color: #28a197;
+  background-color: #eaf6f5;
+}
+
+.notice.long .icon {
+  margin-top: 0;
+  top: 0px;
+}
+
+.padding-small {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.m-b-s {
+  margin-bottom: 12px !important;
+}
+
+@media (min-width: 641px) {
+  .m-b-s {
+    margin-bottom: 15px !important;
+  }
+}

@@ -1,0 +1,34 @@
+.alert-default {
+  border-color: $light-blue;
+  background-color: mix(white, $light-blue, 90%);
+}
+
+.alert-warning {
+  border-color: $red;
+  background-color: mix(white, $mellow-red, 90%);
+}
+
+.alert-success {
+  border-color: $turquoise;
+  background-color: mix(white, $turquoise, 90%);
+}
+
+.notice.long .icon {
+  margin-top: 0;
+  top: 0px;
+}
+
+// Potentially look at using flexbox with a fallback so we don’t need to use different classes
+// See http://codepen.io/bootsified/pen/PNMOVg
+
+.padding-small {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.m-b-s {
+  margin-bottom: 12px !important;
+  @include media(tablet) {
+    margin-bottom: 15px !important;
+  }
+}

@@ -722,7 +722,7 @@ hr {
   position: relative;
   display: -moz-inline-stack;
   display: inline-block;
-  padding: .526315em .789473em .263157em;
+  padding: 0.3em 0.6em 0.2em;
   border: none;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -1936,6 +1936,41 @@ ul.todo li:hover {
   background-color: #ebebeb;
 }
 
+.alert-default {
+  border-color: #2b8cc4;
+  background-color: #eaf4f9;
+}
+
+.alert-warning {
+  border-color: #b10e1e;
+  background-color: #fceaeb;
+}
+
+.alert-success {
+  border-color: #28a197;
+  background-color: #eaf6f5;
+}
+
+.notice.long .icon {
+  margin-top: 0;
+  top: 0px;
+}
+
+.padding-small {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.m-b-s {
+  margin-bottom: 12px !important;
+}
+
+@media (min-width: 641px) {
+  .m-b-s {
+    margin-bottom: 15px !important;
+  }
+}
+
 *:not(.token) {
   font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
 }
@@ -2378,6 +2413,10 @@ pre[class*="language-"] {
   font-size: 16px;
 }
 
+.example-caption {
+  margin-bottom: 35px;
+}
+
 legend {
   font-weight: 700;
 }
@@ -2388,39 +2427,4 @@ legend {
   background-image: url(https://assets.digital.cabinet-office.gov.uk/static/icon-important-2x-c948a58b675598f444f7f8fffd9ebf3d740905da332308c65b0dcb4af880d7ba.png);
   background: url(https://assets.digital.cabinet-office.gov.uk/static/icon-important-aab708504574eda2dc4a4de0802be03dbbd70d57b422de93e55e265c9ae2fc43.png) no-repeat scroll 0 0.5em;
   background-size: 34px 34px;
-}
-
-.style1 {
-  border-color: #2b8cc4;
-  background-color: #eaf4f9;
-}
-
-.style2 {
-  border-color: #b10e1e;
-  background-color: #fceaeb;
-}
-
-.style3 {
-  border-color: #28a197;
-  background-color: #eaf6f5;
-}
-
-.notice.long .icon {
-  margin-top: 0;
-  top: 0px;
-}
-
-.padding-small {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.m-b-s {
-  margin-bottom: 12px !important;
-}
-
-@media (min-width: 641px) {
-  .m-b-s {
-    margin-bottom: 15px !important;
-  }
 }

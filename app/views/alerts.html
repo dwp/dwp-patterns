@@ -14,7 +14,17 @@
 
         <h1 class="heading-xlarge">Alerts, reminders &amp; notifications</h1>
 
-        <h2 class="heading-large">Inset text</h2>
+        <h2 class="heading-small heading-contents">Contents:</h2>
+
+        <ul class="list list-contents">
+          <li><a href="#inset-text">Inset text</a></li>
+          <li><a href="#alert-message">Alert message</a></li>
+          <li><a href="#legal-text">Legal text</a></li>
+          <li><a href="#error-messages">Error messages</a></li>
+          <li><a href="#confirmation-messages">Confirmation messages</a></li>
+        </ul>
+
+        <h2 class="heading-large" id="inset-text">Inset text</h2>
 
         <p>Bordered text is used to draw attention to important content on the page. This can appear within the flow of body content. This element is detailed in the <a href="http://govuk-elements.herokuapp.com/typography#typography-inset-text">Government Service Design Manual</a>.</p>
 
@@ -26,11 +36,11 @@
 
         </div>{# /example #}
 
-        <h2 class="heading-large">Alert message</h2>
+        <h2 class="heading-large" id="alert-message">Alert message</h2>
 
         <p>Alert messages build upon <a href="http://govuk-elements.herokuapp.com/typography#typography-inset-text">inset text</a>. These often appear at the top of the page, underneath the main heading. Icons should not normally be necessary.</p>
 
-        <h3 class="heading-medium">Blue alert message</h3>
+        <h3 class="heading-medium">Default alert message</h3>
 
         <p>Use this when:</p>
 
@@ -42,7 +52,7 @@
 
         <div class="example">
 
-          <div class="panel panel-border-wide style1">
+          <div class="panel panel-border-wide alert-default">
             Contact <a href="https://www.gov.uk/contact-jobcentre-plus">Jobcentre Plus</a> to find out how much you owe the Social&nbsp;Fund.
           </div>
 
@@ -50,7 +60,7 @@
 
         <div class="example">
 
-          <div class="panel panel-border-wide style1">
+          <div class="panel panel-border-wide alert-default">
             <p>If you haven&rsquo;t already booked your Universal Credit interview, please call <strong class="bold-small">035 600 4272</strong> or <strong class="bold-small">0845 600 4272</strong> to arrange a date and time.</p>
             <p>Open hours are 8am to 6pm, Monday to Friday.</p>
           </div>
@@ -59,15 +69,15 @@
 
         <div class="example">
 
-          <div class="panel panel-border-wide style1">
+          <div class="panel panel-border-wide alert-default">
             Make sure you register within <strong class="bold-small">7 days</strong> or you&rsquo;ll have to register again.
           </div>
 
         </div>{# /example #}
 
-        <h2 class="heading-medium">Red alert message</h2>
+        <h2 class="heading-medium">Warning alert message</h2>
 
-        <p>These are different to <a href="#">form validation error messages</a>.</p>
+        <p>These are different to <a href="#error-messages">error messages</a>.</p>
 
         <p>Use this when:</p>
 
@@ -77,24 +87,15 @@
 
         <div class="example">
 
-          <div class="panel panel-border-wide style2">
+          <div class="panel panel-border-wide alert-warning">
             <p>You may experience some technical issues when using this application due to ongoing maintenance.</p>
-
-{#             <ul class="list list-bullet">
-              <li>Personal details</li>
-              <li>Address</li>
-              <li>Housing</li>
-              <li>Who lives with you</li>
-              <li>Bank account details</li>
-            </ul> #}
-
           </div>
 
         </div>{# /example #}
 
-        <h2 class="heading-medium">Turquoise alert message</h2>
+        <h2 class="heading-medium">Success alert message</h2>
 
-        <p>These shouldn&rsquo;t be confused with <a href="#">confirmation messages</a> and are quite rare.</p>
+        <p>These are different to <a href="#confirmation-messages">confirmation messages</a> and are quite rare.</p>
 
         <p>Use this when:</p>
 
@@ -104,25 +105,27 @@
 
         <div class="example">
 
-          <div class="panel panel-border-wide style3">
+          <div class="panel panel-border-wide alert-success">
             <p>Application saved</p>
           </div>
 
         </div>{# /example #}
 
-        <h2 class="heading-large">Legal text</h2>
+        <h2 class="heading-large" id="legal-text">Legal text</h2>
 
         <p>Use bold text with an exclamation icon if there are legal consequences - for example, a fine or prison sentence. This element is detailed in the <a href="http://govuk-elements.herokuapp.com/typography#typography-legal-text">Government Service Design Manual</a>.</p>
 
         <p>A border is not required around this element and it can be included anywhere within the main content of a page.</p>
 
-        <h3 class="heading-medium">Legal text - icon alignment centre</h3>
+{#         <h3 class="heading-medium">Legal text - icon alignment centre</h3>
 
         <p>Use this when:</p>
 
         <ul class="list list-bullet">
           <li>messages are short and up to around 75 characters (one line at wide browser viewports)</li>
-        </ul>
+        </ul> #}
+
+        
 
         <div class="example">
 
@@ -137,26 +140,9 @@
 
         </div>{# /example #}
 
-        <h3 class="heading-medium">Legal text - icon alignment top</h3>
-
-        <p>Use this when:</p>
-
-        <ul class="list list-bullet">
-          <li>messages are longer than 75 characters (2 lines or more at wide browser viewports)</li>
-        </ul>
-
-        <div class="example">
-
-          <div class="notice long">
-            <i class="icon icon-important">
-            <span class="visuallyhidden">Warning</span>
-            </i>
-            <strong class="bold-small">
-            You could be prosecuted or have to pay a penalty if you deliberately give wrong or incomplete information, don't report changes or don't repay any money you owe when asked.
-            </strong>
-          </div>
-
-        </div>{# /example #}
+        <div class="example-caption">
+          <p class="font-xsmall">Use a vertically centred icon when messages are short and up to around 75 characters (1 line at wide browser viewports)</p>
+        </div>
 
         <div class="example">
 
@@ -175,7 +161,9 @@
 
         </div>{# /example #}
 
-        <h2 class="heading-large">Error messages</h2>
+        <p class="font-xsmall">Use a top-aligned icon when messages are longer than 75 characters (2 lines or more at wide browser viewports)</p>
+
+        <h2 class="heading-large" id="error-messages">Error messages</h2>
 
         <p>This element is detailed in the <a href="http://govuk-elements.herokuapp.com/errors/">Government Service Design Manual</a> and normally appears above the main heading of a page.</p>
 
@@ -216,7 +204,7 @@
 
         </div>{# /example #}
 
-        <h2 class="heading-medium">Confirmation messages</h2>
+        <h2 class="heading-large" id="confirmation-messages">Confirmation message</h2>
 
         <p>Use this when:</p>
 
@@ -245,96 +233,14 @@
         <div class="example">
 
           <div class="govuk-box-highlight">
-            <p class="bold-small">You&rsquo;ve successfully unlocked your account</p>
-          </div>
-
-        </div>{# /example #}
-
-        <div class="example">
-
-          <div class="govuk-box-highlight">
             <p class="bold-small">You have amended your business details</p>
           </div>
 
         </div>{# /example #}
 
-
-      </div>{# /column-two-thirds #}
-
-
-    </div>{# /grid-row #}
-
-{#     <div class="example">
-
-      <div class="text form-group">
-        <div class="notice">
-          <i class="icon icon-important">
-          <span class="visuallyhidden">Warning</span>
-          </i>
-          <strong class="bold-small">
-          You could be prosecuted or have to pay a penalty if you deliberately give wrong or incomplete information, don't report changes or don't repay any money you owe when asked.
-          </strong>
-        </div>
-      </div>
-
-    </div> #}
-    {# /example #}
-
-    <!-- <div class="grid-row">
-
-      <div class="column-two-thirds">
-
-        <h2 class="heading-medium">Reminders</h2>
-        <p class="text">
-          Define what is meant by an reminder
-        </p>
-      </div>
-      {# /column-two-thirds #}
-
-    </div>
-    {# /grid-row #}
-
-    <div class="example">
-
-      <div class="text form-group">
-        <div class="notice">
-          <i class="icon icon-important">
-          <span class="visuallyhidden">Warning</span>
-          </i>
-          <strong class="bold-small">
-          You could be prosecuted or have to pay a penalty if you deliberately give wrong or incomplete information, don't report changes or don't repay any money you owe when asked.
-          </strong>
-        </div>
-      </div>
-
-    </div>{# /example #}
-
-    <div class="grid-row">
-
-      <div class="column-two-thirds">
-
-        <h2 class="heading-medium">Notifications</h2>
-        <p class="text">
-          Define what is meant by an notification
-        </p>
       </div>{# /column-two-thirds #}
 
     </div>{# /grid-row #}
-
-    <div class="example">
-
-      <div class="text form-group">
-        <div class="notice">
-          <i class="icon icon-important">
-          <span class="visuallyhidden">Warning</span>
-          </i>
-          <strong class="bold-small">
-          You could be prosecuted or have to pay a penalty if you deliberately give wrong or incomplete information, don't report changes or don't repay any money you owe when asked.
-          </strong>
-        </div>
-      </div>
-
-    </div>{# /example #} -->
    
   </main>
 {% endblock %}

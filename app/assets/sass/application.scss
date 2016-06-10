@@ -32,6 +32,10 @@
     font-size: 16px;
 }
 
+.example-caption {
+  margin-bottom: 35px;
+}
+
 // form styles
 legend {
 	font-weight: 700;
@@ -45,42 +49,3 @@ legend {
 	background: url(https://assets.digital.cabinet-office.gov.uk/static/icon-important-aab708504574eda2dc4a4de0802be03dbbd70d57b422de93e55e265c9ae2fc43.png) no-repeat scroll 0 0.5em;
 	background-size: 34px 34px
 }
-
-// alerts (need to tidy this up - Phil)
-
-.style1 {
-  border-color: $light-blue;
-  background-color: mix(white, $light-blue, 90%);
-}
-
-.style2 {
-  border-color: $red;
-  background-color: mix(white, $mellow-red, 90%);
-}
-
-.style3 {
-  border-color: $turquoise;
-  background-color: mix(white, $turquoise, 90%);
-}
-
-.notice.long .icon {
-  margin-top: 0;
-  top: 0px;
-}
-
-// Potentially look at using flexbox with a fallback so we don’t need to use different classes
-// See http://codepen.io/bootsified/pen/PNMOVg
-
-.padding-small {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.m-b-s {
-  margin-bottom: 12px !important;
-  @include media(tablet) {
-    margin-bottom: 15px !important;
-  }
-}
-
-// end of alerts
