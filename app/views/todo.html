@@ -59,32 +59,68 @@
       Use this when:
       <ul class="list list-bullet">
         <li>
-
+          a list of things need to be done in a single view by multiple users
+        </li>
+        <li>
+          each thing is assigned to one or multiple users
+        </li>
+        <li>
+          each thing needs to have supporting content
+        </li>
+        <li>
+          each thing needs to be completed by a specific date
+        </li>
+        <li>
+          completed things are stored and viewed elsewhere
         </li>
       </ul>
     </p>
 
     <div class="example">
-      <ul class="todo">
-        <li>
+      <ul class="todo detailed">
+        <li class="overdue">
           <a href="">
-            Book your interview
+            Book your interview <span>Overdue 6 days</span>
           </a>
+          <p>
+            John Smith | Added 13 June 2016
+          </p>
+          <span class="assigned">WC</span>
+          <span>CM</span>
+          <span>DM</span>
+        </li>
+        <li class="overdue">
+          <a href="">
+            Provide proof of childcare costs <span>Overdue 1 day</span>
+          </a>
+          <p>
+            John Smith | Added 13 June 2016
+          </p>
+          <span>WC</span>
+          <span class="assigned">CM</span>
+          <span>DM</span>
+        </li>
+        <li class="overdue">
+          <a href="">
+            Book your Habitual Residency Test <span>Due today</span>
+          </a>
+          <p>
+            John Smith | Added 13 June 2016
+          </p>
+          <span>WC</span>
+          <span>CM</span>
+          <span class="assigned">DM</span>
         </li>
         <li>
           <a href="">
-            Provide proof of childcare costs
+            Childcare - declare changes <span>Due 24 June 2016</span>
           </a>
-        </li>
-        <li>
-          <a href="">
-            Book your Habitual Residency Test
-          </a>
-        </li>
-        <li>
-          <a href="">
-            Childcare - declare changes
-          </a>
+          <p>
+            John Smith | Added 13 June 2016
+          </p>
+          <span class="assigned">WC</span>
+          <span class="assigned">CM</span>
+          <span>DM</span>
         </li>
       </ul>
     </div>

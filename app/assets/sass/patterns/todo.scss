@@ -7,7 +7,34 @@ ul.todo li {
   box-sizing: border-box;
   display: block;
 }
-
 ul.todo li:hover {
   background-color: darken($grey-4, 5%);
+}
+ul.todo.detailed li {
+  @include core-16;
+}
+ul.todo.detailed li span {
+  margin-right: 5px;
+  padding: 2px;
+  color: $secondary-text-colour;
+  text-align: center;
+}
+ul.todo.detailed li span.assigned {
+  border: 1px solid $secondary-text-colour;
+  border-radius: 5px;
+}
+ul.todo.detailed li a span {
+  float: right;
+  padding: 0;
+  text-decoration: none;
+  text-align: left;
+
+  @include media (mobile) {
+    float: none;
+    display: block;
+  }
+
+}
+ul.todo.detailed li.overdue a span {
+color: $red;
 }
