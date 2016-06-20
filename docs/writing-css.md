@@ -51,6 +51,6 @@ The line `@import '_typography';` makes all the code in [_typography.scss](https
 
 ## Imports
 
-Imports are done from either the toolkit's [stylesheets](https://github.com/alphagov/govuk_frontend_toolkit/tree/master/stylesheets/) folder or the [app/assets/sass](../app/assets/sass) folder application.scss sits in. The later means you can create your own partial files to import. 
+Imports are done from either the toolkit's [stylesheets](https://github.com/alphagov/govuk_frontend_toolkit/tree/master/stylesheets/) folder or the [app/assets/sass](../app/assets/sass) folder application.scss sits in. The latter means you can create your own partial files to import. 
 
 Note that the convention is to start the name of any partial with an underscore, like those in the toolkit.
