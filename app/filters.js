@@ -1,52 +1,49 @@
-/**
- * filter items
- * Add your filters to the fi obj as methods. See examples below.
- * "fi" being short allowing tidier composition
- */
-var fi = {};
+module.exports = function(env) {
 
-/**
- * logs an object in the template to the console on the client.
- * @param  {Any} a any type
- * @return {String}   a script tag with a console.log call.
- * @example {{ "hello world" | log }}
- * @example {{ "hello world" | log | safe }}  [for environments with autoescaping turned on]
- */
-fi.log = function log(a) {
-	return '<script>console.log(' + JSON.stringify(a, null, '\t') + ');</script>';
+  /**
+   * Instantiate object used to store the methods registered as a
+   * 'filter' (of the same name) within nunjucks. You can override
+   * gov.uk core filters by creating filter methods of the same name.
+   * @type {Object}
+   */
+  var filters = {};
+
+  /* ------------------------------------------------------------------
+    add your methods to the filters obj below this comment block:
+    @example:
+
+    filters.sayHi = function(name) {
+        return 'Hi ' + name + '!';
+    }
+
+    Which in your templates would be used as:
+
+    {{ 'Paul' | sayHi }} => 'Hi Paul'
+
+    Notice the first argument of your filters method is whatever
+    gets 'piped' via '|' to the filter.
+
+    Filters can take additional arguments, for example:
+
+    filters.sayHi = function(name,tone) {
+      return (tone == 'formal' ? 'Greetings' : 'Hi') + ' ' + name + '!';
+    }
+
+    Which would be used like this:
+
+    {{ 'Joel' | sayHi('formal') }} => 'Greetings Joel!'
+    {{ 'Gemma' | sayHi }} => 'Hi Gemma!'
+
+    For more on filters and how to write them see the Nunjucks
+    documentation.
+
+  ------------------------------------------------------------------ */
+
+
+
+  /* ------------------------------------------------------------------
+    keep the following line to return your filters to the app
+  ------------------------------------------------------------------ */
+  return filters;
+
 };
-
-/**
- * Converts string to camel case
- * @param {String} any string
- * @return {String} a string
- * @example {{ "Hello There" | toCamelCase }} // helloThere
- */
-fi.toCamelCase = function toCamelCase(s) {
-	return s.trim().split(/-| /).reduce(function (pw, cw, i) {
-		return pw += (i === 0 ? cw[0].toLowerCase() : cw[0].toUpperCase()) + cw.slice(1);
-	}, '');
-};
-
-/**
- * Hypthenates a string
- * @param {String} string to be converted
- * @return {String}
- * @example {{ "Hello there" | toHyphenated }} // hello-there
- */
-fi.toHyphenated = function toHyphenated(s) {
-	return s.trim().toLowerCase().replace(/\s+/g, '-');
-};
-
-/**
- * padZeros on a number
- * @param n {Number} value to be padded
- * @param l {Number} padding length
- * @example {{ 3 | padZeros(2) }} // 003
- */
-fi.padZeros = function padZeros(n, l) {
-	var t = l - String(n).length;
-	return Array((t > -1 ? t : 0) + 1).join('0') + String(n);
-};
-
-exports.items = fi;
