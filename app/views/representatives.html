@@ -25,7 +25,7 @@
         <li>the user needs someone to represent them</li>
       </ul>
     </p>
-    
+
     </div>
   </div>
 
@@ -34,10 +34,10 @@
         <h1 class="heading-xlarge">Who do you want to be contacted about your condition, award or application?</h1>
 
         <div class="column-two-thirds">
-          
+
 
           <form>
-          
+
             <div class="form-group">
               <fieldset>
                 <legend class="hidden">Who do you want to be contacted about your condition, award or application?</legend>
@@ -147,10 +147,10 @@
   {{ htmlToPrism('<h1 class="heading-xlarge">Who do you want to be contacted about your condition, award or application?</h1>
 
         <div class="column-two-thirds">
-          
+
 
           <form>
-          
+
             <div class="form-group">
               <fieldset>
                 <legend class="hidden">Who do you want to be contacted about your condition, award or application?</legend>
@@ -245,12 +245,12 @@
                   <code>
     $(document).on('click', 'input[type="radio"]', function (e) {
       if ($(e.target).attr('id') === 'yourself' || $(e.target).attr('id') === 'someone-else') {
-        $('#you-contact').show();
         if ($(this).attr('id') === 'someone-else') {
-          $('#representative').show();
-          $('#you-contact').hide();
+          $('#representative').addClass('js-hidden');
+          $('#you-contact').removeClass('js-hidden');
         } else {
-          $('#representative').hide();
+          $('#representative').removeClass('js-hidden');
+          $('#you-contact').addClass('js-hidden');
         }
       }
     });
@@ -270,7 +270,7 @@
 
     </ul>
   </div>
-  
+
   </main>
 {% endblock %}
 
@@ -279,24 +279,13 @@
 
 
     $(document).on('click', 'input[type="radio"]', function (e) {
-      if ($(e.target).attr('id') === 'carer-yes' || $(e.target).attr('id') === 'carer-no') {
-        if ($(this).attr('id') === 'carer-no') {
-          $('#third-party-details').show();
-        } else {
-          $('#third-party-details').hide();
-        }
-      }
-    });
-
-
-    $(document).on('click', 'input[type="radio"]', function (e) {
       if ($(e.target).attr('id') === 'yourself' || $(e.target).attr('id') === 'someone-else') {
-        $('#you-contact').show();
         if ($(this).attr('id') === 'someone-else') {
-          $('#representative').show();
-          $('#you-contact').hide();
+          $('#representative').addClass('js-hidden');
+          $('#you-contact').removeClass('js-hidden');
         } else {
-          $('#representative').hide();
+          $('#representative').removeClass('js-hidden');
+          $('#you-contact').addClass('js-hidden');
         }
       }
     });

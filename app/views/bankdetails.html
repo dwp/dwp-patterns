@@ -351,16 +351,17 @@
               <div class="tab-pane" style="display: none;">
                 <pre class="language-javascript">
                   <code>
-    $(document).on('click', 'input[type="radio"]', function (e) {
-      if ($(e.target).attr('id') === 'bank-account-yes' || $(e.target).attr('id') === 'building-society-yes') {
-        $('#bank-details').show();
-        if ($(this).attr('id') === 'building-society-yes') {
-          $('#building-society-details').show();
-        } else {
-          $('#building-society-details').hide();
-        }
+  $(document).on('click', 'input[type="radio"]', function (e) {
+    if ($(e.target).attr('id') === 'bank-account-yes' || $(e.target).attr('id') === 'building-society-yes') {
+      if ($(this).attr('id') === 'building-society-yes') {
+        $('#bank-details').addClass('js-hidden');
+        $('#building-society-details').removeClass('js-hidden');
+      } else {
+        $('#bank-details').removeClass('js-hidden');
+        $('#building-society-details').addClass('js-hidden');
       }
-    });
+    }
+  });
                   </code>
                 </pre>
               </div>
@@ -573,17 +574,17 @@
               <div class="tab-pane" style="display: none;">
                 <pre class="language-javascript">
                   <code>
-   $(document).on('click', 'input[type="radio"]', function (e) {
-      if ($(e.target).attr('id') === 'bank-account-yes2' || $(e.target).attr('id') === 'bank-account-no2') {
-        $('#bank-details2').show();
-        if ($(this).attr('id') === 'bank-account-no2') {
-          $('#warningmessage').show();
-          $('#bank-details2').hide();
-        } else {
-          $('#warningmessage').hide();
-        }
+  $(document).on('click', 'input[type="radio"]', function (e) {
+    if ($(e.target).attr('id') === 'bank-account-yes2' || $(e.target).attr('id') === 'bank-account-no2') {
+      if ($(this).attr('id') === 'bank-account-no2') {
+        $('#bank-details2').addClass('js-hidden');
+        $('#warningmessage').removeClass('js-hidden');
+      } else {
+        $('#bank-details2').removeClass('js-hidden');
+        $('#warningmessage').addClass('js-hidden');
       }
-    });
+    }
+  });
                   </code>
                 </pre>
               </div>
@@ -599,23 +600,23 @@
   <script>
     $(document).on('click', 'input[type="radio"]', function (e) {
       if ($(e.target).attr('id') === 'bank-account-yes' || $(e.target).attr('id') === 'building-society-yes') {
-        $('#bank-details').show();
+        $('#bank-details').removeClass('js-hidden');
         if ($(this).attr('id') === 'building-society-yes') {
-          $('#building-society-details').show();
+          $('#building-society-details').removeClass('js-hidden');
         } else {
-          $('#building-society-details').hide();
+          $('#building-society-details').addClass('js-hidden');
         }
       }
     });
 
     $(document).on('click', 'input[type="radio"]', function (e) {
       if ($(e.target).attr('id') === 'bank-account-yes2' || $(e.target).attr('id') === 'bank-account-no2') {
-        $('#bank-details2').show();
         if ($(this).attr('id') === 'bank-account-no2') {
-          $('#warningmessage').show();
-          $('#bank-details2').hide();
+          $('#bank-details2').addClass('js-hidden');
+          $('#warningmessage').removeClass('js-hidden');
         } else {
-          $('#warningmessage').hide();
+          $('#bank-details2').removeClass('js-hidden');
+          $('#warningmessage').addClass('js-hidden');
         }
       }
     });

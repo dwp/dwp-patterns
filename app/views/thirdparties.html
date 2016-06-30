@@ -36,7 +36,7 @@
       <h1 class="heading-xlarge">Are you the carer?</h1>
 
         <div class="column-two-thirds">
-          
+
           <form>
             <fieldset>
               <div class="form-group">
@@ -87,7 +87,7 @@
                 <pre class="language-markup">
                   <code>
   {{ htmlToPrism('<h1 class="heading-xlarge">Are you the carer?</h1>
-          
+
   <form>
     <fieldset>
       <div class="form-group">
@@ -123,16 +123,15 @@
               <div class="tab-pane" style="display: none;">
                 <pre class="language-javascript">
                   <code>
-    $(document).on('click', 'input[type="radio"]', function (e) {
-      if ($(e.target).attr('id') === 'carer-yes' || $(e.target).attr('id') === 'carer-no') {
-        $('#third-party-details').show();
-        if ($(this).attr('id') === 'carer-no') {
-          $('#third-party-details').show();
-        } else {
-          $('#third-party-details').hide();
-        }
+  $(document).on('click', 'input[type="radio"]', function (e) {
+    if ($(e.target).attr('id') === 'carer-yes' || $(e.target).attr('id') === 'carer-no') {
+      if ($(this).attr('id') === 'carer-no') {
+        $('#third-party-details').removeClass('js-hidden');
+      } else {
+        $('#third-party-details').addClass('js-hidden');
       }
-    });
+    }
+  });
                   </code>
                 </pre>
               </div>
@@ -151,26 +150,12 @@
     $(document).on('click', 'input[type="radio"]', function (e) {
       if ($(e.target).attr('id') === 'carer-yes' || $(e.target).attr('id') === 'carer-no') {
         if ($(this).attr('id') === 'carer-no') {
-          $('#third-party-details').show();
+          $('#third-party-details').removeClass('js-hidden');
         } else {
-          $('#third-party-details').hide();
+          $('#third-party-details').addClass('js-hidden');
         }
       }
     });
-
-
-    $(document).on('click', 'input[type="radio"]', function (e) {
-      if ($(e.target).attr('id') === 'yourself' || $(e.target).attr('id') === 'someone-else') {
-        $('#you-contact').show();
-        if ($(this).attr('id') === 'someone-else') {
-          $('#representative').show();
-          $('#you-contact').hide();
-        } else {
-          $('#representative').hide();
-        }
-      }
-    });
-
 
   </script>
 {% endblock %}
