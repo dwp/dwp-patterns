@@ -1,7 +1,5 @@
 # Publishing on the web (Heroku)
 
-> These don't currently work on Windows due to a software incompatability. The Heroku toolbelt is not compatible with Git Bash - you will need to use CMD instead.
-
 We recommend using [Heroku](http://www.heroku.com) to get your prototype online. It’s simple and fast to deploy new versions as you work.
 
 Once your prototype is on Heroku, other people will be able to access and try your prototype from their own computers or mobile devices.
@@ -13,7 +11,6 @@ A prototype deployed on Heroku is called an `app` - it will have a url like:
 
 You can have multiple apps running on Heroku - projects often have several so they can try different ideas out at once.
 
-
 ## 1) Sign up to Heroku
 
 If you’re new to Heroku, [sign up for a free account](https://signup.heroku.com/). When asked what language you use, select `node.js`.
@@ -21,6 +18,8 @@ If you’re new to Heroku, [sign up for a free account](https://signup.heroku.co
 ## 2) Install the Heroku toolbelt.
 
 Install the [Heroku toolbelt](https://toolbelt.heroku.com/).
+
+> On Windows, after downloading the toolbelt you'll need to run `heroku login` using the `cmd` app, as it does not work in Git Bash. Once you've logged in, you can return to using Git Bash.
 
 The toolbelt lets you use Heroku through the terminal. You will need to restart the terminal after installing the toolbelt.
 
@@ -40,25 +39,15 @@ heroku apps:create [NAME OF YOUR APP] --region eu
 ```
 Replace `[name of your app]` with what you want to call your prototype.
 
-## 5) Set a username and passwordg
+## 5) Set a username and password
 
-By default, prototypes made with the kit require a username and password to be used when deployed on Heroku.
-
-Authentication is a good way to stop members of the public coming across your prototype by accident.
+Prototypes made with the kit require a username and password when published online. This stops members of the public coming across your prototype by accident.
 
 ### To set username and password:
 
 ```
 heroku config:set USERNAME=username_here
 heroku config:set PASSWORD=password_here
-```
-
-### Turning off authentication:
-
-If you want your prototype to be accessible on the web without needing a username and password, you can disable authentication.
-
-```
-heroku config:set USE_AUTH=false
 ```
 
 ## 6) Deploy your work
