@@ -12,15 +12,18 @@ var path = require('path'),
     port = (process.env.PORT || config.port),
     utils = require(__dirname + '/lib/utils.js'),
     packageJson = require(__dirname + '/package.json'),
-    filters = require(__dirname + '/app/filters.js'),
 
-    // Grab environment variables specified in Procfile or as Heroku config vars
+// Grab environment variables specified in Procfile or as Heroku config vars
     releaseVersion = packageJson.version,
     username = process.env.USERNAME,
     password = process.env.PASSWORD,
     env      = process.env.NODE_ENV || 'development',
     useAuth  = process.env.USE_AUTH || config.useAuth,
     useHttps  = process.env.USE_HTTPS || config.useHttps;
+
+    env      = env.toLowerCase();
+    useAuth  = useAuth.toLowerCase();
+    useHttps   = useHttps.toLowerCase();
 
 // Authenticate against the environment-provided credentials, if running
 // the app in production (Heroku, effectively)
@@ -43,7 +46,7 @@ nunjucks.setup({
 nunjucks.ready(function(nj) {
   var coreFilters = require(__dirname + '/lib/core_filters.js')(nj),
     customFilters = require(__dirname + '/app/filters.js')(nj),
-  filters = Object.assign(coreFilters, customFilters);
+    filters = Object.assign(coreFilters, customFilters);
   Object.keys(filters).forEach(function(filterName) {
     nj.addFilter(filterName, filters[filterName]);
   });
@@ -99,6 +102,8 @@ if (env === 'production' && useHttps === 'true'){
 
 // Disallow search index idexing
 app.use(function (req, res, next) {
+  // Setting headers stops pages being indexed even if indexed pages link to them.
+  res.setHeader('X-Robots-Tag', 'noindex');
   res.locals.htmlToPrism = htmlToPrism;
   res.locals.serviceName = config.serviceName;
   res.locals.cookieText = config.cookieText;
