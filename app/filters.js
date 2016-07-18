@@ -1,4 +1,12 @@
+var nunjucks = require('nunjucks'),
+    markdown = require('nunjucks-markdown'),
+    marked = require('marked');
+
 module.exports = function(env) {
+
+  var nunjucksSafe = env.getFilter('safe');
+
+  markdown.register(env, marked);
 
   /**
    * Instantiate object used to store the methods registered as a
@@ -39,7 +47,25 @@ module.exports = function(env) {
 
   ------------------------------------------------------------------ */
 
-
+  /**
+   * uses marked library to convert passed value from markdown to HTML
+   * @method markdown
+   * @param  {String} value     the block/string to be converted from markdown
+   * @param  {Boolean} stripPara flag to strip blank paragraphs
+   * @return {String}           converted string of markup
+   */
+  filters.markdown = function markdown(value, stripPara) {
+    var result;
+    stripPara = stripPara !== false;
+    try {
+      result = marked(value,{ gfm: false, tables: true, breaks: true, pedantic: true, sanitize: true, smartLists: true, smartypants: true}).trim();
+      if (stripPara) { result = result.replace(/^<p>|<\/p>$/g, ''); }
+      return nunjucksSafe(result);
+    } catch (e) {
+      console.error('Error processing markdown:', e);
+      return value;
+    }
+  }
 
   /* ------------------------------------------------------------------
     keep the following line to return your filters to the app

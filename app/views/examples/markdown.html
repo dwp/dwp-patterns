@@ -1,0 +1,127 @@
+{% extends "layout_dwp.html" %}
+
+{% block page_title %}
+  Markdown - DWP design patterns
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row markdown">
+
+    <div class="column-two-thirds">
+
+{% markdown %}
+# What is Markdown?
+
+Markdown is a way to style text on the web. You control the display of the document; formatting words as bold or italic, adding images, and creating lists are just a few of the things we can do with Markdown. Mostly, Markdown is just regular text with a few non-alphabetic characters thrown in, like `#` or `*`.
+
+---
+
+## Examples
+
+### Headings
+
+{% endmarkdown %}
+
+<div class="example">
+
+{% markdown %}
+
+# An xlarge heading
+
+## A large heading
+
+### A medium heading
+
+#### A small heading
+
+{% endmarkdown %}
+
+</div>
+
+{% markdown %}
+
+```
+# An xlarge heading
+
+## A large heading
+
+### A medium heading
+
+#### A small heading
+```
+
+### Body copy
+
+{% endmarkdown %}
+
+<div class="example">
+
+{% markdown %}
+
+A 19px body copy paragraph. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.
+
+You can even make words **bold**.
+
+{% endmarkdown %}
+
+</div>
+
+{% markdown %}
+
+```
+A 19px body copy paragraph. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.
+
+You can even make words **bold**.
+```
+
+### Lists
+
+{% endmarkdown %}
+
+<div class="example">
+
+{% markdown %}
+
+* here is a bulleted list
+* vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor
+* vestibulum id ligula porta felis euismod semper
+* integer posuere erat a ante venenatis dapibus posuere velit aliquet
+
+---
+
+1. here is a numbered list
+2. vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor
+3. vestibulum id ligula porta felis euismod semper
+4. integer posuere erat a ante venenatis dapibus posuere velit aliquet
+
+{% endmarkdown %}
+
+</div>
+
+{% markdown %}
+
+```
+* here is a bulleted list
+* vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor
+* vestibulum id ligula porta felis euismod semper
+* integer posuere erat a ante venenatis dapibus posuere velit aliquet
+
+1. here is a numbered list
+2. vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor
+3. vestibulum id ligula porta felis euismod semper
+4. integer posuere erat a ante venenatis dapibus posuere velit aliquet
+```
+
+{% endmarkdown %}
+
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
