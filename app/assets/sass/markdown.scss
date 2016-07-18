@@ -1,0 +1,38 @@
+.markdown {
+
+  h1 {
+    @extend .heading-xlarge !optional;
+  }
+  h2 {
+    @extend .heading-large !optional;
+  }
+  h3 {
+    @extend .heading-medium !optional;
+  }
+  h4 {
+    @extend .heading-small !optional;
+  }
+  h5 {
+    @extend .heading-small !optional;
+  }
+  h6 {
+    @extend .heading-small !optional;
+  }
+  strong {
+    @extend .bold-small !optional;
+  }
+  ul {
+    @extend .list-bullet !optional;
+  }
+  ol {
+    @extend .list-number !optional;
+  }
+  code {
+    @extend .code !optional;
+  }
+  pre code {
+    display: block;
+    padding: 10px;
+  }
+
+}
