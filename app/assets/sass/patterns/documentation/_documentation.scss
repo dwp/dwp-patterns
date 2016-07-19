@@ -1,0 +1,52 @@
+@import 'prism';
+@import 'tabbing';
+@import 'example-box';
+
+.constrain {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+// fudge additional to the gov.uk grid system (sigh)
+.column-one-whole {
+  box-sizing: border-box;
+  padding: 0 15px;
+  clear: both;
+  @extend %contain-floats;
+}
+
+.pattern-overview {
+  $this-colour: rgba($grey-3,1);
+  @extend %contain-floats; // yuck
+  border-bottom: 1px solid $grey-1;
+  background: $this-colour;
+  &__title {
+    margin: 0 0 15px 0;
+    &__label {
+      @include core-19;
+    }
+  }
+}
+
+.pattern {
+  padding: 30px 20px;
+  background: rgba(#ccc,.15);
+  &:not(:last-of-type) {
+    border-bottom: 1px dashed rgba($grey-1,0.5);
+  }
+  &__title {
+    margin: 0 0 20px 0;
+  }
+  &__header,
+  &__body {
+    margin-bottom: 20px;
+  }
+}
+
+.content {
+  &--full {
+    max-width: 100%!important;
+    margin: 0!important;
+    padding: 0!important;
+  }
+}

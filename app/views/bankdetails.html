@@ -1,625 +1,452 @@
-{% extends "layout_dwp.html" %}
+{% extends "layouts/layout_dwp_pattern.html" %}
 
-{% block page_title %}
-  Enter bank details - DWP design patterns
-{% endblock %}
+{% set page = { 
+  title: 'Banking details',
+  description: 'User interface patterns for capturing the appropriate banking details from users'
+} %}
 
-{% block content %}
+{############################################################################## 
+START PATTERN BLOCK 
+##############################################################################}
+{%- block pattern_block_1 -%}
+    
+{% set pattern = {
+  title: 'Standard',
+  criteria: [
+    "the user needs to give details of the bank account they want to receive payment"
+  ]
+} %}
 
-<main id="content" role="main">
-  <div class="grid-row">
-    <div class="column-two-thirds">
-      <a class="link-back" href="/">Back</a>
+{# --------------------------------------------------------------------------- 
+  description of the pattern
+------------------------------------------------------------------------------
+  note: 
+  you can use markdown if you set markdown: true
+  in the pattern obj. remember markdown is whitespace sensitive so remove 
+  tab or space indents if the output is different from expected
+--------------------------------------------------------------------------- #}
+{%- set pattern_description -%}
 
-      <h1 class="heading-xlarge">Enter bank details</h1>
+{%- endset -%}
 
-     <h2 class="heading-medium">Standard pattern</h2>
-     <p class="text">
-       Use this when:
-       <ul class="list list-bullet">
-         <li>the user needs to give details of the bank account they want to
-           receive payment</li>
-       </ul>
-     </p>
-    </div>
-  </div>
+{# --------------------------------------------------------------------------- 
+  content notes, you can use markdown if you set markdown: true
+  in the pattern object
+--------------------------------------------------------------------------- #}
+{%- set pattern_notes_content -%}
 
-    <div class="grid-row">
-      <div class="example">
-        <div class="column-two-thirds">
-          <h1 class="heading-xlarge">Your bank details</h1>
+{% endset %}
 
-          <form>
-            <div class="form-group">
-              <fieldset>
-                <label class="form-label-bold label-no-hint" for="ba-account-holder">Account holder name</label>
-                <input type="text" class="form-control" id="ba-account-holder" name="ba-account-holder" value="">
-              </fieldset>
-            </div>
+{# --------------------------------------------------------------------------- 
+  research notes, you can use markdown if you set markdown: true
+  in the pattern object
+--------------------------------------------------------------------------- #}
+{%- set pattern_notes_research -%}
 
-            <legend class="form-label-bold">Sort code</legend>
-            <div class="form-date form-group">
-              <fieldset>
-                <div class="form-group form-group-day">
-                  <label for="ba-sort1"></label>
-                  <input class="form-control" id="ba-sort1" maxlength="2" name="ba-sort1" value="" type="text">
-                </div>
+{% endset %}
 
-                <div class="form-group form-group-month">
-                  <label for="ba-sort2"></label>
-                  <input class="form-control" id="ba-sort2" maxlength="2" name="ba-sort2" value="" type="text">
-                </div>
+{# --------------------------------------------------------------------------- 
+  the pattern demo block, use HTML to build a demo pattern or include screen
+  shots.
+--------------------------------------------------------------------------- #}
+{%- set pattern_demo -%}
 
-                <div class="form-group form-group-month">
-                  <label for="ba-sort3"></label>
-                  <input class="form-control" id="ba-sort3" maxlength="2" name="ba-sort3" value="" type="text">
-                </div>
-              </fieldset>
-            </div>
-
-            <div class="form-group">
-              <fieldset>
-                <label class="form-label-bold" for="ba-account-number">
-                  Account number
-                </label>
-                <input type="text" class="form-control" id="ba-account-number" name="ba-account-number" value="" maxlength="10">
-              </fieldset>
-            </div>
-
-            <div class="form-group">
-              <fieldset>
-                <label class="form-label-bold" for="bs-society-roll">
-                  Building society roll or reference number (optional)
-                  <span class="form-hint">If your building society uses a roll or reference number, you will find it on your passbook</span>
-                </label>
-                <input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll" value="" data-required="true">
-              </fieldset>
-            </div>
-          </form>
-        </div>
+  <div class="column-two-thirds">
+    <h1 class="heading-xlarge">Your bank details</h1>
+    
+    <form>
+      <div class="form-group">
+        <fieldset>
+          <label class="form-label-bold label-no-hint" for="ba-account-holder">Account holder name</label>
+          <input type="text" class="form-control" id="ba-account-holder" name="ba-account-holder" value="">
+        </fieldset>
       </div>
-    </div>
 
-    <div class="grid-row">
-      <details>
-        <summary><span class="summary">View code snippet</span></summary>
+      <legend class="form-label-bold">Sort code</legend>
+      <div class="form-date form-group">
+        <fieldset>
+          <div class="form-group form-group-day">
+            <label for="ba-sort1"></label>
+            <input class="form-control" id="ba-sort1" maxlength="2" name="ba-sort1" value="" type="text">
+          </div>
 
-        <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
-          <div class="tab-panel">
-            <div class="tab-panel-menu">
-              <a href="#" class="tab-link tab-link-active">HTML</a>
-            </div>
+          <div class="form-group form-group-month">
+            <label for="ba-sort2"></label>
+            <input class="form-control" id="ba-sort2" maxlength="2" name="ba-sort2" value="" type="text">
+          </div>
 
-            <div class="tab-panes">
-              <div class="tab-pane" style="display: block;">
-                <pre class="language-markup">
-                  <code>
-    &lt;h1 class="heading-xlarge"&gt;Your bank details&lt;/h1&gt;
-    &lt;form action="bank-details" method="POST"&gt;
-      &lt;div class="form-group"&gt;
-        &lt;fieldset&gt;
-          &lt;label class="form-label-bold label-no-hint" for="ba-account-holder"&gt;Name of account holder&lt;/label&gt;
-          &lt;input type="text" class="form-control" id="ba-account-holder" name="ba-account-holder" value=""&gt;
-        &lt;/fieldset&gt;
-      &lt;/div&gt;
+          <div class="form-group form-group-month">
+            <label for="ba-sort3"></label>
+            <input class="form-control" id="ba-sort3" maxlength="2" name="ba-sort3" value="" type="text">
+          </div>
+        </fieldset>
+      </div>
 
-      &lt;legend class="form-label-bold"&gt;Sort code&lt;/legend&gt;
-      &lt;div class="form-date form-group"&gt;
-        &lt;fieldset&gt;
-          &lt;div class="form-group form-group-day"&gt;
-            &lt;label for="ba-sort1"&gt;&lt;/label&gt;
-            &lt;input class="form-control" id="ba-sort1" maxlength="2" name="ba-sort1" value="" type="text"&gt;
-          &lt;/div&gt;
-
-          &lt;div class="form-group form-group-month"&gt;
-            &lt;label for="ba-sort2"&gt;&lt;/label&gt;
-            &lt;input class="form-control" id="ba-sort2" maxlength="2" name="ba-sort2" value="" type="text"&gt;
-          &lt;/div&gt;
-
-          &lt;div class="form-group form-group-month"&gt;
-            &lt;label for="ba-sort3"&gt;&lt;/label&gt;
-            &lt;input class="form-control" id="ba-sort3" maxlength="2" name="ba-sort3" value="" type="text"&gt;
-          &lt;/div&gt;
-        &lt;/fieldset&gt;
-      &lt;/div&gt;
-
-      &lt;div class="form-group"&gt;
-        &lt;fieldset&gt;
-          &lt;label class="form-label-bold" for="ba-account-number"&gt;
+      <div class="form-group">
+        <fieldset>
+          <label class="form-label-bold" for="ba-account-number">
             Account number
-          &lt;/label&gt;
-          &lt;input type="text" class="form-control" id="ba-account-number" name="ba-account-number" value="" maxlength="10"&gt;
-        &lt;/fieldset&gt;
-      &lt;/div&gt;
+          </label>
+          <input type="text" class="form-control" id="ba-account-number" name="ba-account-number" value="" maxlength="10">
+        </fieldset>
+      </div>
 
-      &lt;div class="form-group"&gt;
-        &lt;fieldset&gt;
-          &lt;label class="form-label-bold" for="bs-society-roll"&gt;
-            Building society roll or reference numbern (optional)
-            &lt;span class="form-hint"&gt;If your building society uses a roll or reference number, you will find it on your passbook&lt;/span&gt;
-          &lt;/label&gt;
-          &lt;input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll" value="" data-required="true"&gt;
-        &lt;/fieldset&gt;
-      &lt;/div&gt;
-    &lt;/form&gt;
-                  </code>
-                </pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </details>
-    </div>
-
-    <div class="grid-row">
-      <div class="column-two-thirds">
-    <h2 class="heading-medium">Alternative pattern 1</h2>
-    <p class="text">
-      Use this when:
-      <ul class="list list-bullet">
-        <li>you want the user to consider which account they want the money paid into</li>
-      </ul>
-    </p>
-    <h2 class="heading-small">Research notes</h2>
-    <p class="text">User research for <a href="http://dwp-digital-services.herokuapp.com/projects/0/get_your_state_pension">Get your State Pension</a>
-      found that asking people whether they want to be paid into a bank account or a building
-      society account makes them think about whether they need their pension for
-      everyday spending or for savings.</p>
-    </div>
+      <div class="form-group">
+        <fieldset>
+          <label class="form-label-bold" for="bs-society-roll">
+            Building society roll or reference number (optional)
+            <span class="form-hint">If your building society uses a roll or reference number, you will find it on your passbook</span>
+          </label>
+          <input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll" value="" data-required="true">
+        </fieldset>
+      </div>
+    </form>
   </div>
 
-    <div class="grid-row">
-      <div class="example">
-        <div class="column-two-thirds">
-          <h1 class="heading-xlarge">Your payment details</h1>
+{%- endset -%}
 
-          <p>How would you like to get paid?</p>
+{# --------------------------------------------------------------------------- 
+  css snippet block
+--------------------------------------------------------------------------- #}
+{%- set pattern_css -%}
 
-          <form>
-            <fieldset>
-              <div class="form-group">
-                <!-- No data-targets to avoid duplication, see jQuery at bottom of this page -->
-                <label class="block-label" for="bank-account-yes">
-                  <input id="bank-account-yes" type="radio" name="account-select" value="bank">
-                  Bank account
-                </label>
+{%- endset -%}
 
-                <label class="block-label" for="building-society-yes">
-                  <input id="building-society-yes" type="radio" name="account-select" value="building">
-                  Building society account
-                </label>
-              </div>
-            </fieldset>
+{# --------------------------------------------------------------------------- 
+  javascript snippet block, whatever you write in here will run in the
+  page on window.load and be output as a snippet.
+--------------------------------------------------------------------------- #}
+{%- set pattern_javascript -%}
 
-            <div class="js-hidden" id="bank-details">
-              <div class="form-group">
-                <fieldset>
-                  <label class="form-label-bold" for="account-name">
-                    Account holder name
-                  </label>
-                  <input type="text" class="form-control" id="account-name" name="account-name">
-                </fieldset>
-              </div>
+{%- endset -%}
 
-              <legend class="form-label-bold">Sort code</legend>
+{# this is where the above blocks and data is passed to the render pattern macro, ignore this unless your confortable with nunjucks and macros #}
+{%- call docs.render_pattern({ metadata: pattern, demo: pattern_demo, demo_script: pattern_javascript, description: pattern_description, notes: { content: pattern_notes_content, research: pattern_notes_research }, snippets: [{ label: 'HTML', block : pattern_demo, hide: pattern.hideSnippetHTML | d(false) },{ label: 'CSS', block: pattern_css, languageClass: 'language-css', hide: pattern.hideSnippetCSS | d(false) },{ label: 'Javascript', block: pattern_javascript, languageClass: 'language-js', hide: pattern.hideSnippetJavascript | d(false) }] }) %}{% endcall %}
 
-              <div class="form-date form-group">
-                <fieldset>
-                  <div class="form-group form-group-day">
-                    <label for="sort-code-1"></label>
-                    <input class="form-control" id="sort-code-1" maxlength="2" name="sort-code-1" type="text" />
-                  </div>
+{%- endblock -%}
+{############################################################################# 
+END PATTERN BLOCK 
+##############################################################################}
 
-                  <div class="form-group form-group-month">
-                    <label for="sort-code-2"></label>
-                    <input class="form-control" id="sort-code-2" maxlength="2"  name="sort-code-2" type="text" />
-                  </div>
 
-                  <div class="form-group form-group-month">
-                    <label for="sort-code-3"></label>
-                    <input class="form-control" id="sort-code-3" maxlength="2"  name="sort-code-3" type="text" />
-                  </div>
-                </fieldset>
-              </div>
+{############################################################################## 
+START PATTERN BLOCK 
+##############################################################################}
+{%- block pattern_block_2 -%}
+    
+{% set pattern = {
+  title: 'Progressive banking details',
+  criteria: [
+    "you want the user to consider which account they want the money paid into"
+  ]
+} %}
 
-              <div class="form-group">
-                <fieldset>
-                  <label class="form-label-bold" for="account-number">
-                    Account number
-                  </label>
-                  <input type="text" class="form-control" id="account-number" name="account-number">
-                </fieldset>
-              </div>
+{# --------------------------------------------------------------------------- 
+  description of the pattern
+------------------------------------------------------------------------------
+  note: 
+  you can use markdown if you set markdown: true
+  in the pattern obj. remember markdown is whitespace sensitive so remove 
+  tab or space indents if the output is different from expected
+--------------------------------------------------------------------------- #}
+{%- set pattern_description -%}
 
-            </div>
+{%- endset -%}
 
-            <div class="js-hidden" id="building-society-details">
-              <div class="form-group">
-                <fieldset>
-                  <label class="form-label-bold" for="bs-society-roll">
-                    Building society roll or reference number
-                    <span class="form-hint">If your building society uses a roll or reference number, you will find it on your passbook</span>
-                  </label>
+{# --------------------------------------------------------------------------- 
+  content notes, you can use markdown if you set markdown: true
+  in the pattern object
+--------------------------------------------------------------------------- #}
+{%- set pattern_notes_content -%}
 
-                  <input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll">
-                </fieldset>
-              </div>
-            </div>
+{% endset %}
 
-            <input type="submit" class="button" value="Continue">
-          </form>
-        </div>
+{# --------------------------------------------------------------------------- 
+  research notes, you can use markdown if you set markdown: true
+  in the pattern object
+--------------------------------------------------------------------------- #}
+{%- set pattern_notes_research -%}
+User research for [Get your State Pension](http://dwp-digital-services.herokuapp.com/projects/0/get_your_state_pension) found that asking people whether they want to be paid into a bank account or a building society account makes them think about whether they need their pension for everyday spending or for savings.
+{% endset %}
+
+{# --------------------------------------------------------------------------- 
+  the pattern demo block, use HTML to build a demo pattern or include screen
+  shots.
+--------------------------------------------------------------------------- #}
+{%- set pattern_demo -%}
+
+<div class="column-two-thirds">
+  <h1 class="heading-xlarge">Your payment details</h1>
+
+  <p>How would you like to get paid?</p>
+
+  <form>
+    <fieldset>
+      <div class="form-group">
+        <!-- No data-targets to avoid duplication, see jQuery at bottom of this page -->
+        <label class="block-label" for="bank-account-yes">
+          <input id="bank-account-yes" type="radio" name="account-select" value="bank">
+          Bank account
+        </label>
+
+        <label class="block-label" for="building-society-yes">
+          <input id="building-society-yes" type="radio" name="account-select" value="building">
+          Building society account
+        </label>
+      </div>
+    </fieldset>
+
+    <div class="js-hidden" id="bank-details">
+      <div class="form-group">
+        <fieldset>
+          <label class="form-label-bold" for="account-name">
+            Account holder name
+          </label>
+          <input type="text" class="form-control" id="account-name" name="account-name">
+        </fieldset>
+      </div>
+
+      <legend class="form-label-bold">Sort code</legend>
+
+      <div class="form-date form-group">
+        <fieldset>
+          <div class="form-group form-group-day">
+            <label for="sort-code-1"></label>
+            <input class="form-control" id="sort-code-1" maxlength="2" name="sort-code-1" type="text" />
+          </div>
+
+          <div class="form-group form-group-month">
+            <label for="sort-code-2"></label>
+            <input class="form-control" id="sort-code-2" maxlength="2"  name="sort-code-2" type="text" />
+          </div>
+
+          <div class="form-group form-group-month">
+            <label for="sort-code-3"></label>
+            <input class="form-control" id="sort-code-3" maxlength="2"  name="sort-code-3" type="text" />
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+        <fieldset>
+          <label class="form-label-bold" for="account-number">
+            Account number
+          </label>
+          <input type="text" class="form-control" id="account-number" name="account-number">
+        </fieldset>
+      </div>
+
+    </div>
+
+    <div class="js-hidden" id="building-society-details">
+      <div class="form-group">
+        <fieldset>
+          <label class="form-label-bold" for="bs-society-roll">
+            Building society roll or reference number
+            <span class="form-hint">If your building society uses a roll or reference number, you will find it on your passbook</span>
+          </label>
+
+          <input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll">
+        </fieldset>
       </div>
     </div>
 
-    <div class="grid-row">
-      <details>
-        <summary role="button"><span class="summary">View code snippet</span></summary>
-
-        <div class="panel panel-border-narrow">
-          <div class="tab-panel">
-            <div class="tab-panel-menu">
-              <a href="#" class="tab-link tab-link-active">HTML</a>
-              <a href="#" class="tab-link">JS</a>
-            </div>
-
-            <div class="tab-panes">
-              <div class="tab-pane" style="display: block;">
-                <pre class="language-markup">
-                  <code>
-    &lt;h1 class="heading-xlarge"&gt;Your payment details&lt;/h1&gt;
-
-    &lt;p&gt;How would you like to get paid?&lt;/p&gt;
-
-    &lt;form&gt;
-      &lt;fieldset&gt;
-        &lt;div class="form-group"&gt;
-          &lt;!-- No data-targets to avoid duplication, see JS tab --&gt;
-          &lt;label class="block-label" for="bank-account-yes"&gt;
-          &lt;input id="bank-account-yes" type="radio" name="account-select" value="bank"&gt;
-            Bank account
-          &lt;/label&gt;
-
-          &lt;label class="block-label" for="building-society-yes"&gt;
-            &lt;input id="building-society-yes" type="radio" name="account-select" value="building"&gt;
-            Building society account
-          &lt;/label&gt;
-        &lt;/div&gt;
-      &lt;/fieldset&gt;
-
-      &lt;div class="js-hidden" id="bank-details"&gt;
-        &lt;div class="form-group"&gt;
-          &lt;fieldset&gt;
-            &lt;label class="form-label-bold" for="account-name"&gt;
-              Account holder name
-            &lt;/label&gt;
-            &lt;input type="text" class="form-control" id="account-name" name="account-name"&gt;
-          &lt;/fieldset&gt;
-        &lt;/div&gt;
-
-        &lt;legend class="form-label-bold"&gt;Sort code&lt;/legend&gt;
-
-        &lt;div class="form-date form-group"&gt;
-          &lt;fieldset&gt;
-            &lt;div class="form-group form-group-day"&gt;
-              &lt;label for="sort-code-1"&gt;&lt;/label&gt;
-              &lt;input class="form-control" id="sort-code-1" maxlength="2" name="sort-code-1" type="text" /&gt;
-            &lt;/div&gt;
-
-            &lt;div class="form-group form-group-month"&gt;
-              &lt;label for="sort-code-2"&gt;&lt;/label&gt;
-              &lt;input class="form-control" id="sort-code-2" maxlength="2"  name="sort-code-2" type="text" /&gt;
-            &lt;/div&gt;
-
-            &lt;div class="form-group form-group-month"&gt;
-              &lt;label for="sort-code-3"&gt;&lt;/label&gt;
-              &lt;input class="form-control" id="sort-code-3" maxlength="2"  name="sort-code-3" type="text" /&gt;
-            &lt;/div&gt;
-          &lt;/fieldset&gt;
-        &lt;/div&gt;
-
-        &lt;div class="form-group"&gt;
-          &lt;fieldset&gt;
-            &lt;label class="form-label-bold" for="account-number"&gt;
-              Account number
-            &lt;/label&gt;
-            &lt;input type="text" class="form-control" id="account-number" name="account-number"&gt;
-          &lt;/fieldset&gt;
-        &lt;/div&gt;
-
-      &lt;/div&gt;
-
-      &lt;div class="js-hidden" id="building-society-details"&gt;
-        &lt;div class="form-group"&gt;
-          &lt;fieldset&gt;
-            &lt;label class="form-label-bold" for="bs-society-roll"&gt;
-              Building society roll or reference number
-              &lt;span class="form-hint"&gt;If your building society uses a roll or reference number, you will find it on your passbook&lt;/span&gt;
-            &lt;/label&gt;
-
-            &lt;input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll"&gt;
-          &lt;/fieldset&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-
-      &lt;input type="submit" class="button" value="Continue"&gt;
-    &lt;/form&gt;
-                  </code>
-                </pre>
-              </div>
-
-              <div class="tab-pane" style="display: none;">
-                <pre class="language-javascript">
-                  <code>
-  $(document).on('click', 'input[type="radio"]', function (e) {
-    if ($(e.target).attr('id') === 'bank-account-yes' || $(e.target).attr('id') === 'building-society-yes') {
-      if ($(this).attr('id') === 'building-society-yes') {
-        $('#bank-details').addClass('js-hidden');
-        $('#building-society-details').removeClass('js-hidden');
-      } else {
-        $('#bank-details').removeClass('js-hidden');
-        $('#building-society-details').addClass('js-hidden');
-      }
-    }
-  });
-                  </code>
-                </pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </details>
-    </div>
-
-    <div class="grid-row">
-      <div class="column-two-thirds">
-    <h2 class="heading-medium">Alternative pattern 2</h2>
-    <p class="text">
-      Use this when:
-      <ul class="list list-bullet">
-        <li>you need to know whether the user has a bank account to receive payment</li>
-      </ul>
-    </p>
-      <h2 class="heading-small">Research notes</h2>
-    <p class="text">User research for <a href="http://dwp-digital-services.herokuapp.com/projects/8/carers_allowance_digital_service">Carer&rsquo;s Allowance</a>
-      found that some people don&rsquo;t have a bank account. They needed to be able to
-      complete the transaction without providing any bank details.
-    </p>
-  </div>
+    <input type="submit" class="button" value="Continue">
+  </form>
 </div>
 
-    <div class="grid-row">
-      <div class="example">
-        <div class="column-two-thirds">
-          <h1 class="heading-xlarge">Your bank details</h1>
-          <p>Carer&rsquo;s Allowance can be paid into a UK bank account, either your own or someone else&rsquo;s, or your own Post Office card account.
-            You&rsquo;re responsible for repaying any overpayments, even if the money is paid into someone else&rsquo;s account
+
+{%- endset -%}
+
+{# --------------------------------------------------------------------------- 
+  css snippet block
+--------------------------------------------------------------------------- #}
+{%- set pattern_css -%}
+
+{%- endset -%}
+
+{# --------------------------------------------------------------------------- 
+  javascript snippet block, whatever you write in here will run in the
+  page on window.load and be output as a snippet.
+--------------------------------------------------------------------------- #}
+{%- set pattern_javascript -%}
+$(document).on('click', 'input[type="radio"]', function (e) {
+  if ($(e.target).attr('id') === 'bank-account-yes' || $(e.target).attr('id') === 'building-society-yes') {
+    $('#bank-details').removeClass('js-hidden');
+    if ($(this).attr('id') === 'building-society-yes') {
+      $('#building-society-details').removeClass('js-hidden');
+    } else {
+      $('#building-society-details').addClass('js-hidden');
+    }
+  }
+});
+{%- endset -%}
+
+{# this is where the above blocks and data is passed to the render pattern macro, ignore this unless your confortable with nunjucks and macros #}
+{%- call docs.render_pattern({ metadata: pattern, demo: pattern_demo, demo_script: pattern_javascript, description: pattern_description, notes: { content: pattern_notes_content, research: pattern_notes_research }, snippets: [{ label: 'HTML', block : pattern_demo, hide: pattern.hideSnippetHTML | d(false) },{ label: 'CSS', block: pattern_css, languageClass: 'language-css', hide: pattern.hideSnippetCSS | d(false) },{ label: 'Javascript', block: pattern_javascript, languageClass: 'language-js', hide: pattern.hideSnippetJavascript | d(false) }] }) %}{% endcall %}
+
+{%- endblock -%}
+{############################################################################# 
+END PATTERN BLOCK 2
+##############################################################################}
 
 
-          <form>
-            <legend>Do you have a bank account?</legend>
-            <fieldset class="inline">
-              <div class="form-group">
-                <!-- No data-targets to avoid duplication, see jQuery at bottom of this page -->
-                <label class="block-label" for="bank-account-yes2">
-                  <input id="bank-account-yes2" type="radio" name="account-select" value="Yes">
-                  Yes
-                </label>
+{############################################################################## 
+START PATTERN BLOCK 3
+##############################################################################}
+{%- block pattern_block_3 -%}
+    
+{% set pattern = {
+  title: 'Progressive banking details',
+  criteria: [
+    "you need to know whether the user has a bank account to receive payment"
+  ]
+} %}
 
-                <label class="block-label" for="bank-account-no2">
-                  <input id="bank-account-no2" type="radio" name="account-select" value="No">
-                  No
-                </label>
-              </div>
-            </fieldset>
+{# --------------------------------------------------------------------------- 
+  description of the pattern
+------------------------------------------------------------------------------
+  note: 
+  you can use markdown if you set markdown: true
+  in the pattern obj. remember markdown is whitespace sensitive so remove 
+  tab or space indents if the output is different from expected
+--------------------------------------------------------------------------- #}
+{%- set pattern_description -%}
 
-            <div class="js-hidden" id="bank-details2">
-              <div class="form-group">
-                <fieldset>
-                  <label class="form-label-bold label-no-hint" for="ba-account-holder">Account holder name</label>
-                  <input type="text" class="form-control" id="ba-account-holder" name="ba-account-holder" value="">
-                </fieldset>
-              </div>
+{%- endset -%}
 
-              <legend class="form-label-bold">Sort code</legend>
-              <div class="form-date form-group">
-                <fieldset>
-                  <div class="form-group form-group-day">
-                    <label for="ba-sort1"></label>
-                    <input class="form-control" id="ba-sort1" maxlength="2" name="ba-sort1" value="" type="text">
-                  </div>
+{# --------------------------------------------------------------------------- 
+  content notes, you can use markdown if you set markdown: true
+  in the pattern object
+--------------------------------------------------------------------------- #}
+{%- set pattern_notes_content -%}
 
-                  <div class="form-group form-group-month">
-                    <label for="ba-sort2"></label>
-                    <input class="form-control" id="ba-sort2" maxlength="2" name="ba-sort2" value="" type="text">
-                  </div>
+{% endset %}
 
-                  <div class="form-group form-group-month">
-                    <label for="ba-sort3"></label>
-                    <input class="form-control" id="ba-sort3" maxlength="2" name="ba-sort3" value="" type="text">
-                  </div>
-                </fieldset>
-              </div>
+{# --------------------------------------------------------------------------- 
+  research notes, you can use markdown if you set markdown: true
+  in the pattern object
+--------------------------------------------------------------------------- #}
+{%- set pattern_notes_research -%}
+User research for [Carer’s Allowance](http://dwp-digital-services.herokuapp.com/projects/8/carers_allowance_digital_service) found that some people don’t have a bank account. They needed to be able to complete the transaction without providing any bank details.
+{% endset %}
 
-              <div class="form-group">
-                <fieldset>
-                  <label class="form-label-bold" for="ba-account-number">
-                    Account number
-                  </label>
-                  <input type="text" class="form-control" id="ba-account-number" name="ba-account-number" value="" maxlength="10">
-                </fieldset>
-              </div>
+{# --------------------------------------------------------------------------- 
+  the pattern demo block, use HTML to build a demo pattern or include screen
+  shots.
+--------------------------------------------------------------------------- #}
+{%- set pattern_demo -%}
 
-              <div class="form-group">
-                <fieldset>
-                  <label class="form-label-bold" for="bs-society-roll">
-                    Building society roll or reference number (optional)
-                    <span class="form-hint">If your building society uses a roll or reference number, you will find it on your passbook</span>
-                  </label>
-                  <input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll" value="" data-required="true">
-                </fieldset>
-              </div>
-            </div>
+<div class="column-two-thirds">
+  <h1 class="heading-xlarge">Your bank details</h1>
+  <p>Carer&rsquo;s Allowance can be paid into a UK bank account, either your own or someone else&rsquo;s, or your own Post Office card account.
+    You&rsquo;re responsible for repaying any overpayments, even if the money is paid into someone else&rsquo;s account
 
+  <form>
+    <legend>Do you have a bank account?</legend>
+    <fieldset class="inline">
+      <div class="form-group">
+        <!-- No data-targets to avoid duplication, see jQuery at bottom of this page -->
+        <label class="block-label" for="bank-account-yes2">
+          <input id="bank-account-yes2" type="radio" name="account-select" value="Yes">
+          Yes
+        </label>
 
-            <div class="js-hidden" id="warningmessage">
-              <div class="panel">
-               <p>You won't be paid Carer's Allowance without a bank account.<br>
-                You can add bank details after you apply by contacting the Carer's Allowance Unit.</p>
-              </div>
-            </div>
-          </form>
-        </div>
+        <label class="block-label" for="bank-account-no2">
+          <input id="bank-account-no2" type="radio" name="account-select" value="No">
+          No
+        </label>
+      </div>
+    </fieldset>
+
+    <div class="js-hidden" id="bank-details2">
+      <div class="form-group">
+        <fieldset>
+          <label class="form-label-bold label-no-hint" for="ba-account-holder">Account holder name</label>
+          <input type="text" class="form-control" id="ba-account-holder" name="ba-account-holder" value="">
+        </fieldset>
+      </div>
+
+      <legend class="form-label-bold">Sort code</legend>
+      <div class="form-date form-group">
+        <fieldset>
+          <div class="form-group form-group-day">
+            <label for="ba-sort1"></label>
+            <input class="form-control" id="ba-sort1" maxlength="2" name="ba-sort1" value="" type="text">
+          </div>
+
+          <div class="form-group form-group-month">
+            <label for="ba-sort2"></label>
+            <input class="form-control" id="ba-sort2" maxlength="2" name="ba-sort2" value="" type="text">
+          </div>
+
+          <div class="form-group form-group-month">
+            <label for="ba-sort3"></label>
+            <input class="form-control" id="ba-sort3" maxlength="2" name="ba-sort3" value="" type="text">
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+        <fieldset>
+          <label class="form-label-bold" for="ba-account-number">
+            Account number
+          </label>
+          <input type="text" class="form-control" id="ba-account-number" name="ba-account-number" value="" maxlength="10">
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+        <fieldset>
+          <label class="form-label-bold" for="bs-society-roll">
+            Building society roll or reference number (optional)
+            <span class="form-hint">If your building society uses a roll or reference number, you will find it on your passbook</span>
+          </label>
+          <input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll" value="" data-required="true">
+        </fieldset>
       </div>
     </div>
 
-    <div class="grid-row">
-      <details>
-        <summary role="button"><span class="summary">View code snippet</span></summary>
-
-        <div class="panel panel-border-narrow">
-          <div class="tab-panel">
-            <div class="tab-panel-menu">
-              <a href="#" class="tab-link tab-link-active">HTML</a>
-              <a href="#" class="tab-link">JS</a>
-            </div>
-
-            <div class="tab-panes">
-              <div class="tab-pane" style="display: block;">
-                <pre class="language-markup">
-                  <code>
-    &lt;h1 class="heading-xlarge"&gt;Your bank details&lt;/h1&gt;
-      &lt;p&gt;Carer's Allowance can be paid into a UK bank account,
-      either your own or someone else's, or your own Post Office card account.
-        You're responsible for repaying any overpayments, even if the money is
-        paid into someone else's account
-
-
-      &lt;form&gt;
-        &lt;legend&gt;Do you have a bank account?&lt;/legend&gt;
-        &lt;fieldset class="inline"&gt;
-          &lt;div class="form-group"&gt;
-            &lt;label class="block-label" for="bank-account-yes2"&gt;
-              &lt;input id="bank-account-yes2" type="radio" name="account-select" value="Yes"&gt;
-              Yes
-            &lt;/label&gt;
-
-            &lt;label class="block-label" for="bank-account-no2"&gt;
-              &lt;input id="bank-account-no2" type="radio" name="account-select" value="No"&gt;
-              No
-            &lt;/label&gt;
-          &lt;/div&gt;
-        &lt;/fieldset&gt;
-
-        &lt;div class="js-hidden" id="bank-details2"&gt;
-          &lt;div class="form-group"&gt;
-            &lt;fieldset&gt;
-              &lt;label class="form-label-bold label-no-hint" for="ba-account-holder"&gt;Account holder name&lt;/label&gt;
-              &lt;input type="text" class="form-control" id="ba-account-holder" name="ba-account-holder" value=""&gt;
-            &lt;/fieldset&gt;
-          &lt;/div&gt;
-
-          &lt;legend class="form-label-bold"&gt;Sort code&lt;/legend&gt;
-          &lt;div class="form-date form-group"&gt;
-            &lt;fieldset&gt;
-              &lt;div class="form-group form-group-day"&gt;
-                &lt;label for="ba-sort1"&gt;&lt;/label&gt;
-                &lt;input class="form-control" id="ba-sort1" maxlength="2" name="ba-sort1" value="" type="text"&gt;
-              &lt;/div&gt;
-
-              &lt;div class="form-group form-group-month"&gt;
-                &lt;label for="ba-sort2"&gt;&lt;/label&gt;
-                &lt;input class="form-control" id="ba-sort2" maxlength="2" name="ba-sort2" value="" type="text"&gt;
-              &lt;/div&gt;
-
-              &lt;div class="form-group form-group-month"&gt;
-                &lt;label for="ba-sort3"&gt;&lt;/label&gt;
-                &lt;input class="form-control" id="ba-sort3" maxlength="2" name="ba-sort3" value="" type="text"&gt;
-              &lt;/div&gt;
-            &lt;/fieldset&gt;
-          &lt;/div&gt;
-
-          &lt;div class="form-group"&gt;
-            &lt;fieldset&gt;
-              &lt;label class="form-label-bold" for="ba-account-number"&gt;
-                Account number
-              &lt;/label&gt;
-              &lt;input type="text" class="form-control" id="ba-account-number" name="ba-account-number" value="" maxlength="10"&gt;
-            &lt;/fieldset&gt;
-          &lt;/div&gt;
-
-          &lt;div class="form-group"&gt;
-            &lt;fieldset&gt;
-              &lt;label class="form-label-bold" for="bs-society-roll"&gt;
-                Building society roll or reference number (optional)
-                &lt;span class="form-hint"&gt;If your building society uses a roll or reference number, you will find it on your passbook&lt;/span&gt;
-              &lt;/label&gt;
-              &lt;input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll" value="" data-required="true"&gt;
-            &lt;/fieldset&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-
-
-        &lt;div class="js-hidden" id="warningmessage"&gt;
-          &lt;div class="panel"&gt;
-           &lt;p&gt;You won't be paid Carer's Allowance without a bank account.&lt;br&gt;
-            You can add bank details after you apply by contacting the Carer's Allowance Unit.&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/form&gt;
-                  </code>
-                </pre>
-              </div>
-
-              <div class="tab-pane" style="display: none;">
-                <pre class="language-javascript">
-                  <code>
-  $(document).on('click', 'input[type="radio"]', function (e) {
-    if ($(e.target).attr('id') === 'bank-account-yes2' || $(e.target).attr('id') === 'bank-account-no2') {
-      if ($(this).attr('id') === 'bank-account-no2') {
-        $('#bank-details2').addClass('js-hidden');
-        $('#warningmessage').removeClass('js-hidden');
-      } else {
-        $('#bank-details2').removeClass('js-hidden');
-        $('#warningmessage').addClass('js-hidden');
-      }
-    }
-  });
-                  </code>
-                </pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </details>
+    <div class="js-hidden" id="warningmessage">
+      <div class="panel">
+       <p>You won't be paid Carer's Allowance without a bank account.<br>
+        You can add bank details after you apply by contacting the Carer's Allowance Unit.</p>
+      </div>
     </div>
-  </main>
-{% endblock %}
+  </form>
+</div>
 
-{% block page_scripts %}
-  <script>
-    $(document).on('click', 'input[type="radio"]', function (e) {
-      if ($(e.target).attr('id') === 'bank-account-yes' || $(e.target).attr('id') === 'building-society-yes') {
-        $('#bank-details').removeClass('js-hidden');
-        if ($(this).attr('id') === 'building-society-yes') {
-          $('#building-society-details').removeClass('js-hidden');
-        } else {
-          $('#building-society-details').addClass('js-hidden');
-        }
-      }
-    });
+{%- endset -%}
 
-    $(document).on('click', 'input[type="radio"]', function (e) {
-      if ($(e.target).attr('id') === 'bank-account-yes2' || $(e.target).attr('id') === 'bank-account-no2') {
-        if ($(this).attr('id') === 'bank-account-no2') {
-          $('#bank-details2').addClass('js-hidden');
-          $('#warningmessage').removeClass('js-hidden');
-        } else {
-          $('#bank-details2').removeClass('js-hidden');
-          $('#warningmessage').addClass('js-hidden');
-        }
-      }
-    });
+{# --------------------------------------------------------------------------- 
+  css snippet block
+--------------------------------------------------------------------------- #}
+{%- set pattern_css -%}
 
-  </script>
-{% endblock %}
+{%- endset -%}
+
+{# --------------------------------------------------------------------------- 
+  javascript snippet block, whatever you write in here will run in the
+  page on window.load and be output as a snippet.
+--------------------------------------------------------------------------- #}
+{%- set pattern_javascript -%}
+$(document).on('click', 'input[type="radio"]', function (e) {
+  if ($(e.target).attr('id') === 'bank-account-yes2' || $(e.target).attr('id') === 'bank-account-no2') {
+    if ($(this).attr('id') === 'bank-account-no2') {
+      $('#bank-details2').addClass('js-hidden');
+      $('#warningmessage').removeClass('js-hidden');
+    } else {
+      $('#bank-details2').removeClass('js-hidden');
+      $('#warningmessage').addClass('js-hidden');
+    }
+  }
+});
+{%- endset -%}
+
+{# this is where the above blocks and data is passed to the render pattern macro, ignore this unless your confortable with nunjucks and macros #}
+{%- call docs.render_pattern({ metadata: pattern, demo: pattern_demo, demo_script: pattern_javascript, description: pattern_description, notes: { content: pattern_notes_content, research: pattern_notes_research }, snippets: [{ label: 'HTML', block : pattern_demo, hide: pattern.hideSnippetHTML | d(false) },{ label: 'CSS', block: pattern_css, languageClass: 'language-css', hide: pattern.hideSnippetCSS | d(false) },{ label: 'Javascript', block: pattern_javascript, languageClass: 'language-js', hide: pattern.hideSnippetJavascript | d(false) }] }) %}{% endcall %}
+
+{%- endblock -%}
+{############################################################################# 
+END PATTERN BLOCK 3
+##############################################################################}

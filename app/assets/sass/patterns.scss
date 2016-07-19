@@ -6,7 +6,12 @@
 @import "css3";
 @import "url-helpers";
 
-// Patterns
+// Patterns documentation styles
+@import 'patterns/documentation/documentation';
+
+// Individual pattern partials
+@import 'patterns/remove-items-from-list';
+@import 'patterns/admin-menu';
 @import 'patterns/check-your-answers';
 @import 'patterns/todo';
 @import 'patterns/alerts';

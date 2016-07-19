@@ -1,0 +1,32 @@
+{% import "macros/documentation.html" as docs %}
+
+{% extends "govuk_template_dwp.html" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block page_title %}
+  {{ (' ' + page.title + ' - ') if page.title }} DWP design patterns
+{% endblock %}
+
+{% block header %}
+  {% include 'includes/header-nocrown.html'%}
+{% endblock %}
+
+{% block content %}
+<main id="doc">
+  {% block content_head %}
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  {% endblock %}
+  <div id="content"{{ (' class="content content--full"' | safe) if layout.contentFull }}>
+    {% block main %}{% endblock %}
+  </div>
+</main>
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+  {% block page_scripts %}{% endblock %}
+{% endblock %}

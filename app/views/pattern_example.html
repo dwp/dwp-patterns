@@ -1,0 +1,85 @@
+{% extends "layouts/layout_dwp_pattern.html" %}
+
+{% set page = { 
+  title: 'Overall pattern title',
+  description: 'Executive summary of this pattern document'
+} %}
+
+{############################################################################## 
+START PATTERN BLOCK 
+##############################################################################}
+{%- block pattern_block_1 -%}
+    
+{% set pattern = {
+  title: 'Title here',
+  criteria: [
+    "Use criteria one",
+    "Use criteria two",
+    "Use criteria three",
+  ]
+} %}
+
+{# --------------------------------------------------------------------------- 
+  description of the pattern
+------------------------------------------------------------------------------
+  note: 
+  you can use markdown if you set markdown: true
+  in the pattern obj. remember markdown is whitespace sensitive so remove 
+  tab or space indents if the output is different from expected
+--------------------------------------------------------------------------- #}
+{%- set pattern_description -%}
+Here you would place a description of this particular pattern if needed.
+{%- endset -%}
+
+{# --------------------------------------------------------------------------- 
+  content notes, you can use markdown if you set markdown: true
+  in the pattern object
+--------------------------------------------------------------------------- #}
+{%- set pattern_notes_content -%}
+Notes about the copy/content of this particular pattern. 
+
+{% endset %}
+
+{# --------------------------------------------------------------------------- 
+  research notes, you can use markdown if you set markdown: true
+  in the pattern object
+--------------------------------------------------------------------------- #}
+{%- set pattern_notes_research -%}
+Notes about the research around this particular pattern
+{% endset %}
+
+{# --------------------------------------------------------------------------- 
+  the pattern demo block, use HTML to build a demo pattern or include screen
+  shots.
+--------------------------------------------------------------------------- #}
+{%- set pattern_demo -%}
+  <h1>Demo HTML goes here</h1>
+{%- endset -%}
+
+{# --------------------------------------------------------------------------- 
+  css snippet block
+--------------------------------------------------------------------------- #}
+{%- set pattern_css -%}
+  /* file name of sass partial to be included */
+  {% include 'sass/patterns/_banking.scss' %}
+  /* or you can just paste the css snippet here */
+  .snippet-demo {
+    background: transparent;
+  }
+{%- endset -%}
+
+{# --------------------------------------------------------------------------- 
+  javascript snippet block, whatever you write in here will run in the
+  page on window.load and be output as a snippet.
+--------------------------------------------------------------------------- #}
+{%- set pattern_javascript -%}
+  console.log("pattern demo javascript!") // view console!
+{%- endset -%}
+
+{# this is where the above blocks and data is passed to the render pattern macro, ignore this unless your confortable with nunjucks and macros #}
+{%- call docs.render_pattern({ metadata: pattern, demo: pattern_demo, demo_script: pattern_javascript, description: pattern_description, notes: { content: pattern_notes_content, research: pattern_notes_research }, snippets: [{ label: 'HTML', block : pattern_demo, hide: pattern.hideSnippetHTML | d(false) },{ label: 'CSS', block: pattern_css, languageClass: 'language-css', hide: pattern.hideSnippetCSS | d(false) },{ label: 'Javascript', block: pattern_javascript, languageClass: 'language-js', hide: pattern.hideSnippetJavascript | d(false) }] }) %}{% endcall %}
+
+{%- endblock -%}
+{############################################################################# 
+END PATTERN BLOCK 
+##############################################################################}
