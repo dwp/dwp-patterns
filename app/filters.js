@@ -6,7 +6,6 @@ module.exports = function(env) {
 
   var nunjucksSafe = env.getFilter('safe');
   markdown.register(env, marked);
-  
   /**
    * Instantiate object used to store the methods registered as a
    * 'filter' (of the same name) within nunjucks. You can override
@@ -45,7 +44,6 @@ module.exports = function(env) {
     documentation.
 
   ------------------------------------------------------------------ */
-
   
   /**
    * sets globally accessible variable within nunjucks context
