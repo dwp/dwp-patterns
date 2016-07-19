@@ -1,0 +1,64 @@
+{% set layout = {
+  contentFull: true
+} %}
+
+{% extends "layouts/layout_dwp.html" %}
+
+{% block page_title %}{{ page.title }} &ndash; DWP design patterns{% endblock %}
+
+{% block content_head %}
+  
+  <div class="pattern-overview">
+      
+      <div class="pattern-overview__navigation">
+        <div class="constrain">
+          <a class="link-back" href="/" role="navigation">Back</a>
+        </div>
+      </div>
+      
+      <div class="pattern-overview__content">
+        <div class="constrain">
+          <div class="grid-row">
+            
+            <div class="column-two-thirds" style="width: 100%;">
+              
+              <h1 class="heading-xlarge pattern-overview__title" id="pattern_title">
+                {{ page.titleLong | d(page.title | d('page.title has not been set!')) }}
+              </h1>
+              
+              {% if page.subtitle %}<h2 class="heading-medium">{{ page.subtitle }}</h2>{% endif %}
+              
+              {% if page.description %}
+                <div class="pattern-overview__description">
+                  <div class="grid-row">
+                    <div class="column-two-thirds">
+                      {% block pattern_description %}
+                      <p>{{ page.description }}</p>
+                      {% endblock %}
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+              
+            </div>
+            
+          </div>
+        </div>          
+      </div>
+      
+  </div>
+  <!-- /.pattern -->
+
+{% endblock %}
+
+{% block main %}
+  {% block pattern_block_1 %}{% endblock %}
+  {% block pattern_block_2 %}{% endblock %}
+  {% block pattern_block_3 %}{% endblock %}
+  {% block pattern_block_4 %}{% endblock %}
+  {% block pattern_block_5 %}{% endblock %}
+  {% block pattern_block_6 %}{% endblock %}
+  {% block pattern_block_8 %}{% endblock %}
+  {% block pattern_block_9 %}{% endblock %}
+  {% block pattern_block_10 %}{% endblock %}
+{% endblock %}

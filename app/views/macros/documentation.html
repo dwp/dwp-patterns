@@ -1,0 +1,260 @@
+{# /**
+ * Outputs the example pattern rendered in some standard mark-up for display purposes
+ * @method example
+ * @param  {object} example configuration options for rendering the example
+ * @return {string}         rendered HTML block of the formatted example
+ */ #}
+{% macro pattern_demo(demo) %}
+<div class="grid-row">
+  <div class="column-one-whole">
+    <div class="example">
+        {% if caller %}
+          {{ caller() }}
+        {% else %}
+          <p>You need use 'call' to yield the content within the demo block.</p>
+        {% endif %}
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
+{# /**
+ * outputs a snippet chunk of markup
+ * @method snippet
+ * @param  {Object} snippet 
+ */ #}
+{% macro snippet(snippet) %}
+<pre class="{{ snippet.languageClass | d('language-markup') }}"><code>{{ caller() | trim | unescape }}</code></pre>
+{% endmacro %}
+
+{# /**
+ * outputs the standard markup for a pattern document's content
+ * @method contentColumn
+ */ #}
+{% macro contentColumn(args) %}
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        {{ caller() }}
+      </div>
+    <div>
+{% endmacro %}
+
+{# /**
+ * content block macro for calling content column with/without markup formatting
+ * @method content_block
+ * @param  {Args}      markdown=false default to markdown off
+ */ #}
+{% macro content_block(markdown=false) %}
+  {% set content = caller() %}
+  {% call contentColumn() %}
+    {%- if markdown -%}
+      <div class="markdown">
+  {%- markdown -%}
+  {{ content }}
+  {%- endmarkdown -%}
+      </div>
+    {% else %}
+      {{ content }}
+    {% endif %}
+  {% endcall %}
+{% endmacro %}
+
+{# /**
+ * Outputs the HTML example for the pattern
+ * @method outputHTML
+ * @param  {object}   example configuration options
+ * @return {string}           the formatted and escape HTML block for rendering
+ */ #}
+{% macro pattern_snippets(snippets) %}
+  
+  {%- if caller -%}
+  <div class="grid-row">
+    <div class="column-one-whole">      
+      <details>
+        <summary role="button"><span class="summary">{{ snippets.title | d('View code snippet') }}</span></summary>
+        
+        <div class="panel panel-border-narrow">
+          
+          <div class="tab-panel">
+            
+            {% set tabs = snippets | filterByEmpty('block') %}
+            
+            <div class="tab-panel-menu">
+              {% for tab in tabs if tabs.length > 0 %}
+              {% if not tab.hide %}
+              <a href="#{{ tab.label | lower }}" class="tab-link{{ ' tab-link-active' if loop.first }}">{{ tab.label }}</a>
+              {% endif %}
+              {% endfor %}
+            </div>
+            
+            {% if tabs.length > 0 %}            
+            <div class="tab-panes">
+              
+              {% for tab in tabs %}
+              {% if not tab.hide %}
+              <div class="tab-pane">
+                
+                {% call snippet(tab) %}
+                  {{ tab.block }}
+                {% endcall %}
+                
+              </div>
+              {% endif %}
+              {% endfor %}
+              
+            </div>         
+            {% endif %}
+            
+          </div>
+          
+        </div>
+        
+        {{ caller() }}
+        
+      </details>    
+    </div>
+  </div>
+  {% else %}
+    <p>
+      You need to use 'call' to invoke this macro!
+    </p>
+  {% endif %}
+{% endmacro %}
+
+{# /**
+ * render pattern macro, stitches together other macros to render the pattern
+ * this is all because nunjucks does not have a concept like Twig's 'embed'
+ * see: http://twig.sensiolabs.org/doc/tags/embed.html
+ * @param  {Object}       pattern object containing all the pattern data and content
+ */ #}
+{% macro render_pattern(pattern) %}
+  
+  {# create a 'defaults' object to be overriden by what is passed in 'pattern' #}
+  {% set data = {
+    title: 'No title has been setting in pattern!',
+    snippets: true,
+    markdown: true,
+    status: 'Draft'
+  } | merge(pattern.metadata) %}
+  
+  {% if pattern %}
+    <article class="pattern" data-title="{{ data.title }}" id="{{ data.title | lower | trC(' ','-')}}">
+      
+      <div class="constrain">
+        
+        <header class="pattern__header">
+          
+          <h1 class="heading-large pattern__title">
+            {% if data.status %}
+              <span class="heading-secondary">{{ data.status }}</span>
+            {% endif %}
+            {{ data.title }}
+          </h1>
+          
+          {% if not pattern.content %}
+          
+            {% call contentColumn() %}
+
+              <div class="pattern__description">
+              {%- if pattern.description -%}
+                {%- if data.markdown -%}
+                  <div class="markdown">
+{%- markdown -%}{{ pattern.description | trim }}{%- endmarkdown -%}
+                  </div>
+                {%- else -%}
+                  {{ pattern.description }}
+                {%- endif -%}
+              {%- endif -%}
+              </div>
+              
+              {% if data.criteria %}
+                <div class="pattern__criteria">
+                  <h3 class="heading-small pattern__title">Use this pattern when</h3>
+                  <ul class="list list-bullet">
+                    {% for item in data.criteria %}
+                      <li>{{ item }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endif %} 
+              
+            {% endcall %}
+          
+          {% endif %}
+          
+        </header>
+        
+        {% if pattern.content %}
+          
+          {{ pattern.content }}
+          
+        {% else %}
+          
+          <div class="pattern__body">
+            
+            {% if pattern.demo and not pattern.demo | isEmpty %}
+
+              <div class="pattern__demo">
+                {% call pattern_demo() %}
+                  {{ pattern.demo | safe }}
+                {% endcall %}
+              </div>
+              
+              {% if pattern.demo_script and not pattern.demo_script | isEmpty %}
+                {% if not data.supressJavascript %}                
+                  <script type="text/javascript">                  
+                  window.addEventListener("load", function(){
+                    {{ pattern.demo_script | trim | safe }}
+                  }, false);
+                  </script>
+                {% endif %}
+              {% endif %}
+              
+            {% endif %}
+            
+            {% if pattern.snippets and data.snippets %}
+              {% call pattern_snippets(pattern.snippets) %}{% endcall %}
+            {% endif %}
+            
+          </div>
+          <!-- /.pattern__body -->
+          
+          <div class="pattern__notes">
+            
+            {% call contentColumn() %}
+            
+              {% if pattern.notes.research and not (pattern.notes.research | trim) | isEmpty %}
+                <div class="pattern__notes__research">
+                  <h3 class="heading-medium pattern__title">{{ 'Research notes' }}</h3>
+                  {%- if pattern.notes.research -%}{%- if data.markdown -%}<div class="markdown">
+{%- markdown -%}{{ pattern.notes.research | trim }}{%- endmarkdown -%}
+                  </div>{%- else -%}{{ pattern.notes.research | safe }}{%- endif -%}{%- endif -%}
+                </div>
+              {% endif %}
+              
+              {% if pattern.notes.content and not (pattern.notes.content | trim) | isEmpty %}
+                <div class="pattern__notes__content">
+                  <h3 class="heading-medium pattern__title">{{ 'Content notes' }}</h3>
+                  {%- if pattern.notes.content -%}{%- if data.markdown -%}<div class="markdown">
+{%- markdown -%}{{ pattern.notes.content | trim }}{% endmarkdown %}
+                  </div>{%- else -%}{{ pattern.notes.content | safe }}{%- endif -%}{%- endif -%}
+                </div>
+              {% endif %}
+            
+            {% endcall %}
+            
+          </div>
+          <!-- /.pattern__notes -->
+          
+          {% if caller %}
+            {{ caller() }}
+          {% endif %}
+          
+        {% endif %} 
+        
+      </div>
+      <!-- /.constrain -->
+      
+    </article>
+  {% endif %}
+{% endmacro %}

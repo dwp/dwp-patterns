@@ -1,0 +1,41 @@
+{% extends "layouts/layout_dwp_pattern.html" %}
+
+{% set page = { 
+  title: 'Enter banking details' 
+} %}
+
+{############################################################################## 
+START PATTERN BLOCK 
+##############################################################################}
+{%- block pattern_block_1 -%}
+    
+{% set pattern = {
+  title: 'Standard'
+} %}
+
+{% set pattern_content %}
+  
+  {% call docs.content_block(markdown=true) %}
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  
+  - something
+  - something else
+  - blah
+  {% endcall %}
+
+  {% call docs.pattern_demo() %}
+    <p>
+      test
+    </p>
+  {% endcall %}
+
+{% endset %}
+
+{# this is where the above blocks and data is passed to the render pattern macro, ignore this unless your confortable with nunjucks and macros #}
+{%- call docs.render_pattern({ content: pattern_content | safe, metadata: pattern , demo: pattern_demo, demo_script: pattern_javascript, description: pattern_description, notes: { content: pattern_notes_content, research: pattern_notes_research }, snippets: [{ label: 'HTML', block : pattern_demo, hide: pattern.hideSnippetHTML | d(false) },{ label: 'CSS', block: pattern_css, languageClass: 'language-css', hide: pattern.hideSnippetCSS | d(false) },{ label: 'Javascript', block: pattern_javascript, languageClass: 'language-js', hide: pattern.hideSnippetJavascript | d(false) }] }) %}{% endcall %}
+
+{%- endblock -%}
+{############################################################################# 
+END PATTERN BLOCK 
+##############################################################################}
+

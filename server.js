@@ -33,7 +33,7 @@ if (env === 'production' && useAuth === 'true'){
 
 // Application settings
 app.set('view engine', 'html');
-app.set('views', [__dirname + '/app/views', __dirname + '/lib/']);
+app.set('views', [__dirname + '/app/views', __dirname + '/lib/', __dirname + '/app/assets']);
 
 nunjucks.setup({
   autoescape: true,
@@ -50,6 +50,13 @@ nunjucks.ready(function(nj) {
   Object.keys(filters).forEach(function(filterName) {
     nj.addFilter(filterName, filters[filterName]);
   });
+ 
+// The second argument can be any function that renders markdown 
+
+	// nj.addFilter('__setglobal__', function(v, k) {
+	// 	nj.addGlobal(k, v);
+	// });
+  
 });
 
 // Middleware to serve static assets
