@@ -276,6 +276,71 @@
     </details>
 
     <div class="grid-row">
+    <div class="column-two-thirds">
+    <h2 class="heading-medium">Horizontal variant</h2>
+    <p class="text">
+      Use this when:
+    </p>
+
+    <ul class="list list-bullet">
+      <li>
+        the user needs access to several admin areas but the vertical solution
+        above is not suitable
+      </li>
+
+      <li>
+        the user needs access to generic action links, like ‘Log out’
+        (these are displayed in the same bar to the right of the main options).
+      </li>
+    </ul>
+    </div>
+    </div>
+
+    <div class="example">
+    <header role="banner" id="global-header" class="with-proposition">
+    <div class="header-wrapper">
+      <div class="header-global">
+        <div class="header-logo">
+          <a href="/" id="logo" class="content dwplogo">
+            DWP
+          </a>
+        </div>
+      </div>
+
+      <div class="header-proposition">
+        <div class="content">
+          <nav id="proposition-menu">
+            <a href="/" id="proposition-name">Design patterns</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav">
+      <div class="nav-wrapper">
+      <div class="nav-inner">
+        <ul class="nav-pri">
+          <li class="cur"><a href="">Area 1</a></li>
+          <li><a href="">Area 2</a></li>
+          <li><a href="">Area 3</a></li>
+          <li><a href="">Area 4</a></li>
+        </ul>
+        <p class="nav-account"><a href="">User Settings</a>&nbsp;&nbsp;&nbsp;&nbsp;Julie Smith: <a href="">Log out</a></p>
+      </div>
+    </div>
+    </div>
+  </header>
+    <div class="admin-content-wrapper">
+      <div class="horizontal-admin-content">
+      <div class="admin-content">
+        <h1 class="heading-xlarge">Area 1</h1>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+    <div class="grid-row">
       <div class="column-two-thirds">
         <h2 class="heading-medium">Secondary navigation</h2>
 
@@ -676,7 +741,7 @@
   $('.admin-panes').each(function() {
     $(this).children('div').hide();
     $(this).children('.admin-pane:first').show();
-    $(this).parent().find('li:first').addClass('active');
+    $(this).parent().find('li:first').addClass('cur');
     $(this).parents('.admin-submenu-container').find('h1').text($('.active').find('a').text());
   });
 
