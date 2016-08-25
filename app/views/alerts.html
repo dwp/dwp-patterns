@@ -31,14 +31,14 @@
         <div class="example">
 
           <div class="panel panel-border-wide">
-            It can take up to 8 weeks to register a lasting power of attorney if there are no mistakes in the application.
+            It takes up to 8 weeks to register a lasting power of attorney.
           </div>
 
         </div>{# /example #}
 
         <h2 class="heading-large" id="alert-message">Alert message</h2>
 
-        <p>Alert messages build upon <a href="http://govuk-elements.herokuapp.com/typography#typography-inset-text">inset text</a>. These often appear at the top of the page, underneath the main heading. Icons shouldn&rsquo;t normally be necessary. Alert messages usually span the width of a text column. If you&rsquo;re layout is full-width, keep the maximum number of characters per line to about 75 (⅔ the width of the page at desktop size).</p>
+        <p>Alert messages usually appear at the top of the page, underneath the main heading. They span the width of a text column. In full-width layout keep the maximum number of characters per line to about 75 (⅔ the width of the page at desktop size).</p>
 
         <h3 class="heading-medium">Default alert message</h3>
 
@@ -46,8 +46,8 @@
 
         <ul class="list list-bullet">
           <li>a section of text is the most important feature of the page</li>
-          <li>when text needs to be highlighted and standard inset text isn&rsquo;t enough</li>
-          <li>contact information is of particular significance</li>
+          <li>when text needs to be highlighted and inset text hasn't worked</li>
+          <li>the user must take a significant action apart from the service, eg make a phone call</li>
         </ul>
 
         <div class="example">
@@ -61,7 +61,7 @@
         <div class="example">
 
           <div class="panel panel-border-wide alert-default">
-            <p>If you haven&rsquo;t already booked your Universal Credit interview, please call <strong class="bold-small">035 600 4272</strong> or <strong class="bold-small">0845 600 4272</strong> to arrange a date and time.</p>
+            <p>If you haven&rsquo;t booked your Universal Credit interview, call <strong class="bold-small">035 600 4272</strong> or <strong class="bold-small">0845 600 4272</strong> to arrange a date and time.</p>
             <p>Open hours are 8am to 6pm, Monday to Friday.</p>
           </div>
 
@@ -70,14 +70,12 @@
         <div class="example">
 
           <div class="panel panel-border-wide alert-default">
-            Make sure you register within <strong class="bold-small">7 days</strong> or you&rsquo;ll have to register again.
+            Register within <strong class="bold-small">7 days</strong> or you&rsquo;ll have to register again.
           </div>
 
         </div>{# /example #}
 
         <h2 class="heading-medium">Warning alert message</h2>
-
-        <p>These are different to <a href="#error-messages">error messages</a>.</p>
 
         <p>Use this when:</p>
 
@@ -88,34 +86,32 @@
         <div class="example">
 
           <div class="panel panel-border-wide alert-warning">
-            <p>You may experience some technical issues when using this application due to ongoing maintenance.</p>
+            <p>You may have some issues when using this service as it's currently being worked on.</p>
           </div>
 
         </div>{# /example #}
 
         <h2 class="heading-medium">Positive alert message</h2>
 
-        <p>These are different to <a href="#confirmation-messages">confirmation messages</a> and are quite rare.</p>
-
         <p>Use this when:</p>
 
         <ul class="list list-bullet">
-          <li>an action has been completed during a transaction, but the user hasn&rsquo;t completed their full journey</li>
+          <li>there's been a discrete action during a transaction, but the user hasn&rsquo;t completed their full journey, eg they've sent something or saved something</li>
         </ul>
 
         <div class="example">
 
           <div class="panel panel-border-wide alert-success">
-            <p>Application saved</p>
+            <p>Application saved.</p>
           </div>
 
         </div>{# /example #}
 
         <h2 class="heading-large" id="legal-text">Legal text</h2>
 
-        <p>Use bold text with an exclamation icon if there are legal consequences - for example, a fine or prison sentence. This element is detailed in the <a href="http://govuk-elements.herokuapp.com/typography#typography-legal-text">Government Service Design Manual</a>.</p>
+        <p>You must call out anything that may affect the user personally or financially. This element is detailed in the <a href="http://govuk-elements.herokuapp.com/typography#typography-legal-text">Government Service Design Manual</a>.</p>
 
-        <p>A border is not required around this element and it can be included anywhere within the main content of a page.</p>
+        <p>A border is not required around and it can be included anywhere within the main content of a page. Almost all transactional services will have this on a declaration page, warning of consequences of fraud.</p>
 
 {#         <h3 class="heading-medium">Legal text - icon alignment centre</h3>
 
@@ -152,11 +148,11 @@
             </i>
             <p>
               <strong class="bold-small">
-                It is important that you understand that in return for your Universal Credit payment you are agreeing to look for work.
+                You must repay any money you're asked to.
               </strong>
             </p>
 
-            <p><strong class="bold-small">You&rsquo;ll need to commit to doing everything you reasonably can to find and take paid work. Your work coach will help you agree your commitments.</strong></p>
+            <p><strong class="bold-small">If you don't repay money when asked you could be taken to court, and your benefits reduced or money taken directly from your wages until your debt is repaid.</strong></p>
           </div>
 
         </div>{# /example #}
@@ -170,8 +166,8 @@
         <p>Use this when:</p>
 
         <ul class="list list-bullet">
-          <li>there&rsquo;s an error that&rsquo;s the result of something the user has done</li>
-          <li>a problem has occurred that the user needs to address</li>
+          <li>the user has done something that's caused an error</li>
+          <li>there&rsquo;s a problem that the user needs to do something about</li>
         </ul>
 
         <div class="example">
@@ -180,9 +176,9 @@
 
             <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">There&rsquo;s a problem</h1>
             <p>Check your form. You must:</p>
-            <ul class="error-summary-list">
-              <li><a href="#">Enter your full name</a></li>
-              <li><a href="#">Enter a valid email address</a></li>
+            <ul class="error-summary-list list list-bullet" style="padding-left: 20px">
+              <li style="color:#b10e1e;"><a href="#">enter your full name</a></li>
+              <li style="color:#b10e1e;"><a href="#">enter a valid email address</a></li>
             </ul>
 
           </div>
@@ -193,13 +189,16 @@
 
           <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-2" tabindex="-1">
 
-            <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">Your partner hasn&rsquo;t created their own account&nbsp;yet.</h1>
+            <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">Your partner hasn&rsquo;t created their account.</h1>
             
-            <p>They should go to &lsquo;Register with a partner code&rsquo; on the homepage and use this code:</p>
-
-            <p>Partner code: <strong class="heading-small">YF92NEXT</strong></p>
-            <p>They have <strong class="bold-small">7 days left</strong> - the code expires on <strong class="bold-small">26/06/2016</strong></p>
-            <p>If they don&rsquo;t use it, you&rsquo;ll both have to register again.</p>
+            <p>They must:</p>
+            <ol class="list-bullet">
+            <li>go to the homepage</li>
+            <li>select &lsquo;Register with a partner code&rsquo;</li>
+            <li>enter this code: <strong class="heading-small">YF92NEXT</strong></li>
+          </ol>
+            <p>They have <strong class="bold-small">7 days left</strong> - this code won't work after <strong class="bold-small">26 June 2016</strong>.</p>
+            <p>If they don't register in time you'll both have to register again.</p>
 
           </div>
 
@@ -211,14 +210,14 @@
 
         <ul class="list list-bullet">
           <li>a user has completed an action successfully</li>
-          <li>a user has completed a transaction</li>
+          <li>a user has finished a transaction</li>
         </ul>
 
         <div class="example">
 
           <div class="govuk-box-highlight padding-small">
             <h1 class="bold-large m-b-s">Your application has been&nbsp;received</h1>
-            <p><strong class="heading-small">Your National Insurance number is your reference</strong></p>
+            <p><strong class="heading-small">Your reference number is your National Insurance number</strong></p>
           </div>
 
         </div>{# /example #}
@@ -234,7 +233,7 @@
         <div class="example">
 
           <div class="govuk-box-highlight">
-            <p class="bold-small">You have amended your business details</p>
+            <p class="bold-small">You've changed your business details</p>
           </div>
 
         </div>{# /example #}
