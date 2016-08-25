@@ -16,9 +16,9 @@
 }
 
 .pattern-overview {
-  $this-colour: rgba($grey-3,1);
+  $this-colour: $panel-colour;
   @extend %contain-floats; // yuck
-  border-bottom: 1px solid $grey-1;
+  border-bottom: 1px solid $border-colour;
   background: $this-colour;
   &__title {
     margin: 0 0 15px 0;
@@ -30,9 +30,9 @@
 
 .pattern {
   padding: 30px 20px;
-  background: rgba(#ccc,.15);
+  background: #fff;
   &:not(:last-of-type) {
-    border-bottom: 1px dashed rgba($grey-1,0.5);
+    border-bottom: 1px solid $panel-colour;
   }
   &__title {
     margin: 0 0 20px 0;
