@@ -119,6 +119,40 @@
 
         </div>{# /example #}
 
+        <div class="grid-row">
+                  <details>
+                    <summary role="button"><span class="summary">View code snippet</span></summary>
+                    <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+                      <div class="tab-panel">
+                        <div class="tab-panel-menu">
+                          <a href="#" class="tab-link tab-link-active">HTML</a>
+                          <a href="#" class="tab-link">SCSS</a>
+                        </div>
+
+                        <div class="tab-panes">
+                          <div class="tab-pane" style="display: block;">
+<pre class="language-markup">
+<code>
+{{ htmlToPrism('<div class="panel panel-border-wide alert-default">
+  Make sure you register within <strong class="bold-small">7 days</strong> or you&rsquo;ll have to register again.
+</div>') }}</code>
+</pre>
+</div>
+
+                          <div class="tab-pane" style="display: none;">
+                            <pre class="language-css"><code>
+.alert-default {
+  border-color: $light-blue;
+  background-color: mix(white, $light-blue, 90%);
+}</code></pre>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </details>
+                </div>
+
+
         <h2 class="heading-medium">Warning alert message</h2>
 
         <p>Use this when:</p>
@@ -135,6 +169,45 @@
 
         </div>{# /example #}
 
+        <div class="grid-row">
+          <details>
+            <summary role="button"><span class="summary">View code snippet</span></summary>
+            <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+              <div class="tab-panel">
+                <div class="tab-panel-menu">
+                  <a href="#" class="tab-link tab-link-active">HTML</a>
+                  <a href="#" class="tab-link">SCSS</a>
+                </div>
+
+                <div class="tab-panes">
+                  <div class="tab-pane" style="display: block;">
+                    <pre class="language-markup">
+                      <code>
+{{ htmlToPrism('<div class="panel panel-border-wide alert-warning">
+  <p>You may experience some technical issues when using this application due to ongoing maintenance.</p>
+</div>') }}</code>
+                    </pre>
+                  </div>
+
+                  <div class="tab-pane" style="display: none;">
+                    <pre class="language-css">
+                      <code>
+.alert-warning {
+  border-color: $red;
+  background-color: mix(white, $mellow-red, 90%);
+}</code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+
+
+
+
+
         <h2 class="heading-medium">Positive alert message</h2>
 
         <p>Use this when:</p>
@@ -150,6 +223,10 @@
           </div>
 
         </div>{# /example #}
+
+
+
+
 
         <h2 class="heading-large" id="legal-text">Legal text</h2>
 
