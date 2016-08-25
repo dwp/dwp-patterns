@@ -6,11 +6,13 @@
 
 // Header stuff
 .admin-header-wrapper {
+  float: right;
   background-color: #DEE0E2;
-  height: 40px;
   text-align: right;
   font-size: 16px;
-  width: 100%;
+  // margin: 5px 0 5px 0;
+  margin:15px;
+  // width: 100%;
 }
 
 .admin-header-content {
@@ -19,11 +21,33 @@
   max-width: 1020px;
 }
 
+// Secondary grey bar
+.secondary-bar {
+  background-color: $panel-colour;
+  overflow: hidden;
+}
+
+
 .admin-header-content li {
   display: inline-block;
-  margin-top: 6px;
-  padding: 4px 10px;
+  // padding: 15px;
+}
+
+.admin-header-content li::after{
+  // display: inline-block;
+  float: right;
+  margin-right: 15px;
+  padding: 0 0 0 15px;
+  content:'';
+  width:2px;
+  // padding: 0 15px 0 15px;
+  // background-color: red;
+  height: 20px;
   border-right: 1px solid #999;
+}
+
+.admin-header-content li:last-child::after{
+  display: none;
 }
 
 .admin-header-content li:last-child {
@@ -39,7 +63,9 @@
   overflow:hidden;
   background-color: #F8F8F8;
 }
-
+.horizontal-admin-secondary-wrapper {
+  padding-left: 30px;
+}
 .admin-wrapper .admin-column-wrapper {
   float:left;
   width:200%;
@@ -53,7 +79,16 @@
   float:right;
   width:50%;
   position:relative;
-  padding-bottom:1em;
+  //padding-bottom:1em;
+
+}
+.admin-wrapper .admin-content-wrapper-horizontalnav {
+  //float:left;
+  padding-left: 30px;
+  width:60%;
+  height:200px;
+  position:relative;
+  //padding-bottom:1em;
 
 }
 
@@ -62,6 +97,13 @@
   position:relative;
   right:100%;
   overflow:hidden;
+}
+.admin-wrapper .admin-content-horizontalnav {
+  //margin-left: 50px;
+  //position:relative;
+  //right:100%;
+  //float:inherit;
+  //overflow:hidden;
 }
 .admin-wrapper .admin-sidebar-wrapper {
   float:left;

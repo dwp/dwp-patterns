@@ -49,18 +49,19 @@ legend {
 }
 // Navigation pri
 
-.nav {
+.nav-horizontal {
   background-color: $panel-colour;
   overflow: hidden;
 }
 .nav-wrapper {
+  float: left;
   padding-left: 15px;
   padding-right: 15px;
 }
 .nav-inner {
   max-width: 960px;
   font-size: 16px;
-  line-height: 21px;
+  line-height: 22px;
   margin: 0 auto;
 }
 
@@ -104,7 +105,7 @@ legend {
 
 
 .nav-tabbed {
-  // background-color: red;
+  //background-color: red;
   border-bottom: 1px solid $border-colour;
   margin-bottom: 20px;
   // padding-bottom: 5px;
@@ -153,4 +154,7 @@ legend {
 }
 .horizontal-admin-content {
   padding-left: 30px
+}
+.divider {
+    border-left:1px solid black;
 }
