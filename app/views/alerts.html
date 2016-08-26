@@ -449,33 +449,31 @@
               <div class="tab-panel">
                 <div class="tab-panel-menu">
                   <a href="#" class="tab-link tab-link-active">HTML</a>
-                  <a href="#" class="tab-link">SCSS</a>
                 </div>
                 <div class="tab-panes">
                   <div class="tab-pane" style="display: block;">
                     <pre class="language-markup">
-                      <code>
-{{ htmlToPrism('<div class="notice long">
-  <i class="icon icon-important">
-  <span class="visuallyhidden">Warning</span>
-  </i>
-  <p>
-    <strong class="bold-small">
-      You must repay any money you\'re asked to.
-    </strong>
-  </p>
-  <p><strong class="bold-small">If you don\'t repay money when asked you could be taken to court, and your benefits reduced or money taken directly from your wages until your debt is repaid.</strong></p>
-</div>') }}</code>
-                    </pre>
-                  </div>
-                  <div class="tab-pane" style="display: none;">
-                    <pre class="language-css">
-                      <code>
-.notice.long .icon {
-  margin-top: 0;
-  top: 0px;
-}</code>
-                    </pre>
+<code>{{ htmlToPrism('<div class="example">
+  <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-2" tabindex="-1">
+    <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">There&rsquo;s a problem</h1>
+    <p>Check your form. You must:</p>
+    <ul class="error-summary-list list list-bullet" style="padding-left: 20px">
+      <li style="color:#b10e1e;"><a href="#">enter your full name</a></li>
+      <li style="color:#b10e1e;"><a href="#">enter a valid email address</a></li>
+    </ul>
+</div>
+
+<div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-2" tabindex="-1">
+    <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">Your partner hasn&rsquo;t created their account.</h1>
+    <p>They must:</p>
+    <ol class="list-bullet">
+      <li>go to the homepage</li>
+      <li>select &lsquo;Register with a partner code&rsquo;</li>
+      <li>enter this code: <strong class="heading-small">YF92NEXT</strong></li>
+    </ol>
+    <p>They have <strong class="bold-small">7 days left</strong> - this code won\'t work after <strong class="bold-small">26 June 2016</strong>.</p>
+    <p>If they don\'t register in time you\'ll both have to register again.</p>
+</div>') }}</code></pre>
                   </div>
                 </div>
               </div>
@@ -527,7 +525,6 @@
               <div class="tab-panel">
                 <div class="tab-panel-menu">
                   <a href="#" class="tab-link tab-link-active">HTML</a>
-                  <a href="#" class="tab-link">SCSS</a>
                 </div>
                 <div class="tab-panes">
                   <div class="tab-pane" style="display: block;">
@@ -545,11 +542,6 @@
 <div class="govuk-box-highlight">
   <p class="bold-small">You\'ve changed your business details</p>
 </div>') }}</code>
-                    </pre>
-                  </div>
-                  <div class="tab-pane" style="display: none;">
-                    <pre class="language-css">
-<code>css here</code>
                     </pre>
                   </div>
                 </div>
