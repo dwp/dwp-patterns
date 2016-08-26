@@ -262,6 +262,9 @@
 
 
 
+        <!-- LEGAL TEXT -->
+
+
         <h2 class="heading-large" id="legal-text">Legal text</h2>
 
         <p>You must call out anything that may affect the user personally or financially. This element is detailed in the <a href="http://govuk-elements.herokuapp.com/typography#typography-legal-text">Government Service Design Manual</a>.</p>
@@ -274,9 +277,8 @@
 
         <ul class="list list-bullet">
           <li>messages are short and up to around 75 characters (one line at wide browser viewports)</li>
-        </ul> #}
-
-
+        </ul>
+#}
 
         <div class="example">
 
@@ -290,6 +292,38 @@
           </div>
 
         </div>{# /example #}
+
+        <div class="grid-row">
+          <details>
+            <summary role="button"><span class="summary">View code snippet</span></summary>
+            <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+              <div class="tab-panel">
+                <div class="tab-panel-menu">
+                  <a href="#" class="tab-link tab-link-active">HTML</a>
+                </div>
+
+                <div class="tab-panes">
+                  <div class="tab-pane" style="display: block;">
+                    <pre class="language-markup">
+                      <code>
+{{ htmlToPrism('<div class="notice">
+    <i class="icon icon-important">
+    <span class="visuallyhidden">Warning</span>
+    </i>
+    <strong class="bold-small">
+    You can be fined up to &pound;5,000 if you don&rsquo;t register.
+    </strong>
+</div>') }}</code>
+                    </pre>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+
 
         <div class="example-caption">
           <p class="font-xsmall">Use a vertically centred icon when messages are short and up to around 75 characters (1 line at wide browser viewports)</p>
@@ -312,8 +346,57 @@
 
         </div>{# /example #}
 
+        <div class="grid-row">
+          <details>
+            <summary role="button"><span class="summary">View code snippet</span></summary>
+            <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+              <div class="tab-panel">
+                <div class="tab-panel-menu">
+                  <a href="#" class="tab-link tab-link-active">HTML</a>
+                  <a href="#" class="tab-link">SCSS</a>
+                </div>
+
+                <div class="tab-panes">
+                  <div class="tab-pane" style="display: block;">
+                    <pre class="language-markup">
+                      <code>
+{{ htmlToPrism('<div class="notice long">
+  <i class="icon icon-important">
+  <span class="visuallyhidden">Warning</span>
+  </i>
+  <p>
+    <strong class="bold-small">
+      You must repay any money you\'re asked to.
+    </strong>
+  </p>
+  <p><strong class="bold-small">If you don\'t repay money when asked you could be taken to court, and your benefits reduced or money taken directly from your wages until your debt is repaid.</strong></p>
+</div>') }}</code>
+                    </pre>
+                  </div>
+
+                  <div class="tab-pane" style="display: none;">
+                    <pre class="language-css">
+                      <code>
+.notice.long .icon {
+  margin-top: 0;
+  top: 0px;
+}</code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+
+
         <p class="font-xsmall">Use a top-aligned icon when messages are longer than 75 characters (2 lines or more at wide browser viewports)</p>
 
+
+
+
+
+<!-- ERROR MSSGS -->
         <h2 class="heading-large" id="error-messages">Error message</h2>
 
         <p>This element is detailed in the <a href="http://govuk-elements.herokuapp.com/errors/">Government Service Design Manual</a> and normally appears above the main heading of a page.</p>
@@ -358,6 +441,57 @@
           </div>
 
         </div>{# /example #}
+        
+        <div class="grid-row">
+          <details>
+            <summary role="button"><span class="summary">View code snippet</span></summary>
+            <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+              <div class="tab-panel">
+                <div class="tab-panel-menu">
+                  <a href="#" class="tab-link tab-link-active">HTML</a>
+                  <a href="#" class="tab-link">SCSS</a>
+                </div>
+
+                <div class="tab-panes">
+                  <div class="tab-pane" style="display: block;">
+                    <pre class="language-markup">
+                      <code>
+{{ htmlToPrism('<div class="notice long">
+  <i class="icon icon-important">
+  <span class="visuallyhidden">Warning</span>
+  </i>
+  <p>
+    <strong class="bold-small">
+      You must repay any money you\'re asked to.
+    </strong>
+  </p>
+  <p><strong class="bold-small">If you don\'t repay money when asked you could be taken to court, and your benefits reduced or money taken directly from your wages until your debt is repaid.</strong></p>
+</div>') }}</code>
+                    </pre>
+                  </div>
+
+                  <div class="tab-pane" style="display: none;">
+                    <pre class="language-css">
+                      <code>
+.notice.long .icon {
+  margin-top: 0;
+  top: 0px;
+}</code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+
+
+
+
+
+
+
+
 
         <h2 class="heading-large" id="confirmation-messages">Confirmation message</h2>
 
