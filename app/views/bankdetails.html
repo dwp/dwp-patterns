@@ -137,7 +137,7 @@ START PATTERN BLOCK
 {% set pattern = {
   title: 'Progressive banking details',
   criteria: [
-    "you want the user to consider which account they want the money paid into"
+    "you want the user to think about which account they want the money paid into"
   ]
 } %}
 
@@ -158,7 +158,16 @@ START PATTERN BLOCK
   in the pattern object
 --------------------------------------------------------------------------- #}
 {%- set pattern_notes_content -%}
+Reading left to right and top to bottom most (not all) bank cards display information in this order:
++ card number 
++ sort code 
++ valid from 
++ valid to 
++ account holder 
++ sort code 
++ account number
 
+Carer's found changing the order of input boxes to reflect this saved the user time on this page.
 {% endset %}
 
 {# --------------------------------------------------------------------------- 
@@ -320,7 +329,9 @@ START PATTERN BLOCK 3
   in the pattern object
 --------------------------------------------------------------------------- #}
 {%- set pattern_notes_content -%}
+On Carer's this was original titled 'Payment'. This implied to users that they were being asked to pay from their account, not have money paid into it.
 
+Post Office Card account information  was only included in Carer's because the service has an unusually high number of users with this type of account. This type of account is actually opened for users by the service if they don't have a bank account by the time the first payment is due.
 {% endset %}
 
 {# --------------------------------------------------------------------------- 
@@ -328,7 +339,7 @@ START PATTERN BLOCK 3
   in the pattern object
 --------------------------------------------------------------------------- #}
 {%- set pattern_notes_research -%}
-User research for [Carer’s Allowance](http://dwp-digital-services.herokuapp.com/projects/8/carers_allowance_digital_service) found that some people don’t have a bank account. They needed to be able to complete the transaction without providing any bank details.
+User research for [Carer’s Allowance](http://dwp-digital-services.herokuapp.com/projects/8/carers_allowance_digital_service) found that a significant number of users didn't have bank accounts at the time they applied or were reluctant to give their bank details online before they were actually awarded the benefit.
 {% endset %}
 
 {# --------------------------------------------------------------------------- 
