@@ -1,0 +1,189 @@
+// forecasts pattern
+.highlighted-event {
+    background-color: #28a197;
+    color:#fff;
+    text-align:center;
+    padding:0.2em 2em 0.2em 2em;
+    margin: 0 0 1em 0
+}
+
+.highlighted-event p {
+    line-height:2.3em;
+    color:#fff
+}
+
+.highlighted-event p em {
+    font-size: 2.45em;
+    font-style:normal;
+    font-weight:700;
+    display:block;
+    margin-bottom:0.5em;
+    color:#fff
+}
+
+@media (max-width: 640px){
+    .highlighted-event {
+        margin:0 -1em 1em -1em;
+        padding:1em 2em 1em 2em;
+        font-family:"nta",Arial,sans-serif;
+        font-size:22px;
+        line-height:1.04167;
+        font-weight:400;
+        text-transform:none
+    }
+}
+
+@media (max-width: 640px) and (max-width: 640px) {
+    .highlighted-event {
+        font-size:19px;
+        line-height:1.09375
+    }
+}
+
+@media (max-width: 640px) {
+    .highlighted-event p {
+        font-size:0.5em;
+        line-height:inherit
+    }
+
+    .highlight  ed-event p em {
+        font-size:0.8em;
+        display:inline
+    }
+}
+
+
+@media (min-width: 640px) {
+    .highlighted-event {
+        padding: 1.75em 0.75em 1.25em 0.75em
+    }
+}
+
+
+.highlighted-event p {
+    font-family:"nta",Arial,sans-serif;
+    font-size:22px;
+    line-height: 1.25;
+    font-weight: 400;
+    text-transform: none;
+    padding-top: 9px;
+    padding-bottom: 6px;
+    font-weight: bold;
+    padding: 0;
+    margin:0
+}
+
+@media (max-width: 640px){
+    .highlighted-event p {
+        font-size:18px;
+        line-height:1.2
+    }
+}
+
+@media (min-width: 641px) {
+    .highlighted-event p {padding-top:6px;padding-bottom:4px}
+}
+
+@media (max-width: 640px){
+    .highlighted-event p {
+        padding:0;
+        margin-top:0;
+        margin-bottom:0;
+        font-weight:bold;
+        padding:0;
+        margin:0
+    }
+}
+
+@media (min-width: 641px) {
+    .highlighted-event p {
+        padding:0;
+        margin:0;
+        font-weight:bold
+    }
+}
+
+.highlighted-event p em {
+    display:block;
+    font-family:"nta",Arial,sans-serif;font-size:60px;
+    line-height:1;font-weight:400;
+    text-transform:none;
+    padding-top:8px;
+    padding-bottom:7px;
+    font-weight:bold;
+    margin-bottom:0;
+    padding:0;
+    padding-top:0.2em;
+    padding-bottom:0.1em
+}
+
+@media (max-width: 640px) {
+    .highlighted-event p em {
+        font-size:46px;
+        line-height:1.03774
+    }
+}
+
+@media (min-width: 641px){
+    .highlighted-event p em {
+        padding-top:6px;
+        padding-bottom:6px
+    }
+}
+
+@media (max-width: 640px) {
+    .highlighted-event p em {
+        padding:0;
+        padding-top:0.2em;
+        padding-bottom:0.1em
+    }
+}
+
+.chart-block {
+  clear: both;
+   margin-bottom: 80px;
+    @media only screen and (max-width: 640px) {
+      margin-bottom:50px;
+  }
+}
+
+.chart-block .footnote {
+
+    display:inline-block;
+}
+
+.graph {
+  float: left;
+  width: 100%;
+}
+
+.graph li
+{
+  position: relative;
+  display: block;
+  background:#C1DFE4;
+  height:37px;
+  @media only screen and (max-width: 640px) {
+      height: 27px;
+      margin-left: 0;
+  }
+}
+
+
+.graph  li .amount {
+  display: block;
+  height: 100%;
+  background: #28A197;
+  line-height: 1.6em;
+  color:#fff;
+  text-align: right;
+  font-size: 25px;
+  font-weight: 800;
+  @media only screen and (max-width: 640px) {
+      font-size: 20px;
+  }
+}
+
+li .amount {
+  padding-right: 10px;
+}
