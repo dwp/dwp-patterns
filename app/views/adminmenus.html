@@ -76,10 +76,10 @@
           <div class="admin-sidebar-wrapper">
             <div class="admin-sidebar-content">
               <ul>
-                <li><a href="javascript:void(0);">Area 1</a></li>
-                <li><a href="javascript:void(0);">Area 2</a></li>
-                <li><a href="javascript:void(0);">Area 3</a></li>
-                <li><a href="javascript:void(0);">Area 4</a></li>
+                <li class="active"><a href="#">Area 1</a></li>
+                <li><a href="#">Area 2</a></li>
+                <li><a href="#">Area 3</a></li>
+                <li><a href="#">Area 4</a></li>
               </ul>
             </div>
           </div>
@@ -265,7 +265,7 @@
       // Check the href of each link in the sidebar
       $('.admin-sidebar-content a').each(function () {
         if (url === $(this).attr('href')) {
-          // If the href matches the current URL set it as active
+          // If the href matches the activerent URL set it as active
           $(this).parents('li').addClass('active');
         }
       });
@@ -323,10 +323,10 @@
       <div class="nav-wrapper">
       <div class="nav-inner">
         <ul class="nav-pri">
-          <li class="cur"><a href="javascript:void(0);">Area 1</a></li>
-          <li><a href="javascript:void(0);">Area 2</a></li>
-          <li><a href="javascript:void(0);">Area 3</a></li>
-          <li><a href="javascript:void(0);">Area 4</a></li>
+          <li class="active"><a href="#">Area 1</a></li>
+          <li><a href="#">Area 2</a></li>
+          <li><a href="#">Area 3</a></li>
+          <li><a href="#">Area 4</a></li>
         </ul>
         </div>
         </div>
@@ -403,7 +403,7 @@
           <div class="admin-content-wrapper">
             <div class="admin-content">
               <div class="admin-submenu-container">
-              <h1 class="heading-xlarge">Section heading</h1>
+              <h1 class="heading-xlarge">Section 1</h1>
 
               <div class="admin-submenu">
                 <ul>
@@ -443,10 +443,10 @@
           <div class="admin-sidebar-wrapper">
             <div class="admin-sidebar-content">
               <ul>
-                <li><a href="javascript:void(0);">Area 1</a></li>
-                <li><a href="javascript:void(0);">Area 2</a></li>
-                <li><a href="javascript:void(0);">Area 3</a></li>
-                <li><a href="javascript:void(0);">Area 4</a></li>
+                <li class="active"><a href="#">Area 1</a></li>
+                <li><a href="#">Area 2</a></li>
+                <li><a href="#">Area 3</a></li>
+                <li><a href="#">Area 4</a></li>
               </ul>
             </div>
           </div>
@@ -502,7 +502,7 @@
         &lt;div class="admin-content-wrapper"&gt;
           &lt;div class="admin-content"&gt;
             &lt;div class="admin-submenu-container"&gt;
-            &lt;h1 class="heading-xlarge"&gt;Section heading&lt;/h1&gt;
+            &lt;h1 class="heading-xlarge"&gt;Section 1&lt;/h1&gt;
 
             &lt;div class="admin-submenu"&gt;
               &lt;ul&gt;
@@ -770,10 +770,10 @@
           <div class="nav-wrapper">
           <div class="nav-inner">
             <ul class="nav-pri">
-              <li class="cur"><a href="javascript:void(0);">Area 1</a></li>
-              <li><a href="javascript:void(0);">Area 2</a></li>
-              <li><a href="javascript:void(0);">Area 3</a></li>
-              <li><a href="javascript:void(0);">Area 4</a></li>
+              <li class="active"><a href="#">Area 1</a></li>
+              <li><a href="#">Area 2</a></li>
+              <li><a href="#">Area 3</a></li>
+              <li><a href="#">Area 4</a></li>
             </ul>
             </div>
             </div>
@@ -792,11 +792,11 @@
           <div class="admin-content-wrapper-horizontalnav">
             <div class="admin-content-horizontalnav">
               <div class="admin-submenu-container">
-              <h1 class="heading-xlarge">Section heading</h1>
+              <h1 class="heading-xlarge">Section 1</h1>
 
               <div class="admin-submenu">
                 <ul>
-                  <li><a href="#">Section 1</a></li>
+                  <li class="active"><a href="#">Section 1</a></li>
                   <li><a href="#">Section 2</a></li>
                   <li><a href="#">Section 3</a></li>
                   <li><a href="#">Section 4</a></li>
@@ -844,11 +844,11 @@
     }
 
     // Check the href of each link in the sidebar
-    $('.admin-sidebar-content a').each(function () {
-      if (url === $(this).attr('href')) {
-        // If the href matches the current URL set it as active
-        $(this).parents('li').addClass('active');
-      }
+    $('.admin-sidebar-content a, .nav-pri a').click(function (e) {
+        e.preventDefault();
+        var target = $(this);
+        target.closest("ul").children('li.active').removeClass('active')
+        target.parents('li').addClass('active');
     });
   });
 
@@ -856,8 +856,8 @@
   $('.admin-panes').each(function() {
     $(this).children('div').hide();
     $(this).children('.admin-pane:first').show();
-    $(this).parent().find('li:first').addClass('cur');
-    $(this).parents('.admin-submenu-container').find('h1').text($('.active').find('a').text());
+    $(this).parent().find('li:first').addClass('active');
+  //  $(this).parents('.admin-submenu-container').find('h1').text($('.active').find('a').text());
   });
 
   $(document).on('click', '.admin-submenu a', function(e) {
