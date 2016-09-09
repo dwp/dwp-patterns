@@ -277,19 +277,17 @@
 {% block page_scripts %}
   <script>
 
-
     $(document).on('click', 'input[type="radio"]', function (e) {
       if ($(e.target).attr('id') === 'yourself' || $(e.target).attr('id') === 'someone-else') {
         if ($(this).attr('id') === 'someone-else') {
-          $('#representative').addClass('js-hidden');
-          $('#you-contact').removeClass('js-hidden');
-        } else {
           $('#representative').removeClass('js-hidden');
           $('#you-contact').addClass('js-hidden');
+        } else {
+          $('#representative').addClass('js-hidden');
+          $('#you-contact').removeClass('js-hidden');
         }
       }
     });
-
 
   </script>
 {% endblock %}
