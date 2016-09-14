@@ -1,8 +1,8 @@
 {% extends "layouts/layout_dwp_pattern.html" %}
 
 {% set page = {
-  title: 'Overall pattern title',
-  description: 'Executive summary of this pattern document'
+  title: 'Consent to contact',
+  description: 'Pattern for getting users consent to contact third parties'
 } %}
 
 {##############################################################################
@@ -11,11 +11,12 @@ START PATTERN BLOCK
 {%- block pattern_block_1 -%}
 
 {% set pattern = {
-  title: 'Title here',
+  title: 'Standard',
   criteria: [
-    "Use criteria one",
-    "Use criteria two",
-    "Use criteria three",
+    "the service needs to contact third parties",
+    "the user must name those third parties",
+    "the user must give their consent to the department",
+    "the user has to be aware they can withdraw their consent"
   ]
 } %}
 
@@ -28,7 +29,6 @@ START PATTERN BLOCK
   tab or space indents if the output is different from expected
 --------------------------------------------------------------------------- #}
 {%- set pattern_description -%}
-Here you would place a description of this particular pattern if needed.
 {%- endset -%}
 
 {# ---------------------------------------------------------------------------
@@ -36,8 +36,15 @@ Here you would place a description of this particular pattern if needed.
   in the pattern object
 --------------------------------------------------------------------------- #}
 {%- set pattern_notes_content -%}
-Notes about the copy/content of this particular pattern.
+This pattern was agreed with Nicky Hope and Kyle Calvert as part of Employment Support Allowance and Industrial Injuries Disablement Benefit.
 
+There must be content on the start page of the service explaining that the user will be asked for consent and has the right to withdraw it at any time following their application.
+
+The user should be played back the people they've consented to contact and make a positive action that they agree those people can be contacted.
+
+The pattern must **not** be used if legislation dictates that the service is unusable without necessary contact with a third party.
+
+Allowing the user to give consent to contact confers the ability to withdraw consent. If this would render the service useless then you shouldn't use this pattern. Consent is assumed.
 {% endset %}
 
 {# ---------------------------------------------------------------------------
@@ -45,7 +52,6 @@ Notes about the copy/content of this particular pattern.
   in the pattern object
 --------------------------------------------------------------------------- #}
 {%- set pattern_notes_research -%}
-Notes about the research around this particular pattern
 {% endset %}
 
 {# ---------------------------------------------------------------------------
@@ -53,19 +59,14 @@ Notes about the research around this particular pattern
   shots.
 --------------------------------------------------------------------------- #}
 {%- set pattern_demo -%}
-  <h1>Demo HTML goes here</h1>
+
 {%- endset -%}
 
 {# ---------------------------------------------------------------------------
   css snippet block
 --------------------------------------------------------------------------- #}
 {%- set pattern_css -%}
-  /* file name of sass partial to be included */
-  {% include 'sass/patterns/_banking.scss' %}
-  /* or you can just paste the css snippet here */
-  .snippet-demo {
-    background: transparent;
-  }
+
 {%- endset -%}
 
 {# ---------------------------------------------------------------------------
@@ -73,7 +74,7 @@ Notes about the research around this particular pattern
   page on window.load and be output as a snippet.
 --------------------------------------------------------------------------- #}
 {%- set pattern_javascript -%}
-  console.log("pattern demo javascript!") // view console!
+
 {%- endset -%}
 
 {# this is where the above blocks and data is passed to the render pattern macro, ignore this unless your confortable with nunjucks and macros #}

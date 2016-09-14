@@ -36,6 +36,48 @@
 
         </div>{# /example #}
 
+          <details>
+            <summary role="button"><span class="summary">View code snippet</span></summary>
+            <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+              <div class="tab-panel">
+                <div class="tab-panel-menu">
+                  <a href="#" class="tab-link tab-link-active">HTML</a>
+                  <a href="#" class="tab-link">CSS</a>
+                </div>
+
+                <div class="tab-panes">
+                  <div class="tab-pane" style="display: block;">
+                    <pre class="language-markup">
+                      <code>
+{{ htmlToPrism('<div class="panel panel-border-wide">
+  It can take up to 8 weeks to register a lasting power of attorney if there are no mistakes in the application.
+</div>') }}</code>
+                    </pre>
+                  </div>
+
+                  <div class="tab-pane" style="display: none;">
+                    <pre class="language-css">
+                      <code>
+.panel {
+  clear: both;
+  border-left-style: solid;
+  border-color: #bfc1c3;
+  padding: 0.7894736842em;
+  margin-bottom: 0.7894736842em;
+}
+
+.panel-border-wide {
+  border-left-width: 10px;
+}
+                       </code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+
         <h2 class="heading-large" id="alert-message">Alert message</h2>
 
         <p>Alert messages usually appear at the top of the page, underneath the main heading. They span the width of a text column. In full-width layout keep the maximum number of characters per line to about 75 (⅔ the width of the page at desktop size).</p>
@@ -75,6 +117,38 @@
 
         </div>{# /example #}
 
+                  <details>
+                    <summary role="button"><span class="summary">View code snippet</span></summary>
+                    <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+                      <div class="tab-panel">
+                        <div class="tab-panel-menu">
+                          <a href="#" class="tab-link tab-link-active">HTML</a>
+                          <a href="#" class="tab-link">SCSS</a>
+                        </div>
+
+                        <div class="tab-panes">
+                          <div class="tab-pane" style="display: block;">
+<pre class="language-markup">
+<code>
+{{ htmlToPrism('<div class="panel panel-border-wide alert-default">
+  Make sure you register within <strong class="bold-small">7 days</strong> or you&rsquo;ll have to register again.
+</div>') }}</code>
+</pre>
+</div>
+
+                          <div class="tab-pane" style="display: none;">
+                            <pre class="language-css"><code>
+.alert-default {
+  border-color: $light-blue;
+  background-color: mix(white, $light-blue, 90%);
+}</code></pre>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </details>
+
+
         <h2 class="heading-medium">Warning alert message</h2>
 
         <p>Use this when:</p>
@@ -90,6 +164,43 @@
           </div>
 
         </div>{# /example #}
+
+          <details>
+            <summary role="button"><span class="summary">View code snippet</span></summary>
+            <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+              <div class="tab-panel">
+                <div class="tab-panel-menu">
+                  <a href="#" class="tab-link tab-link-active">HTML</a>
+                  <a href="#" class="tab-link">SCSS</a>
+                </div>
+
+                <div class="tab-panes">
+                  <div class="tab-pane" style="display: block;">
+                    <pre class="language-markup">
+                      <code>
+{{ htmlToPrism('<div class="panel panel-border-wide alert-warning">
+  <p>You may experience some technical issues when using this application due to ongoing maintenance.</p>
+</div>') }}</code>
+                    </pre>
+                  </div>
+
+                  <div class="tab-pane" style="display: none;">
+                    <pre class="language-css">
+                      <code>
+.alert-warning {
+  border-color: $red;
+  background-color: mix(white, $mellow-red, 90%);
+}</code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+
+
+
 
         <h2 class="heading-medium">Positive alert message</h2>
 
@@ -107,6 +218,45 @@
 
         </div>{# /example #}
 
+          <details>
+            <summary role="button"><span class="summary">View code snippet</span></summary>
+            <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+              <div class="tab-panel">
+                <div class="tab-panel-menu">
+                  <a href="#" class="tab-link tab-link-active">HTML</a>
+                  <a href="#" class="tab-link">SCSS</a>
+                </div>
+
+                <div class="tab-panes">
+                  <div class="tab-pane" style="display: block;">
+                    <pre class="language-markup">
+                      <code>
+{{ htmlToPrism('<div class="panel panel-border-wide alert-success">
+  <p>Application saved</p>
+</div>') }}</code>
+                    </pre>
+                  </div>
+
+                  <div class="tab-pane" style="display: none;">
+                    <pre class="language-css">
+                      <code>
+.alert-success {
+  border-color: $turquoise;
+  background-color: mix(white, $turquoise, 90%);
+}</code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+
+
+
+        <!-- LEGAL TEXT -->
+
+
         <h2 class="heading-large" id="legal-text">Legal text</h2>
 
         <p>You must call out anything that may affect the user personally or financially. This element is detailed in the <a href="http://govuk-elements.herokuapp.com/typography#typography-legal-text">Government Service Design Manual</a>.</p>
@@ -119,9 +269,8 @@
 
         <ul class="list list-bullet">
           <li>messages are short and up to around 75 characters (one line at wide browser viewports)</li>
-        </ul> #}
-
-        
+        </ul>
+#}
 
         <div class="example">
 
@@ -135,6 +284,36 @@
           </div>
 
         </div>{# /example #}
+
+          <details>
+            <summary role="button"><span class="summary">View code snippet</span></summary>
+            <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+              <div class="tab-panel">
+                <div class="tab-panel-menu">
+                  <a href="#" class="tab-link tab-link-active">HTML</a>
+                </div>
+
+                <div class="tab-panes">
+                  <div class="tab-pane" style="display: block;">
+                    <pre class="language-markup">
+                      <code>
+{{ htmlToPrism('<div class="notice">
+    <i class="icon icon-important">
+    <span class="visuallyhidden">Warning</span>
+    </i>
+    <strong class="bold-small">
+    You can be fined up to &pound;5,000 if you don&rsquo;t register.
+    </strong>
+</div>') }}</code>
+                    </pre>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </details>
+
 
         <div class="example-caption">
           <p class="font-xsmall">Use a vertically centred icon when messages are short and up to around 75 characters (1 line at wide browser viewports)</p>
@@ -157,8 +336,55 @@
 
         </div>{# /example #}
 
+          <details>
+            <summary role="button"><span class="summary">View code snippet</span></summary>
+            <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+              <div class="tab-panel">
+                <div class="tab-panel-menu">
+                  <a href="#" class="tab-link tab-link-active">HTML</a>
+                  <a href="#" class="tab-link">SCSS</a>
+                </div>
+
+                <div class="tab-panes">
+                  <div class="tab-pane" style="display: block;">
+                    <pre class="language-markup">
+                      <code>
+{{ htmlToPrism('<div class="notice long">
+  <i class="icon icon-important">
+  <span class="visuallyhidden">Warning</span>
+  </i>
+  <p>
+    <strong class="bold-small">
+      You must repay any money you\'re asked to.
+    </strong>
+  </p>
+  <p><strong class="bold-small">If you don\'t repay money when asked you could be taken to court, and your benefits reduced or money taken directly from your wages until your debt is repaid.</strong></p>
+</div>') }}</code>
+                    </pre>
+                  </div>
+
+                  <div class="tab-pane" style="display: none;">
+                    <pre class="language-css">
+                      <code>
+.notice.long .icon {
+  margin-top: 0;
+  top: 0px;
+}</code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+
         <p class="font-xsmall">Use a top-aligned icon when messages are longer than 75 characters (2 lines or more at wide browser viewports)</p>
 
+
+
+
+
+<!-- ERROR MSSGS -->
         <h2 class="heading-large" id="error-messages">Error message</h2>
 
         <p>This element is detailed in the <a href="http://govuk-elements.herokuapp.com/errors/">Government Service Design Manual</a> and normally appears above the main heading of a page.</p>
@@ -190,7 +416,7 @@
           <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-2" tabindex="-1">
 
             <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">Your partner hasn&rsquo;t created their account.</h1>
-            
+
             <p>They must:</p>
             <ol class="list-bullet">
             <li>go to the homepage</li>
@@ -204,6 +430,45 @@
 
         </div>{# /example #}
 
+          <details>
+            <summary role="button"><span class="summary">View code snippet</span></summary>
+            <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+              <div class="tab-panel">
+                <div class="tab-panel-menu">
+                  <a href="#" class="tab-link tab-link-active">HTML</a>
+                </div>
+                <div class="tab-panes">
+                  <div class="tab-pane" style="display: block;">
+                    <pre class="language-markup">
+<code>{{ htmlToPrism('<div class="example">
+  <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-2" tabindex="-1">
+    <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">There&rsquo;s a problem</h1>
+    <p>Check your form. You must:</p>
+    <ul class="error-summary-list list list-bullet" style="padding-left: 20px">
+      <li style="color:#b10e1e;"><a href="#">enter your full name</a></li>
+      <li style="color:#b10e1e;"><a href="#">enter a valid email address</a></li>
+    </ul>
+</div>
+
+<div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-2" tabindex="-1">
+    <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">Your partner hasn&rsquo;t created their account.</h1>
+    <p>They must:</p>
+    <ol class="list-bullet">
+      <li>go to the homepage</li>
+      <li>select &lsquo;Register with a partner code&rsquo;</li>
+      <li>enter this code: <strong class="heading-small">YF92NEXT</strong></li>
+    </ol>
+    <p>They have <strong class="bold-small">7 days left</strong> - this code won\'t work after <strong class="bold-small">26 June 2016</strong>.</p>
+    <p>If they don\'t register in time you\'ll both have to register again.</p>
+</div>') }}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+
+        <!-- CONFIRMATION MSSGS -->
         <h2 class="heading-large" id="confirmation-messages">Confirmation message</h2>
 
         <p>Use this when:</p>
@@ -238,9 +503,42 @@
 
         </div>{# /example #}
 
+
+          <details>
+            <summary role="button"><span class="summary">View code snippet</span></summary>
+            <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+              <div class="tab-panel">
+                <div class="tab-panel-menu">
+                  <a href="#" class="tab-link tab-link-active">HTML</a>
+                </div>
+                <div class="tab-panes">
+                  <div class="tab-pane" style="display: block;">
+                    <pre class="language-markup">
+                      <code>
+{{ htmlToPrism('<div class="govuk-box-highlight padding-small">
+  <h1 class="bold-large m-b-s">Your application has been&nbsp;received</h1>
+  <p><strong class="heading-small">Your reference number is your National Insurance number</strong></p>
+</div>
+
+<div class="govuk-box-highlight">
+  <p class="bold-small">Invite sent to john.smith@example.com</p>
+</div>
+
+<div class="govuk-box-highlight">
+  <p class="bold-small">You\'ve changed your business details</p>
+</div>') }}</code>
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+
+
       </div>{# /column-two-thirds #}
 
     </div>{# /grid-row #}
-   
+
   </main>
 {% endblock %}

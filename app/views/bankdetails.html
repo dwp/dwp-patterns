@@ -1,15 +1,15 @@
 {% extends "layouts/layout_dwp_pattern.html" %}
 
-{% set page = { 
+{% set page = {
   title: 'Banking details',
   description: 'User interface patterns for capturing the appropriate banking details from users'
 } %}
 
-{############################################################################## 
-START PATTERN BLOCK 
+{##############################################################################
+START PATTERN BLOCK
 ##############################################################################}
 {%- block pattern_block_1 -%}
-    
+
 {% set pattern = {
   title: 'Standard',
   criteria: [
@@ -17,19 +17,19 @@ START PATTERN BLOCK
   ]
 } %}
 
-{# --------------------------------------------------------------------------- 
+{# ---------------------------------------------------------------------------
   description of the pattern
 ------------------------------------------------------------------------------
-  note: 
+  note:
   you can use markdown if you set markdown: true
-  in the pattern obj. remember markdown is whitespace sensitive so remove 
+  in the pattern obj. remember markdown is whitespace sensitive so remove
   tab or space indents if the output is different from expected
 --------------------------------------------------------------------------- #}
 {%- set pattern_description -%}
 
 {%- endset -%}
 
-{# --------------------------------------------------------------------------- 
+{# ---------------------------------------------------------------------------
   content notes, you can use markdown if you set markdown: true
   in the pattern object
 --------------------------------------------------------------------------- #}
@@ -37,7 +37,7 @@ START PATTERN BLOCK
 
 {% endset %}
 
-{# --------------------------------------------------------------------------- 
+{# ---------------------------------------------------------------------------
   research notes, you can use markdown if you set markdown: true
   in the pattern object
 --------------------------------------------------------------------------- #}
@@ -45,7 +45,7 @@ START PATTERN BLOCK
 
 {% endset %}
 
-{# --------------------------------------------------------------------------- 
+{# ---------------------------------------------------------------------------
   the pattern demo block, use HTML to build a demo pattern or include screen
   shots.
 --------------------------------------------------------------------------- #}
@@ -53,7 +53,7 @@ START PATTERN BLOCK
 
   <div class="column-two-thirds">
     <h1 class="heading-xlarge">Your bank details</h1>
-    
+
     <form>
       <div class="form-group">
         <fieldset>
@@ -105,14 +105,14 @@ START PATTERN BLOCK
 
 {%- endset -%}
 
-{# --------------------------------------------------------------------------- 
+{# ---------------------------------------------------------------------------
   css snippet block
 --------------------------------------------------------------------------- #}
 {%- set pattern_css -%}
 
 {%- endset -%}
 
-{# --------------------------------------------------------------------------- 
+{# ---------------------------------------------------------------------------
   javascript snippet block, whatever you write in here will run in the
   page on window.load and be output as a snippet.
 --------------------------------------------------------------------------- #}
@@ -124,16 +124,16 @@ START PATTERN BLOCK
 {%- call docs.render_pattern({ metadata: pattern, demo: pattern_demo, demo_script: pattern_javascript, description: pattern_description, notes: { content: pattern_notes_content, research: pattern_notes_research }, snippets: [{ label: 'HTML', block : pattern_demo, hide: pattern.hideSnippetHTML | d(false) },{ label: 'CSS', block: pattern_css, languageClass: 'language-css', hide: pattern.hideSnippetCSS | d(false) },{ label: 'Javascript', block: pattern_javascript, languageClass: 'language-js', hide: pattern.hideSnippetJavascript | d(false) }] }) %}{% endcall %}
 
 {%- endblock -%}
-{############################################################################# 
-END PATTERN BLOCK 
+{#############################################################################
+END PATTERN BLOCK
 ##############################################################################}
 
 
-{############################################################################## 
-START PATTERN BLOCK 
+{##############################################################################
+START PATTERN BLOCK
 ##############################################################################}
 {%- block pattern_block_2 -%}
-    
+
 {% set pattern = {
   title: 'Progressive banking details',
   criteria: [
@@ -141,36 +141,36 @@ START PATTERN BLOCK
   ]
 } %}
 
-{# --------------------------------------------------------------------------- 
+{# ---------------------------------------------------------------------------
   description of the pattern
 ------------------------------------------------------------------------------
-  note: 
+  note:
   you can use markdown if you set markdown: true
-  in the pattern obj. remember markdown is whitespace sensitive so remove 
+  in the pattern obj. remember markdown is whitespace sensitive so remove
   tab or space indents if the output is different from expected
 --------------------------------------------------------------------------- #}
 {%- set pattern_description -%}
 
 {%- endset -%}
 
-{# --------------------------------------------------------------------------- 
+{# ---------------------------------------------------------------------------
   content notes, you can use markdown if you set markdown: true
   in the pattern object
 --------------------------------------------------------------------------- #}
 {%- set pattern_notes_content -%}
 Reading left to right and top to bottom most (not all) bank cards display information in this order:
-+ card number 
-+ sort code 
-+ valid from 
-+ valid to 
-+ account holder 
-+ sort code 
++ card number
++ sort code
++ valid from
++ valid to
++ account holder
++ sort code
 + account number
 
 Carer's found changing the order of input boxes to reflect this saved the user time on this page.
 {% endset %}
 
-{# --------------------------------------------------------------------------- 
+{# ---------------------------------------------------------------------------
   research notes, you can use markdown if you set markdown: true
   in the pattern object
 --------------------------------------------------------------------------- #}
@@ -178,7 +178,7 @@ Carer's found changing the order of input boxes to reflect this saved the user t
 User research for [Get your State Pension](http://dwp-digital-services.herokuapp.com/projects/0/get_your_state_pension) found that asking people whether they want to be paid into a bank account or a building society account makes them think about whether they need their pension for everyday spending or for savings.
 {% endset %}
 
-{# --------------------------------------------------------------------------- 
+{# ---------------------------------------------------------------------------
   the pattern demo block, use HTML to build a demo pattern or include screen
   shots.
 --------------------------------------------------------------------------- #}
@@ -267,14 +267,14 @@ User research for [Get your State Pension](http://dwp-digital-services.herokuapp
 
 {%- endset -%}
 
-{# --------------------------------------------------------------------------- 
+{# ---------------------------------------------------------------------------
   css snippet block
 --------------------------------------------------------------------------- #}
 {%- set pattern_css -%}
 
 {%- endset -%}
 
-{# --------------------------------------------------------------------------- 
+{# ---------------------------------------------------------------------------
   javascript snippet block, whatever you write in here will run in the
   page on window.load and be output as a snippet.
 --------------------------------------------------------------------------- #}
@@ -295,16 +295,16 @@ $(document).on('click', 'input[type="radio"]', function (e) {
 {%- call docs.render_pattern({ metadata: pattern, demo: pattern_demo, demo_script: pattern_javascript, description: pattern_description, notes: { content: pattern_notes_content, research: pattern_notes_research }, snippets: [{ label: 'HTML', block : pattern_demo, hide: pattern.hideSnippetHTML | d(false) },{ label: 'CSS', block: pattern_css, languageClass: 'language-css', hide: pattern.hideSnippetCSS | d(false) },{ label: 'Javascript', block: pattern_javascript, languageClass: 'language-js', hide: pattern.hideSnippetJavascript | d(false) }] }) %}{% endcall %}
 
 {%- endblock -%}
-{############################################################################# 
+{#############################################################################
 END PATTERN BLOCK 2
 ##############################################################################}
 
 
-{############################################################################## 
+{##############################################################################
 START PATTERN BLOCK 3
 ##############################################################################}
 {%- block pattern_block_3 -%}
-    
+
 {% set pattern = {
   title: 'Progressive banking details',
   criteria: [
@@ -312,19 +312,19 @@ START PATTERN BLOCK 3
   ]
 } %}
 
-{# --------------------------------------------------------------------------- 
+{# ---------------------------------------------------------------------------
   description of the pattern
 ------------------------------------------------------------------------------
-  note: 
+  note:
   you can use markdown if you set markdown: true
-  in the pattern obj. remember markdown is whitespace sensitive so remove 
+  in the pattern obj. remember markdown is whitespace sensitive so remove
   tab or space indents if the output is different from expected
 --------------------------------------------------------------------------- #}
 {%- set pattern_description -%}
 
 {%- endset -%}
 
-{# --------------------------------------------------------------------------- 
+{# ---------------------------------------------------------------------------
   content notes, you can use markdown if you set markdown: true
   in the pattern object
 --------------------------------------------------------------------------- #}
@@ -334,7 +334,7 @@ On Carer's this was original titled 'Payment'. This implied to users that they w
 Post Office Card account information  was only included in Carer's because the service has an unusually high number of users with this type of account. This type of account is actually opened for users by the service if they don't have a bank account by the time the first payment is due.
 {% endset %}
 
-{# --------------------------------------------------------------------------- 
+{# ---------------------------------------------------------------------------
   research notes, you can use markdown if you set markdown: true
   in the pattern object
 --------------------------------------------------------------------------- #}
@@ -342,7 +342,7 @@ Post Office Card account information  was only included in Carer's because the s
 User research for [Carer’s Allowance](http://dwp-digital-services.herokuapp.com/projects/8/carers_allowance_digital_service) found that a significant number of users didn't have bank accounts at the time they applied or were reluctant to give their bank details online before they were actually awarded the benefit.
 {% endset %}
 
-{# --------------------------------------------------------------------------- 
+{# ---------------------------------------------------------------------------
   the pattern demo block, use HTML to build a demo pattern or include screen
   shots.
 --------------------------------------------------------------------------- #}
@@ -429,14 +429,14 @@ User research for [Carer’s Allowance](http://dwp-digital-services.herokuapp.co
 
 {%- endset -%}
 
-{# --------------------------------------------------------------------------- 
+{# ---------------------------------------------------------------------------
   css snippet block
 --------------------------------------------------------------------------- #}
 {%- set pattern_css -%}
 
 {%- endset -%}
 
-{# --------------------------------------------------------------------------- 
+{# ---------------------------------------------------------------------------
   javascript snippet block, whatever you write in here will run in the
   page on window.load and be output as a snippet.
 --------------------------------------------------------------------------- #}
@@ -458,6 +458,6 @@ $(document).on('click', 'input[type="radio"]', function (e) {
 {%- call docs.render_pattern({ metadata: pattern, demo: pattern_demo, demo_script: pattern_javascript, description: pattern_description, notes: { content: pattern_notes_content, research: pattern_notes_research }, snippets: [{ label: 'HTML', block : pattern_demo, hide: pattern.hideSnippetHTML | d(false) },{ label: 'CSS', block: pattern_css, languageClass: 'language-css', hide: pattern.hideSnippetCSS | d(false) },{ label: 'Javascript', block: pattern_javascript, languageClass: 'language-js', hide: pattern.hideSnippetJavascript | d(false) }] }) %}{% endcall %}
 
 {%- endblock -%}
-{############################################################################# 
+{#############################################################################
 END PATTERN BLOCK 3
 ##############################################################################}
