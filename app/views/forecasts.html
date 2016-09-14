@@ -35,7 +35,6 @@ they might get it and how it could change between now and then"
   in the pattern object
 --------------------------------------------------------------------------- #}
 {%- set pattern_notes_content -%}
-
 {% endset %}
 
 {# ---------------------------------------------------------------------------
@@ -96,6 +95,92 @@ they might get it and how it could change between now and then"
 --------------------------------------------------------------------------- #}
 {%- set pattern_css -%}
 {% include 'sass/patterns/_forecasts.scss' %}
+
+{%- endset -%}
+
+{# ---------------------------------------------------------------------------
+  javascript snippet block, whatever you write in here will run in the
+  page on window.load and be output as a snippet.
+--------------------------------------------------------------------------- #}
+{%- set pattern_javascript -%}
+
+{%- endset -%}
+
+{# this is where the above blocks and data is passed to the render pattern macro, ignore this unless your confortable with nunjucks and macros #}
+{%- call docs.render_pattern({ metadata: pattern, demo: pattern_demo, demo_script: pattern_javascript, description: pattern_description, notes: { content: pattern_notes_content, research: pattern_notes_research }, snippets: [{ label: 'HTML', block : pattern_demo, hide: pattern.hideSnippetHTML | d(false) },{ label: 'CSS', block: pattern_css, languageClass: 'language-css', hide: pattern.hideSnippetCSS | d(false) },{ label: 'Javascript', block: pattern_javascript, languageClass: 'language-js', hide: pattern.hideSnippetJavascript | d(false) }] }) %}{% endcall %}
+
+{%- endblock -%}
+{#############################################################################
+END PATTERN BLOCK
+##############################################################################}
+
+{##############################################################################
+START PATTERN BLOCK
+##############################################################################}
+{%- block pattern_block_2 -%}
+
+{% set pattern = {
+  title: 'Alternative pattern',
+  criteria: [
+    "the user needs to know what debt they have left and when they will clear it by"
+  ]
+} %}
+
+{# ---------------------------------------------------------------------------
+  description of the pattern
+------------------------------------------------------------------------------
+  note:
+  you can use markdown if you set markdown: true
+  in the pattern obj. remember markdown is whitespace sensitive so remove
+  tab or space indents if the output is different from expected
+--------------------------------------------------------------------------- #}
+{%- set pattern_description -%}
+
+{%- endset -%}
+
+{# ---------------------------------------------------------------------------
+  content notes, you can use markdown if you set markdown: true
+  in the pattern object
+--------------------------------------------------------------------------- #}
+{%- set pattern_notes_content -%}
+
+{% endset %}
+
+{# ---------------------------------------------------------------------------
+  research notes, you can use markdown if you set markdown: true
+  in the pattern object
+--------------------------------------------------------------------------- #}
+{%- set pattern_notes_research -%}
+
+{% endset %}
+
+{# ---------------------------------------------------------------------------
+  the pattern demo block, use HTML to build a demo pattern or include screen
+  shots.
+--------------------------------------------------------------------------- #}
+{%- set pattern_demo -%}
+
+<div class="column-two-thirds">
+  <div class="highlighted-event">
+    <p>Your DWP debt today</p>
+    <p><em>£3000</em></p>
+    <p>At the current rate your debt will be<br>paid off by 1 July 2020</p>
+  </div>
+  <h2 class="heading-medium">About this debt</h2>
+  <p>
+    You're currently repaying £60.00 four-weekly from this benefit. This money is taken directly from your main benefit payment.
+    <br><a href="#">Change your payments</a></p>
+    <p>You may have debt for various reasons, <a href="">see a breakdown of your debt</a>.
+    </p>
+  </div>
+
+
+{%- endset -%}
+
+{# ---------------------------------------------------------------------------
+  css snippet block
+--------------------------------------------------------------------------- #}
+{%- set pattern_css -%}
 
 {%- endset -%}
 
