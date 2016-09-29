@@ -59,7 +59,7 @@ Allowing the user to give consent to contact confers the ability to withdraw con
   shots.
 --------------------------------------------------------------------------- #}
 {%- set pattern_demo -%}
-
+<form>
 <h1 class="heading-xlarge">People who might be contacted</h1>
 <p class="lede">The following person might be asked for medical information about you:</p>
 
@@ -87,7 +87,7 @@ Allowing the user to give consent to contact confers the ability to withdraw con
       </label>
     </div>
   </fieldset>
-</div> 
+</div>
 
 <div class="form-group panel panel-border-narrow js-hidden alert-warning" id="notContactDetails">
   <p>If we can&#39;t contact your GP you might have to wait longer to get the full amount of Employment and Support Allowance. This is because it will take longer to to get details of your illness or condition that your GP could tell us about.</p>
@@ -96,6 +96,7 @@ Allowing the user to give consent to contact confers the ability to withdraw con
 <div class="form-group">
   <input type="submit" class="button" value="Continue">
 </div>
+</form>
 
 {%- endset -%}
 
