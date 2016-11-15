@@ -1,0 +1,365 @@
+{% extends "layouts/layout_dwp.html" %}
+
+{% block page_title %}
+  Search for your address - DWP design patterns
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+              <a class="link-back" href="/">Back</a>
+
+      <h1 class="heading-xlarge">
+     Search for your address</h1>
+
+      <h2 class="heading-medium">Standard pattern</h2>
+      <p class="text">
+        Use this when :
+        <ul class="list list-bullet">
+          <li>people need to find an address</li>
+        </ul>
+      </p>
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <div class="example">
+        <div class="grid-row">
+          <div class="column-two-thirds">
+            <h1 class="heading-xlarge">Search for your address</h1>
+            <form action="address-postcode" method="POST" autocomplete="off">
+
+              <div class="form-group{{ ' error' if addressError }}" data-required data-error="Enter your postcode">
+                <label for="postcode" class="form-label-bold">
+                  Your postcode
+                  {% if addressError %} <span class="error-message">{{ addressError }}</span>{% endif %}
+                </label>
+                <input type="text" name="postcode" id="postcode" class="form-control form-control-1-4" value="{{ postcode }}">
+              </div>
+
+              <div class="form-group">
+                <input type="submit" class="button" value="Continue">
+              </div>
+
+            </form>
+
+            <p>
+              <a href="contact-details">Enter address manually</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <details>
+        <summary role="button"><span class="summary">View code snippet</span></summary>
+
+        <div class="panel panel-border-narrow">
+          <div class="tab-panel">
+            <div class="tab-panel-menu">
+              <a href="#" class="tab-link tab-link-active">HTML</a>
+            </div>
+
+            <div class="tab-panes">
+              <div class="tab-pane" style="display: block;">
+                <pre class="language-markup">
+                  <code>
+{{ htmlToPrism('<h1 class="heading-xlarge">Search for your address</h1>
+            <form action="address-postcode" method="POST" autocomplete="off">
+              <div class="form-group" data-required data-error="Enter your postcode">
+                <label for="postcode" class="form-label-bold">
+                  Your postcode
+                </label>
+                <input type="text" name="postcode" id="postcode" class="form-control form-control-1-4" value="{{ postcode }}">
+              </div>
+              <div class="form-group">
+                <input type="submit" class="button" value="Continue">
+              </div>
+            </form>
+            <p>
+              <a href="contact-details">Enter address manually</a>
+            </p>')  }}
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <div class="grid-row">
+      <div class="example">
+        <div class="grid-row">
+          <div class="column-two-thirds">
+            <h1 class="heading-large">Select your address</h1>
+
+              <form action="address-confirm" method="post" class="form">
+          
+                  <fieldset class="form-group" data-required data-error="Select an option from the list">
+
+                    <legend class="visuallyhidden">Select your address</legend>
+                    
+                      <label for="radio-part-{{loop.index}}" class="block-label">
+                        <input id="radio-part-{{loop.index}}" type="radio" name="number" value="ee">
+                        <span class="font-small">12 Town Street, Pudsey, Leeds LS28 4YU</span>
+                      </label>
+
+                    <label for="radio-part-0" class="block-label">
+                      <input id="radio-part-0" type="radio" name="number" value="none">
+                      <span class="font-small">None of these are my address</span>
+                    </label>
+                    
+                  </fieldset>
+
+                  <div class="form-group">
+                    <input type="submit" class="button" value="Continue">
+                  </div>
+
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <details>
+        <summary role="button"><span class="summary">View code snippet</span></summary>
+
+        <div class="panel panel-border-narrow">
+          <div class="tab-panel">
+            <div class="tab-panel-menu">
+              <a href="#" class="tab-link tab-link-active">HTML</a>
+            </div>
+
+            <div class="tab-panes">
+              <div class="tab-pane" style="display: block;">
+                <pre class="language-markup">
+                  <code>
+{{ htmlToPrism('<h1 class="heading-large">Select your address</h1>
+
+              <form action="address-confirm" method="post" class="form">
+          
+                  <fieldset class="form-group" data-required data-error="Select an option from the list">
+
+                    <legend class="visuallyhidden">Select your address</legend>
+                    
+                      <label for="radio-part-{{loop.index}}" class="block-label">
+                        <input id="radio-part-{{loop.index}}" type="radio" name="number" value="ee">
+                        <span class="font-small">12 Town Street, Pudsey, Leeds LS28 4YU</span>
+                      </label>
+
+                    <label for="radio-part-0" class="block-label">
+                      <input id="radio-part-0" type="radio" name="number" value="none">
+                      <span class="font-small">None of these are my address</span>
+                    </label>
+                    
+                  </fieldset>
+
+                  <div class="form-group">
+                    <input type="submit" class="button" value="Continue">
+                  </div>
+
+              </form>')  }}
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <div class="grid-row">
+      <div class="example">
+        <div class="grid-row">
+          <div class="column-two-thirds">
+            <h1 class="heading-large">Confirm address</h1>
+
+            <form action="contact-pref">
+              
+              <ul class="todo">
+                  <li>12 Town Street,<br />
+                  Pudsey<br />
+                  Leeds<br />
+                  LS28 4YU</li>
+              </ul>
+              
+              <details class="form-group">
+                  <summary><span class="summary">I need to manually edit this address</span></summary>
+                  <div class="panel panel-border-narrow">
+
+                      <div class="form-group-compound">
+                          <label class="form-label" for="address-a">House or flat number and street</label>
+                          <input type="text" name="address" id="address-a" class="form-control" value="12 Town Street">
+                      </div>
+                      <div class="form-group-compound">
+                          <input type="text" name="address" id="address-a" class="form-control" value="Pudsey">
+                      </div>
+                      <div class="form-group-compound" data-required data-error="Enter your town or city">
+                          <label for="town" class="form-label">Town or city</label>
+                          <input type="text" name="town" id="town" class="form-control" value="Leeds">
+                      </div>
+                      <div class="form-group-compound">
+                          <label for="county" class="form-label">County</label>
+                          <input type="text" name="county" id="county" class="form-control" value="">
+                      </div>
+                      <div data-required data-error="Enter your postcode">
+                          <label for="postCode" class="form-label">Postcode</label>
+                          <input type="text" name="postCode" id="postCode" class="form-control form-control-1-4" value="{{ postcode }}">
+                      </div>
+                  </div>
+              </details>
+              
+              <div class="form-group" data-required data-error="Select an option">
+                  <fieldset class="inline">
+                      <legend class="form-label-bold">
+                          Do you need letters in a different format, for example, braille, large print or audio CD?
+                      </legend>
+                      <label for="radio-part-2" data-target="format" class="block-label">
+                          <input id="radio-part-2" type="radio" name="housing-act" value="Yes"> Yes
+                      </label>
+                      <label for="radio-part-3" class="block-label">
+                          <input id="radio-part-3" type="radio" name="housing-act" value="No"> No
+                      </label>
+                  </fieldset>
+              </div>
+              <div class="panel panel-border-narrow form-group js-hidden" id="format" data-required data-error="Select which format you need">
+                  <fieldset class="">
+                      <legend class="form-labl-bold">What format do you need?</legend>
+                      <label class="block-label" for="radio-inline-1">
+                          <input id="radio-inline-1" type="radio" name="partner" value="Yes"> Large print
+                      </label>
+                      <label class="block-label" for="radio-inline-2">
+                          <input id="radio-inline-2" type="radio" name="partner" value="No"> Braille
+                      </label>
+                      <label class="block-label" for="radio-inline-7">
+                          <input id="radio-inline-7" type="radio" name="partner" value="No"> Audio CD
+                      </label>
+                      <label class="block-label" data-target="other-sc2" for="radio-inline-17">
+                          <input id="radio-inline-17" type="radio" name="partner" value="other">
+                          Other
+                      </label>
+                      <div class="form-group js-hidden" id="other-sc2">
+                          <label class="form-label" for="freq">What format?</label><input type="text" class="form-control" id="freq">
+                      </div>
+                  </fieldset>
+              </div>
+              
+              <div class="form-group">
+                <input type="submit" class="button" value="Confirm">
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <details>
+        <summary role="button"><span class="summary">View code snippet</span></summary>
+
+        <div class="panel panel-border-narrow">
+          <div class="tab-panel">
+            <div class="tab-panel-menu">
+              <a href="#" class="tab-link tab-link-active">HTML</a>
+            </div>
+
+            <div class="tab-panes">
+              <div class="tab-pane" style="display: block;">
+                <pre class="language-markup">
+                  <code>
+{{ htmlToPrism('<h1 class="heading-large">Confirm address</h1>
+
+            <form action="contact-pref">
+              
+              <ul class="todo">
+                  <li>12 Town Street,<br />
+                  Pudsey<br />
+                  Leeds<br />
+                  LS28 4YU</li>
+              </ul>
+              
+              <details class="form-group">
+                  <summary><span class="summary">I need to manually edit this address</span></summary>
+                  <div class="panel panel-border-narrow">
+
+                      <div class="form-group-compound">
+                          <label class="form-label" for="address-a">House or flat number and street</label>
+                          <input type="text" name="address" id="address-a" class="form-control" value="12 Town Street">
+                      </div>
+                      <div class="form-group-compound">
+                          <input type="text" name="address" id="address-a" class="form-control" value="Pudsey">
+                      </div>
+                      <div class="form-group-compound" data-required data-error="Enter your town or city">
+                          <label for="town" class="form-label">Town or city</label>
+                          <input type="text" name="town" id="town" class="form-control" value="Leeds">
+                      </div>
+                      <div class="form-group-compound">
+                          <label for="county" class="form-label">County</label>
+                          <input type="text" name="county" id="county" class="form-control" value="">
+                      </div>
+                      <div data-required data-error="Enter your postcode">
+                          <label for="postCode" class="form-label">Postcode</label>
+                          <input type="text" name="postCode" id="postCode" class="form-control form-control-1-4" value="{{ postcode }}">
+                      </div>
+                  </div>
+              </details>
+              
+              <div class="form-group" data-required data-error="Select an option">
+                  <fieldset class="inline">
+                      <legend class="form-label-bold">
+                          Do you need letters in a different format, for example, braille, large print or audio CD?
+                      </legend>
+                      <label for="radio-part-2" data-target="format" class="block-label">
+                          <input id="radio-part-2" type="radio" name="housing-act" value="Yes"> Yes
+                      </label>
+                      <label for="radio-part-3" class="block-label">
+                          <input id="radio-part-3" type="radio" name="housing-act" value="No"> No
+                      </label>
+                  </fieldset>
+              </div>
+              <div class="panel panel-border-narrow form-group js-hidden" id="format" data-required data-error="Select which format you need">
+                  <fieldset class="">
+                      <legend class="form-labl-bold">What format do you need?</legend>
+                      <label class="block-label" for="radio-inline-1">
+                          <input id="radio-inline-1" type="radio" name="partner" value="Yes"> Large print
+                      </label>
+                      <label class="block-label" for="radio-inline-2">
+                          <input id="radio-inline-2" type="radio" name="partner" value="No"> Braille
+                      </label>
+                      <label class="block-label" for="radio-inline-7">
+                          <input id="radio-inline-7" type="radio" name="partner" value="No"> Audio CD
+                      </label>
+                      <label class="block-label" data-target="other-sc2" for="radio-inline-17">
+                          <input id="radio-inline-17" type="radio" name="partner" value="other">
+                          Other
+                      </label>
+                      <div class="form-group js-hidden" id="other-sc2">
+                          <label class="form-label" for="freq">What format?</label><input type="text" class="form-control" id="freq">
+                      </div>
+                  </fieldset>
+              </div>
+              
+              <div class="form-group">
+                <input type="submit" class="button" value="Confirm">
+              </div>
+
+            </form>')  }}
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+
+
+  </main>
+{% endblock %}
