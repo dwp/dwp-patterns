@@ -1,0 +1,118 @@
+{% extends "layouts/layout_dwp_pattern.html" %}
+
+{% set page = {
+  title: 'Conditions',
+  description: 'User interface patterns for capturing health care professional details'
+} %}
+
+{##############################################################################
+START PATTERN BLOCK
+##############################################################################}
+{%- block pattern_block_1 -%}
+
+{% set pattern = {
+  title: 'Standard',
+  criteria: [
+    "the user needs to provide details of health conditions or disabilities"
+  ]
+} %}
+
+{# ---------------------------------------------------------------------------
+  description of the pattern
+------------------------------------------------------------------------------
+  note:
+  you can use markdown if you set markdown: true
+  in the pattern obj. remember markdown is whitespace sensitive so remove
+  tab or space indents if the output is different from expected
+--------------------------------------------------------------------------- #}
+{%- set pattern_description -%}
+
+
+{%- endset -%}
+
+{# ---------------------------------------------------------------------------
+  content notes, you can use markdown if you set markdown: true
+  in the pattern object
+--------------------------------------------------------------------------- #}
+{%- set pattern_notes_content -%}
+
+This question was about making it as understandable as possible. With testing users were able to
+identify with the terms "conditions and disabilities".
+
+{% endset %}
+
+{# ---------------------------------------------------------------------------
+  research notes, you can use markdown if you set markdown: true
+  in the pattern object
+--------------------------------------------------------------------------- #}
+{%- set pattern_notes_research -%}
+
+Dropdowns and typeahead were trialled and rejected. Users were generally not aware of the typeahead as
+they were looking at the keyboard and not the screen. A dropdown was not acceisble and contained far too
+many options for this to be a viable solution.
+
+
+{% endset %}
+
+{# ---------------------------------------------------------------------------
+  the pattern demo block, use HTML to build a demo pattern or include screen
+  shots.
+--------------------------------------------------------------------------- #}
+{%- set pattern_demo -%}
+
+  <div class="column-two-thirds">
+    <header>
+    <h1 class="form-title heading-xlarge">What conditions or disabilities do you have?</h1>
+  </header>
+
+    <form>
+        <fieldset>
+
+          <h2 class="heading-small">Condition 1</h2>
+          <div class="form-group" id="form-group-name">
+          <label class="form-label" for="name">
+            Name of condition
+          </label>
+            <input type="text" class="form-control" id="name" name="name" value="">
+          </div>
+
+          <div class="form-group" id="form-group-when-started">
+          <label class="form-label" for="when-started">
+            When it started
+          </label>
+            <input type="text" class="form-control" id="when-started" name="when-started" value="">
+          </div>
+
+        </fieldset>
+    </form>
+  </div>
+
+{%- endset -%}
+
+{# ---------------------------------------------------------------------------
+  css snippet block
+--------------------------------------------------------------------------- #}
+{%- set pattern_css -%}
+
+.form-title {
+  margin-bottom:8px;
+}
+
+
+{%- endset -%}
+
+{# ---------------------------------------------------------------------------
+  javascript snippet block, whatever you write in here will run in the
+  page on window.load and be output as a snippet.
+--------------------------------------------------------------------------- #}
+{%- set pattern_javascript -%}
+
+{%- endset -%}
+
+{# this is where the above blocks and data is passed to the render pattern macro, ignore this unless your confortable with nunjucks and macros #}
+{%- call docs.render_pattern({ metadata: pattern, demo: pattern_demo, demo_script: pattern_javascript, description: pattern_description, notes: { content: pattern_notes_content, research: pattern_notes_research }, snippets: [{ label: 'HTML', block : pattern_demo, hide: pattern.hideSnippetHTML | d(false) },{ label: 'CSS', block: pattern_css, languageClass: 'language-css', hide: pattern.hideSnippetCSS | d(false) },{ label: 'Javascript', block: pattern_javascript, languageClass: 'language-js', hide: pattern.hideSnippetJavascript | d(false) }] }) %}{% endcall %}
+
+{%- endblock -%}
+{#############################################################################
+END PATTERN BLOCK
+##############################################################################}

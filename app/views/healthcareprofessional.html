@@ -1,0 +1,145 @@
+{% extends "layouts/layout_dwp_pattern.html" %}
+
+
+{% set page = {
+  title: 'Healthcare Professional',
+  description: 'User interface patterns for capturing health care professional details'
+} %}
+
+{##############################################################################
+START PATTERN BLOCK
+##############################################################################}
+{%- block pattern_block_1 -%}
+
+{% set pattern = {
+  title: 'Standard',
+  criteria: [
+    "the user needs to provide details of health care professionals"
+  ]
+} %}
+
+{# ---------------------------------------------------------------------------
+  description of the pattern
+------------------------------------------------------------------------------
+  note:
+  you can use markdown if you set markdown: true
+  in the pattern obj. remember markdown is whitespace sensitive so remove
+  tab or space indents if the output is different from expected
+--------------------------------------------------------------------------- #}
+{%- set pattern_description -%}
+
+{%- endset -%}
+
+{# ---------------------------------------------------------------------------
+  content notes, you can use markdown if you set markdown: true
+  in the pattern object
+--------------------------------------------------------------------------- #}
+{%- set pattern_notes_content -%}
+
+We ask this question as we want to gather the most useful information for the PIP assessor.
+Free text boxes are used for all areas so that the user doesn't feel restricted. A precise date is
+not required for the last seen date and most users can't remember the date.
+
+{% endset %}
+
+{# ---------------------------------------------------------------------------
+  research notes, you can use markdown if you set markdown: true
+  in the pattern object
+--------------------------------------------------------------------------- #}
+{%- set pattern_notes_research -%}
+
+Initially, the first design was copied from the paper PIP2 and tested and further iterations have come
+about as a result of continued testing. We avoided using validation on as many fields as possible
+with only the first health care professional being mandatory, following a user giving consent.
+In the live environment, this page had the highest dropout rate as users tended not to have the information
+ to hand when reaching the page.
+
+{% endset %}
+
+{# ---------------------------------------------------------------------------
+  the pattern demo block, use HTML to build a demo pattern or include screen
+  shots.
+--------------------------------------------------------------------------- #}
+{%- set pattern_demo -%}
+
+  <div class="column-two-thirds">
+    <header>
+    <h1 class="form-title heading-xlarge">Are there any professionals who can tell us about your condition?</h1>
+  </header>
+
+    <p>
+They could be your doctor, support worker, carer or anyone else who has information about the effects
+ of your condition.
+ </p>
+
+    <form>
+        <fieldset>
+
+          <h2 class="heading-small">Professional 1</h2>
+          <div class="form-group" id="form-group-name">
+          <label class="form-label" for="name">
+            Their name
+          </label>
+            <input type="text" class="form-control" id="name" name="name" value="">
+          </div>
+
+          <div class="form-group" id="form-group-proffesion">
+          <label class="form-label" for="profession">
+            Their profession
+          </label>
+            <input type="text" class="form-control" id="profession" name="profession" value="">
+          </div>
+
+          <div class="form-group">
+            <label for="address">
+              <span class="form-label">
+                Their address
+              </span>
+            </label>
+            <textarea class="txtaddress form-control form-control-3-4" id="address" name="address" value=""></textarea>
+          </div>
+
+            <div class="form-group" id="form-group-phone">
+            <label class="form-label" for="phone">
+              Their phone number
+            </label>
+              <input type="text" class="form-control" id="phone" name="phone" value="">
+            </div>
+
+            <div class="form-group" id="form-group-last-seen">
+            <label class="form-label" for="last-seen">
+              When you last saw them
+            </label>
+              <input type="text" class="form-control" id="last-seen" name="last-seen" value="">
+            </div>
+
+</fieldset>
+    </form>
+  </div>
+
+{%- endset -%}
+
+{# ---------------------------------------------------------------------------
+  css snippet block
+--------------------------------------------------------------------------- #}
+{%- set pattern_css -%}
+
+{% include 'sass/patterns/_healthcareprofessional.scss' %}
+
+{%- endset -%}
+
+{# ---------------------------------------------------------------------------
+  javascript snippet block, whatever you write in here will run in the
+  page on window.load and be output as a snippet.
+--------------------------------------------------------------------------- #}
+{%- set pattern_javascript -%}
+
+{%- endset -%}
+
+{# this is where the above blocks and data is passed to the render pattern macro, ignore this unless your confortable with nunjucks and macros #}
+{%- call docs.render_pattern({ metadata: pattern, demo: pattern_demo, demo_script: pattern_javascript, description: pattern_description, notes: { content: pattern_notes_content, research: pattern_notes_research }, snippets: [{ label: 'HTML', block : pattern_demo, hide: pattern.hideSnippetHTML | d(false) },{ label: 'CSS', block: pattern_css, languageClass: 'language-css', hide: pattern.hideSnippetCSS | d(false) },{ label: 'Javascript', block: pattern_javascript, languageClass: 'language-js', hide: pattern.hideSnippetJavascript | d(false) }] }) %}{% endcall %}
+
+{%- endblock -%}
+{#############################################################################
+END PATTERN BLOCK
+##############################################################################}
