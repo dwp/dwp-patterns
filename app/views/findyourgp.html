@@ -1,0 +1,169 @@
+{% extends "layouts/layout_dwp.html" %}
+
+{% block page_title %}
+  Find your GP - DWP design patterns
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+              <a class="link-back" href="/">Back</a>
+
+      <h1 class="heading-xlarge">
+     Find your GP surgery</h1>
+
+      <h2 class="heading-medium">Standard pattern</h2>
+      <p class="text">
+        Use this when :
+        <ul class="list list-bullet">
+          <li>people must find details of their GP</li>
+        </ul>
+      </p>
+      <p class="text">To view a working version look at the <a href="http://esa-digital.herokuapp.com/beta06/gp-details">Apply for Employment and Support Allowance prototype</a> (only sample data).</p>
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <div class="example">
+        <div class="grid-row">
+          <div class="column-two-thirds">
+            <header>
+              <h1 class="heading-large">
+              Find your GP surgery
+              </h1>
+            </header>
+
+            <div id="name" class="form-group" data-error="Enter the name of your GP practice">
+              <label for="practiceSearch" class="form-label">Your GP surgery</label>
+              <input type="text" name="practiceSearch" id="practiceSearch" class="form-control form-control-2-3 typeahead" placeholder="Search by GP surgery, city or postcode" value="">
+            </div>
+
+            <p>
+              <a href="manual-gp">I can't find my GP surgery</a>
+            </p>
+
+            <div class="form-group">
+              <input type="submit" class="button" value="Continue">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <details>
+        <summary role="button"><span class="summary">View code snippet</span></summary>
+
+        <div class="panel panel-border-narrow">
+          <div class="tab-panel">
+            <div class="tab-panel-menu">
+              <a href="#" class="tab-link tab-link-active">HTML</a>
+            </div>
+
+            <div class="tab-panes">
+              <div class="tab-pane" style="display: block;">
+                <pre class="language-markup">
+                  <code>
+{{ htmlToPrism('<header>
+  <h1 class="heading-large">
+  Find your GP surgery
+  </h1>
+</header>
+
+<div id="name" class="form-group" data-error="Enter the name of your GP practice">
+  <label for="practiceSearch" class="form-label">Your GP surgery</label>
+  <input type="text" name="practiceSearch" id="practiceSearch" class="form-control form-control-2-3 typeahead" placeholder="Search by GP surgery, city or postcode" value="">
+</div>
+
+<div class="form-group">
+  <input type="submit" class="button" value="Continue">
+</div>')  }}
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </main>
+{% endblock %}
+
+{% block body_end %}
+
+{{ super() }}
+
+<script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
+
+<script>
+var dataGPName = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.whitespace('gpName','gpAddress1','gpAddress2',
+                                                    'gpAddress3','gpAddress4','gpPostcode',
+                                                    'gpTelephone'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+    url: 'https://gp-look-up.herokuapp.com/getGp?query=%QUERY',
+    wildcard: '%QUERY',
+    filter: function (data) {
+            // Map the remote source JSON array to a JavaScript object array
+
+            return $.map(data.entries, function (gp) {
+                return {
+                    gpName: gp.Name,
+                    gpAddress1: gp.Address.Line1 || "",
+                    gpAddress2: gp.Address.Line2 || "",
+                    gpAddress3: gp.Address.Line3 || "",
+                    gpAddress4: gp.Address.Line4 || "",
+                    gpPostcode: gp.Address.Postcode || "",
+                    gpTelephone: gp.Telephone || ""
+                };
+            });
+        }
+  }
+});
+
+dataGPName.initialize();
+
+
+$('#name .typeahead').typeahead({
+  hint: true,
+  highlight: true,
+  minLength: 3
+}, {
+  display: function (item) { return item.orgName  },
+  source: dataGPName.ttAdapter(),
+  limit: 50,
+  templates: {
+        empty: [
+            '<p class="tt-suggestion">No matches found - <a href="manual-gp">enter details manually</a></p>'].join('\n'),
+        suggestion: function (data) {
+        return '<p><span class="bold-medium">' + data.gpName + '</span><br>' + data.gpAddress1 + "-"
+           + data.gpAddress2 +"-" + data.gpAddress3 + "-" + data.gpAddress4 + "-" + data.gpPostcode +'<br>' + data.gpTelephone + '</p>';
+        }
+    }
+});
+
+
+$('#name .typeahead').bind('typeahead:select', function(ev, suggestion) {
+  $('#name').after('<div class="call-to-action"><p><strong>' + suggestion.gpName + '</strong><br>' + suggestion.gpAddress1 + "-" + suggestion.gpAddress2 +"-" + suggestion.gpAddress3 + "-" + suggestion.gpAddress4 + "-" + suggestion.gpPostcode + '<br>' + suggestion.gpTelephone +  '</p>');
+  $(this).typeahead("val", "");
+
+  //enable the continue button
+  $('#continueButton').prop('disabled', false).removeClass('disabled');
+});
+
+
+</script>
+
+<style media="screen" type="text/css">
+#name .tt-menu {
+  max-height: 500px;
+  overflow-y: auto;
+}
+</style>
+
+{% endblock %}
+
