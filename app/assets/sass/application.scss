@@ -47,3 +47,21 @@ legend {
 	background: url(https://assets.digital.cabinet-office.gov.uk/static/icon-important-aab708504574eda2dc4a4de0802be03dbbd70d57b422de93e55e265c9ae2fc43.png) no-repeat scroll 0 0.5em;
 	background-size: 34px 34px
 }
+
+.warning {
+  background-color: mix($page-colour, $mellow-red, 90%);
+  border-left: .526315789473684em solid $red;
+  padding-left: .526315789473684em;
+}
+
+.declaration {
+  background-image: url('/public/images/icon-important.png');
+  background-position: left center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  font-weight: bold;
+  max-width: 30em;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  padding-top: 20px;
+}
