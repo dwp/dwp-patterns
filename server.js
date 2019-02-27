@@ -31,6 +31,10 @@ if (env === 'production' && useAuth === 'true'){
     app.use(utils.basicAuth(username, password));
 }
 
+app.use('/', function(req, res, next) {
+  return res.redirect(301, 'https://dwp-design-examples.herokuapp.com')
+})
+
 // Application settings
 app.set('view engine', 'html');
 app.set('views', [__dirname + '/app/views', __dirname + '/lib/', __dirname + '/app/assets']);
