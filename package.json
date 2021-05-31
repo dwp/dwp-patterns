@@ -40,7 +40,7 @@
     "prompt": "^0.2.14",
     "readdir": "0.0.6",
     "serve-favicon": "2.3.0",
-    "xo": "^0.14.0"
+    "xo": "^0.32.1"
   },
   "xo": {
     "space": true,
