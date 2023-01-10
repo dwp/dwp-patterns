@@ -26,7 +26,7 @@
     "grunt": "0.4.5",
     "grunt-cli": "0.1.13",
     "grunt-concurrent": "0.4.3",
-    "grunt-contrib-watch": "0.5.3",
+    "grunt-contrib-watch": "0.6.0",
     "grunt-nodemon": "0.4.0",
     "grunt-sass": "^1.1.0",
     "grunt-sync": "^0.5.1",
@@ -40,7 +40,7 @@
     "prompt": "^0.2.14",
     "readdir": "0.0.6",
     "serve-favicon": "2.3.0",
-    "xo": "^0.14.0"
+    "xo": "^0.20.0"
   },
   "xo": {
     "space": true,
