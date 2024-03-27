@@ -15,7 +15,7 @@
     "body-parser": "^1.14.1",
     "browser-sync": "^2.11.1",
     "consolidate": "0.x",
-    "express": "4.13.3",
+    "express": "4.19.2",
     "express-nunjucks": "^0.9.3",
     "express-session": "^1.13.0",
     "express-writer": "0.0.4",
