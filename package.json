@@ -28,7 +28,7 @@
     "grunt-concurrent": "0.4.3",
     "grunt-contrib-watch": "0.5.3",
     "grunt-nodemon": "0.4.0",
-    "grunt-sass": "^1.1.0",
+    "grunt-sass": "^3.0.0",
     "grunt-sync": "^0.5.1",
     "hogan.js": "3.0.2",
     "lodash": "^4.13.1",
