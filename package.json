@@ -37,7 +37,7 @@
     "nunjucks": "^2.4.2",
     "nunjucks-markdown": "^2.0.0",
     "portscanner": "^1.0.0",
-    "prompt": "^0.2.14",
+    "prompt": "^1.2.0",
     "readdir": "0.0.6",
     "serve-favicon": "2.3.0",
     "xo": "^0.14.0"
